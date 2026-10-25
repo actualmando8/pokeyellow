@@ -8,7 +8,7 @@ SeafoamIslandsB1FWildMons:
 	db 29, SLOWPOKE
 	db 18, ZUBAT
 	db 28, KINGLER
-	db 22, SEEL
+	db 24, SMOOCHUM
 	db 26, SEEL
 	end_grass_wildmons
 

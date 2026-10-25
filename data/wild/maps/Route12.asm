@@ -8,7 +8,7 @@ Route12WildMons:
 	db 27, BELLSPROUT
 	db 29, GLOOM
 	db 29, WEEPINBELL
-	db 26, FARFETCHD
+	db 20, MUNCHLAX
 	db 31, FARFETCHD
 	end_grass_wildmons
 

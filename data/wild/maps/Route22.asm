@@ -8,7 +8,7 @@ Route22WildMons:
 	db  4, NIDORAN_F
 	db  5, MANKEY
 	db  2, SPEAROW
-	db  4, SPEAROW
+	db   5, TYROGUE
 	db  6, SPEAROW
 	end_grass_wildmons
 

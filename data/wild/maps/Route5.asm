@@ -8,7 +8,7 @@ Route5WildMons:
 	db 17, PIDGEY
 	db 17, PIDGEOTTO
 	db  3, JIGGLYPUFF
-	db  5, JIGGLYPUFF
+	db   4, IGGLYBUFF
 	db  7, JIGGLYPUFF
 	end_grass_wildmons
 

@@ -7,7 +7,7 @@ Route4WildMons:
 	db  8, SANDSHREW
 	db 10, RATTATA
 	db 10, SANDSHREW
-	db 12, RATTATA
+	db 10, EKANS
 	db 11, SPEAROW
 	db 12, SPEAROW
 	end_grass_wildmons

@@ -7,8 +7,8 @@ ViridianForestWildMons:
 	db  4, PIDGEY
 	db  6, PIDGEY
 	db  6, CATERPIE
-	db  6, METAPOD
-	db  8, PIDGEY
+	db   5, WEEDLE
+	db   5, PICHU
 	db  9, PIDGEOTTO
 	end_grass_wildmons
 

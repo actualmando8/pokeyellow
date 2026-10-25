@@ -7,7 +7,7 @@ PokemonMansion1FWildMons:
 	db 37, RATTATA
 	db 37, RATICATE
 	db 30, GROWLITHE
-	db 26, GRIMER
+	db 26, KOFFING
 	db 34, GROWLITHE
 	db 38, GROWLITHE
 	end_grass_wildmons

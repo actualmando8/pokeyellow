@@ -8,7 +8,7 @@ SafariZoneEastWildMons:
 	db 19, CUBONE
 	db 26, EXEGGCUTE
 	db 24, MAROWAK
-	db 21, CHANSEY
+	db 15, HAPPINY
 	db 15, SCYTHER
 	end_grass_wildmons
 

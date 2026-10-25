@@ -7,7 +7,7 @@ Route6WildMons:
 	db 16, RATTATA
 	db 17, PIDGEY
 	db 17, PIDGEOTTO
-	db  3, JIGGLYPUFF
+	db  12, MEOWTH
 	db  5, JIGGLYPUFF
 	db  7, JIGGLYPUFF
 	end_grass_wildmons
