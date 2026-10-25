@@ -1,7 +1,7 @@
 	db DEX_DODRIO ; pokedex id
 
-	db  60, 110,  70, 100,  60
-	;   hp  atk  def  spd  spc
+	db  60, 110,  70, 100,  60,  60
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     BIDE,         SKULL_BASH,   SKY_ATTACK,   REST,         TRI_ATTACK,   \
 	     SUBSTITUTE,   FLY
 	; end
-
-	db 0 ; padding

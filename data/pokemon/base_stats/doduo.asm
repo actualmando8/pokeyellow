@@ -1,7 +1,7 @@
 	db DEX_DODUO ; pokedex id
 
-	db  35,  85,  45,  75,  35
-	;   hp  atk  def  spd  spc
+	db  35,  85,  45,  75,  35,  35
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 190 ; catch rate
@@ -19,5 +19,3 @@
 	     SKULL_BASH,   SKY_ATTACK,   REST,         TRI_ATTACK,   SUBSTITUTE,   \
 	     FLY
 	; end
-
-	db 0 ; padding

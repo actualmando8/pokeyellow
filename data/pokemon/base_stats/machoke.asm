@@ -1,7 +1,7 @@
 	db DEX_MACHOKE ; pokedex id
 
-	db  80, 100,  70,  45,  50
-	;   hp  atk  def  spd  spc
+	db  80, 100,  70,  45,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, FIGHTING ; type
 	db 90 ; catch rate
@@ -20,5 +20,3 @@
 	     BIDE,         METRONOME,    FIRE_BLAST,   SKULL_BASH,   REST,         \
 	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

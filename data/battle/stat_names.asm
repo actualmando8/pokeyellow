@@ -6,5 +6,5 @@ VitaminStats:
 	li "ATTACK"
 	li "DEFENSE"
 	li "SPEED"
-	li "SPECIAL"
-	assert_list_length NUM_STATS
+	li "SPECIAL" ; Calcium raises the stat exp that Sp.Atk and Sp.Def share
+	assert_list_length NUM_STAT_EXP

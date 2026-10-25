@@ -1,7 +1,7 @@
 	db DEX_WEEPINBELL ; pokedex id
 
-	db  65,  90,  50,  55,  85
-	;   hp  atk  def  spd  spc
+	db  65,  90,  50,  55,  85,  85
+	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type
 	db 120 ; catch rate
@@ -18,5 +18,3 @@
 	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         REST,         SUBSTITUTE,   CUT
 	; end
-
-	db 0 ; padding

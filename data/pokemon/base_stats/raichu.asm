@@ -1,7 +1,7 @@
 	db DEX_RAICHU ; pokedex id
 
-	db  60,  90,  55, 100,  90
-	;   hp  atk  def  spd  spc
+	db  60,  90,  55, 100,  90,  90
+	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type
 	db 75 ; catch rate
@@ -20,5 +20,3 @@
 	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
 	     THUNDER_WAVE, SUBSTITUTE,   FLASH
 	; end
-
-	db 0 ; padding

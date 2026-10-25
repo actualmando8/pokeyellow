@@ -1,7 +1,7 @@
 	db DEX_ODDISH ; pokedex id
 
-	db  45,  50,  55,  30,  75
-	;   hp  atk  def  spd  spc
+	db  45,  50,  55,  30,  75,  75
+	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type
 	db 255 ; catch rate
@@ -18,5 +18,3 @@
 	     MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         REST,         SUBSTITUTE,   CUT
 	; end
-
-	db 0 ; padding

@@ -26,7 +26,7 @@ GainExperience:
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonBaseStats
-	ld c, NUM_STATS
+	ld c, NUM_STAT_EXP
 .gainStatExpLoop
 	ld a, [hli]
 	ld b, a ; enemy mon base stat

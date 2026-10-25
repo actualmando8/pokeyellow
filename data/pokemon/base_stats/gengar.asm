@@ -1,7 +1,7 @@
 	db DEX_GENGAR ; pokedex id
 
-	db  60,  65,  60, 110, 130
-	;   hp  atk  def  spd  spc
+	db  60,  65,  60, 110, 130, 130
+	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, POISON ; type
 	db 45 ; catch rate
@@ -21,5 +21,3 @@
 	     SKULL_BASH,   DREAM_EATER,  REST,         PSYWAVE,      EXPLOSION,    \
 	     SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

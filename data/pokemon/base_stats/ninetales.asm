@@ -1,7 +1,7 @@
 	db DEX_NINETALES ; pokedex id
 
-	db  73,  76,  75, 100, 100
-	;   hp  atk  def  spd  spc
+	db  73,  76,  75, 100, 100, 100
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
 	db 75 ; catch rate
@@ -19,5 +19,3 @@
 	     BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         \
 	     SUBSTITUTE
 	; end
-
-	db 0 ; padding

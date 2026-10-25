@@ -702,7 +702,8 @@ wPlayerMonUnmodifiedMaxHP:: dw
 wPlayerMonUnmodifiedAttack:: dw
 wPlayerMonUnmodifiedDefense:: dw
 wPlayerMonUnmodifiedSpeed:: dw
-wPlayerMonUnmodifiedSpecial:: dw
+wPlayerMonUnmodifiedSpAtk:: dw
+wPlayerMonUnmodifiedSpDef:: dw
 
 ; stat modifiers for the player's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -711,10 +712,11 @@ wPlayerMonStatMods::
 wPlayerMonAttackMod:: db
 wPlayerMonDefenseMod:: db
 wPlayerMonSpeedMod:: db
-wPlayerMonSpecialMod:: db
+wPlayerMonSpAtkMod:: db
+wPlayerMonSpDefMod:: db
 wPlayerMonAccuracyMod:: db
 wPlayerMonEvasionMod:: db
-	ds 2
+	ds 1
 wPlayerMonStatModsEnd::
 
 	ds 1
@@ -724,7 +726,8 @@ wEnemyMonUnmodifiedMaxHP:: dw
 wEnemyMonUnmodifiedAttack:: dw
 wEnemyMonUnmodifiedDefense:: dw
 wEnemyMonUnmodifiedSpeed:: dw
-wEnemyMonUnmodifiedSpecial:: dw
+wEnemyMonUnmodifiedSpAtk:: dw
+wEnemyMonUnmodifiedSpDef:: dw
 
 ; stat modifiers for the enemy's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -733,10 +736,11 @@ wEnemyMonStatMods::
 wEnemyMonAttackMod:: db
 wEnemyMonDefenseMod:: db
 wEnemyMonSpeedMod:: db
-wEnemyMonSpecialMod:: db
+wEnemyMonSpAtkMod:: db
+wEnemyMonSpDefMod:: db
 wEnemyMonAccuracyMod:: db
 wEnemyMonEvasionMod:: db
-	ds 2
+	ds 1
 wEnemyMonStatModsEnd::
 
 NEXTU
@@ -1702,7 +1706,8 @@ wMonHBaseHP:: db
 wMonHBaseAttack:: db
 wMonHBaseDefense:: db
 wMonHBaseSpeed:: db
-wMonHBaseSpecial:: db
+wMonHBaseSpAtk:: db
+wMonHBaseSpDef:: db
 wMonHTypes::
 wMonHType1:: db
 wMonHType2:: db
@@ -2520,7 +2525,7 @@ wBGPPalsBuffer:: ds NUM_ACTIVE_PALS * PAL_SIZE
 SECTION "Stack", WRAM0
 
 ; the stack grows downward
-	ds $eb - 1
+	ds $c7 - 1
 wStack:: db
 
 ENDSECTION

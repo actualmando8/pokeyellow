@@ -1,7 +1,7 @@
 	db DEX_DEWGONG ; pokedex id
 
-	db  90,  70,  80,  70,  95
-	;   hp  atk  def  spd  spc
+	db  90,  70,  80,  70,  95,  95
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ICE ; type
 	db 75 ; catch rate
@@ -19,5 +19,3 @@
 	     PAY_DAY,      RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH
 	; end
-
-	db 0 ; padding

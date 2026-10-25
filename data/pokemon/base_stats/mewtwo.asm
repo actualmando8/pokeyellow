@@ -1,7 +1,7 @@
 	db DEX_MEWTWO ; pokedex id
 
-	db 106, 110,  90, 130, 154
-	;   hp  atk  def  spd  spc
+	db 106, 110,  90, 130, 154, 154
+	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 3 ; catch rate
@@ -22,5 +22,3 @@
 	     SELFDESTRUCT, FIRE_BLAST,   SKULL_BASH,   REST,         THUNDER_WAVE, \
 	     PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   STRENGTH,     FLASH
 	; end
-
-	db 0 ; padding

@@ -707,7 +707,7 @@ AIUseXSpeed:
 	jr AIIncreaseStat
 
 AIUseXSpecial:
-	ld b, SPECIAL_UP1_EFFECT
+	ld b, SPATK_UP1_EFFECT
 	ld a, X_SPECIAL
 	; fallthrough
 

@@ -1,7 +1,7 @@
 	db DEX_PSYDUCK ; pokedex id
 
-	db  50,  52,  48,  55,  50
-	;   hp  atk  def  spd  spc
+	db  50,  52,  48,  55,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 190 ; catch rate
@@ -20,5 +20,3 @@
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         STRENGTH
 	; end
-
-	db 0 ; padding

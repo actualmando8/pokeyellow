@@ -1,7 +1,7 @@
 	db DEX_PRIMEAPE ; pokedex id
 
-	db  65, 105,  60,  95,  60
-	;   hp  atk  def  spd  spc
+	db  65, 105,  60,  95,  60,  60
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, FIGHTING ; type
 	db 75 ; catch rate
@@ -20,5 +20,3 @@
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    SWIFT,        \
 	     SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

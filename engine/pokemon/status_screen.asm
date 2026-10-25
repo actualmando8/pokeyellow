@@ -273,7 +273,13 @@ PrintStatsBox:
 	push bc
 	push hl
 	ld de, .StatsText
+	ld hl, hUILayoutFlags
+	set BIT_SINGLE_SPACED_LINES, [hl] ; six stats only fit single-spaced
+	pop hl
+	push hl
 	call PlaceString
+	ld hl, hUILayoutFlags
+	res BIT_SINGLE_SPACED_LINES, [hl]
 	pop hl
 	pop bc
 	add hl, bc
@@ -284,14 +290,16 @@ PrintStatsBox:
 	call .PrintStat
 	ld de, wLoadedMonSpeed
 	call .PrintStat
-	ld de, wLoadedMonSpecial
+	ld de, wLoadedMonSpAtk
+	call .PrintStat
+	ld de, wLoadedMonSpDef
 	jp PrintNumber
 
 .PrintStat:
 	push hl
 	call PrintNumber
 	pop hl
-	ld de, SCREEN_WIDTH * 2
+	ld de, SCREEN_WIDTH
 	add hl, de
 	ret
 
@@ -299,7 +307,8 @@ PrintStatsBox:
 	db   "ATTACK"
 	next "DEFENSE"
 	next "SPEED"
-	next "SPECIAL@"
+	next "SP.ATK"
+	next "SP.DEF@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]

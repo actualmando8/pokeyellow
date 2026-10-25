@@ -138,15 +138,6 @@ PlayMusic::
 	ld a, b
 	jr PlaySound
 
-ClearMusic:: ; unreferenced
-	xor a
-	ld [wChannelSoundIDs + CHAN5], a
-	ld [wChannelSoundIDs + CHAN6], a
-	ld [wChannelSoundIDs + CHAN7], a
-	ld [wChannelSoundIDs + CHAN8], a
-	ldh [rAUD1SWEEP], a
-	ret
-
 StopAllMusic::
 	ld a, SFX_STOP_ALL_MUSIC
 	ld [wNewSoundID], a

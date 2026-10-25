@@ -1,7 +1,7 @@
 	db DEX_JIGGLYPUFF ; pokedex id
 
-	db 115,  45,  20,  20,  25
-	;   hp  atk  def  spd  spc
+	db 115,  45,  20,  20,  25,  25
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FAIRY ; type
 	db 170 ; catch rate
@@ -22,5 +22,3 @@
 	     REST,         THUNDER_WAVE, PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   \
 	     STRENGTH,     FLASH
 	; end
-
-	db 0 ; padding

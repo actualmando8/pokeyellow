@@ -1,7 +1,7 @@
 	db DEX_NIDORINO ; pokedex id
 
-	db  61,  72,  57,  65,  55
-	;   hp  atk  def  spd  spc
+	db  61,  72,  57,  65,  55,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type
 	db 120 ; catch rate
@@ -19,5 +19,3 @@
 	     THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  REFLECT,      \
 	     BIDE,         SKULL_BASH,   REST,         SUBSTITUTE
 	; end
-
-	db 0 ; padding

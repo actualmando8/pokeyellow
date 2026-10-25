@@ -1,7 +1,7 @@
 	db DEX_MAGMAR ; pokedex id
 
-	db  65,  95,  57,  93,  85
-	;   hp  atk  def  spd  spc
+	db  65,  95,  57,  93,  85,  85
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
@@ -20,5 +20,3 @@
 	     BIDE,         METRONOME,    FIRE_BLAST,   SKULL_BASH,   REST,         \
 	     PSYWAVE,      SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

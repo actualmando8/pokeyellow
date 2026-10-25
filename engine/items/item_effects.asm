@@ -3083,7 +3083,7 @@ SendNewMonToBox:
 	ld [de], a
 	inc de
 	xor a
-	ld b, NUM_STATS * 2
+	ld b, NUM_STAT_EXP * 2
 .statLoop
 	ld [de], a
 	inc de

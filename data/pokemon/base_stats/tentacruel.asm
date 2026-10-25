@@ -1,7 +1,7 @@
 	db DEX_TENTACRUEL ; pokedex id
 
-	db  80,  70,  65, 100, 120
-	;   hp  atk  def  spd  spc
+	db  80,  70,  65, 100, 120, 120
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, POISON ; type
 	db 60 ; catch rate
@@ -19,5 +19,3 @@
 	     MEGA_DRAIN,   MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   CUT,          SURF
 	; end
-
-	db 0 ; padding

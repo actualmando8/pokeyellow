@@ -1,7 +1,7 @@
 	db DEX_DRAGONAIR ; pokedex id
 
-	db  61,  84,  65,  70,  70
-	;   hp  atk  def  spd  spc
+	db  61,  84,  65,  70,  70,  70
+	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, DRAGON ; type
 	db 27 ; catch rate
@@ -20,5 +20,3 @@
 	     REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     REST,         THUNDER_WAVE, SUBSTITUTE,   SURF
 	; end
-
-	db 0 ; padding

@@ -1,7 +1,7 @@
 	db DEX_CHARMANDER ; pokedex id
 
-	db  39,  52,  43,  65,  50
-	;   hp  atk  def  spd  spc
+	db  39,  52,  43,  65,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
@@ -20,5 +20,3 @@
 	     REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     REST,         SUBSTITUTE,   CUT,          STRENGTH
 	; end
-
-	db 0 ; padding

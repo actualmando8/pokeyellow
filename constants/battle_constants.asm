@@ -13,18 +13,24 @@ DEF MAX_STAT_LEVEL EQU 13
 	const STAT_ATTACK
 	const STAT_DEFENSE
 	const STAT_SPEED
-	const STAT_SPECIAL
+	const STAT_SPATK
+	const STAT_SPDEF
 DEF NUM_STATS EQU const_value - 1
+
+; Sp.Atk and Sp.Def share one stat exp slot and one DV (as in Gen 2),
+; so there is one fewer stat exp slot than there are stats.
+DEF NUM_STAT_EXP EQU NUM_STATS - 1
 
 ; StatModTextStrings indexes (see data/battle/stat_mod_names.asm)
 	const_def
 	const MOD_ATTACK
 	const MOD_DEFENSE
 	const MOD_SPEED
-	const MOD_SPECIAL
+	const MOD_SPATK
+	const MOD_SPDEF
 	const MOD_ACCURACY
 	const MOD_EVASION
-	const_skip 2
+	const_skip 1
 DEF NUM_STAT_MODS EQU const_value
 
 ; Moves struct fields (see data/moves/moves.asm)

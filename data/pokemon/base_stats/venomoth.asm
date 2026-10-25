@@ -1,7 +1,7 @@
 	db DEX_VENOMOTH ; pokedex id
 
-	db  70,  65,  60,  90,  90
-	;   hp  atk  def  spd  spc
+	db  70,  65,  60,  90,  90,  90
+	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type
 	db 75 ; catch rate
@@ -19,5 +19,3 @@
 	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SWIFT,        REST,         PSYWAVE,      SUBSTITUTE,   FLASH
 	; end
-
-	db 0 ; padding

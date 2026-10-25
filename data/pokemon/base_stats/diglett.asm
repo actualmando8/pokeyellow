@@ -1,7 +1,7 @@
 	db DEX_DIGLETT ; pokedex id
 
-	db  10,  55,  25,  95,  45
-	;   hp  atk  def  spd  spc
+	db  10,  55,  25,  95,  45,  45
+	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type
 	db 255 ; catch rate
@@ -18,5 +18,3 @@
 	     EARTHQUAKE,   FISSURE,      DIG,          MIMIC,        DOUBLE_TEAM,  \
 	     BIDE,         REST,         ROCK_SLIDE,   SUBSTITUTE,   CUT
 	; end
-
-	db 0 ; padding

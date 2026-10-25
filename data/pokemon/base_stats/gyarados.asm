@@ -1,7 +1,7 @@
 	db DEX_GYARADOS ; pokedex id
 
-	db  95, 125,  79,  81, 100
-	;   hp  atk  def  spd  spc
+	db  95, 125,  79,  81, 100, 100
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, FLYING ; type
 	db 45 ; catch rate
@@ -20,5 +20,3 @@
 	     REFLECT,      BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         \
 	     SUBSTITUTE,   SURF,         STRENGTH
 	; end
-
-	db 0 ; padding

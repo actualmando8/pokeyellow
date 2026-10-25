@@ -4243,32 +4243,32 @@ GetDamageVarsForPlayerAttack:
 	pop bc
 	jr .scaleStats
 .specialAttack
-	ld hl, wEnemyMonSpecial
+	ld hl, wEnemyMonSpDef
 	ld a, [hli]
 	ld b, a
-	ld c, [hl] ; bc = enemy special
+	ld c, [hl] ; bc = enemy special defense
 	ld a, [wEnemyBattleStatus3]
 	bit HAS_LIGHT_SCREEN_UP, a ; check for Light Screen
 	jr z, .specialAttackCritCheck
-; if the enemy has used Light Screen, double the enemy's special
+; if the enemy has used Light Screen, double the enemy's special defense
 	sla c
 	rl b
 ; reflect and light screen boosts do not cap the stat at MAX_STAT_VALUE, so weird things will happen during stats scaling
 ; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Special has used Light Screen
 .specialAttackCritCheck
-	ld hl, wBattleMonSpecial
+	ld hl, wBattleMonSpAtk
 	ld a, [wCriticalHitOrOHKO]
 	and a ; check for critical hit
 	jr z, .scaleStats
-; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld c, STAT_SPECIAL
+; in the case of a critical hit, reset the player's special attack and the enemy's special defense to their base values
+	ld c, STAT_SPDEF
 	call GetEnemyMonStat
 	ldh a, [hProduct + 2]
 	ld b, a
 	ldh a, [hProduct + 3]
 	ld c, a
 	push bc
-	ld hl, wPartyMon1Special
+	ld hl, wPartyMon1SpAtk
 	ld a, [wPlayerMonNumber]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
@@ -4357,25 +4357,25 @@ GetDamageVarsForEnemyAttack:
 	pop bc
 	jr .scaleStats
 .specialAttack
-	ld hl, wBattleMonSpecial
+	ld hl, wBattleMonSpDef
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
 	ld a, [wPlayerBattleStatus3]
 	bit HAS_LIGHT_SCREEN_UP, a ; check for Light Screen
 	jr z, .specialAttackCritCheck
-; if the player has used Light Screen, double the player's special
+; if the player has used Light Screen, double the player's special defense
 	sla c
 	rl b
 ; reflect and light screen boosts do not cap the stat at MAX_STAT_VALUE, so weird things will happen during stats scaling
 ; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Special has used Light Screen
 .specialAttackCritCheck
-	ld hl, wEnemyMonSpecial
+	ld hl, wEnemyMonSpAtk
 	ld a, [wCriticalHitOrOHKO]
 	and a ; check for critical hit
 	jr z, .scaleStats
-; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld hl, wPartyMon1Special
+; in the case of a critical hit, reset the player's special defense and the enemy's special attack to their base values
+	ld hl, wPartyMon1SpDef
 	ld a, [wPlayerMonNumber]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
@@ -4383,7 +4383,7 @@ GetDamageVarsForEnemyAttack:
 	ld b, a
 	ld c, [hl]
 	push bc
-	ld c, STAT_SPECIAL
+	ld c, STAT_SPATK
 	call GetEnemyMonStat
 	ld hl, hProduct + 2
 	pop bc
@@ -6667,7 +6667,7 @@ ApplyBadgeStatBoosts:
 ; Boulder (bit 0) - attack
 ; Thunder (bit 2) - defense
 ; Soul (bit 4) - speed
-; Volcano (bit 6) - special
+; Volcano (bit 6) - special attack (and special defense, see below)
 .loop
 	srl b
 	call c, .applyBoostToStat
@@ -6676,7 +6676,11 @@ ApplyBadgeStatBoosts:
 	srl b
 	dec c
 	jr nz, .loop
-	ret
+; hl now points to Sp.Def, which gets the same boost as Sp.Atk
+	ld a, [wObtainedBadges]
+	bit BIT_VOLCANOBADGE, a
+	ret z
+	jr .applyBoostToStat
 
 ; multiply stat at hl by 1.125
 ; cap stat at MAX_STAT_VALUE

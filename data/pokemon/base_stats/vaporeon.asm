@@ -1,7 +1,7 @@
 	db DEX_VAPOREON ; pokedex id
 
-	db 130,  65,  60,  65, 110
-	;   hp  atk  def  spd  spc
+	db 130,  65,  60,  65, 110, 110
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE,   SURF
 	; end
-
-	db 0 ; padding

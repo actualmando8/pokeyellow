@@ -1,7 +1,7 @@
 	db DEX_JYNX ; pokedex id
 
-	db  65,  50,  35,  95,  95
-	;   hp  atk  def  spd  spc
+	db  65,  50,  35,  95,  95,  95
+	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
@@ -21,5 +21,3 @@
 	     BIDE,         METRONOME,    SKULL_BASH,   REST,         PSYWAVE,      \
 	     SUBSTITUTE
 	; end
-
-	db 0 ; padding

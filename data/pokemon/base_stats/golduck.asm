@@ -1,7 +1,7 @@
 	db DEX_GOLDUCK ; pokedex id
 
-	db  80,  82,  78,  85,  80
-	;   hp  atk  def  spd  spc
+	db  80,  82,  78,  85,  80,  80
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 75 ; catch rate
@@ -21,5 +21,3 @@
 	     SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   SURF,         \
 	     STRENGTH
 	; end
-
-	db 0 ; padding

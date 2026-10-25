@@ -1,7 +1,7 @@
 	db DEX_PIDGEOTTO ; pokedex id
 
-	db  63,  60,  55,  71,  50
-	;   hp  atk  def  spd  spc
+	db  63,  60,  55,  71,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 120 ; catch rate
@@ -18,5 +18,3 @@
 	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     SWIFT,        SKY_ATTACK,   REST,         SUBSTITUTE,   FLY
 	; end
-
-	db 0 ; padding

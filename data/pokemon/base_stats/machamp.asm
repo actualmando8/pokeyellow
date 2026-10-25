@@ -1,7 +1,7 @@
 	db DEX_MACHAMP ; pokedex id
 
-	db  90, 130,  80,  55,  65
-	;   hp  atk  def  spd  spc
+	db  90, 130,  80,  55,  65,  65
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIGHTING, FIGHTING ; type
 	db 45 ; catch rate
@@ -20,5 +20,3 @@
 	     DOUBLE_TEAM,  BIDE,         METRONOME,    FIRE_BLAST,   SKULL_BASH,   \
 	     REST,         ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

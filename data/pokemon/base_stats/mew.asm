@@ -1,7 +1,7 @@
 	db DEX_MEW ; pokedex id
 
-	db 100, 100, 100, 100, 100
-	;   hp  atk  def  spd  spc
+	db 100, 100, 100, 100, 100, 100
+	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 45 ; catch rate
@@ -26,5 +26,3 @@
 	     PSYWAVE,      EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
 	     CUT,          FLY,          SURF,         STRENGTH,     FLASH
 	; end
-
-	db 0 ; padding

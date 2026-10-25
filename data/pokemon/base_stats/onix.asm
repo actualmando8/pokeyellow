@@ -1,7 +1,7 @@
 	db DEX_ONIX ; pokedex id
 
-	db  35,  45, 160,  70,  30
-	;   hp  atk  def  spd  spc
+	db  35,  45, 160,  70,  30,  30
+	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, GROUND ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     BIDE,         SELFDESTRUCT, SKULL_BASH,   REST,         EXPLOSION,    \
 	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
-
-	db 0 ; padding

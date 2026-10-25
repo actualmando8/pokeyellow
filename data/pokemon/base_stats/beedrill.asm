@@ -1,7 +1,7 @@
 	db DEX_BEEDRILL ; pokedex id
 
-	db  65,  80,  40,  75,  45
-	;   hp  atk  def  spd  spc
+	db  65,  80,  40,  75,  45,  45
+	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     BIDE,         SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE,   \
 	     CUT
 	; end
-
-	db 0 ; padding

@@ -1,7 +1,7 @@
 	db DEX_RATTATA ; pokedex id
 
-	db  30,  56,  35,  72,  25
-	;   hp  atk  def  spd  spc
+	db  30,  56,  35,  72,  25,  25
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
 	db 255 ; catch rate
@@ -19,5 +19,3 @@
 	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE
 	; end
-
-	db 0 ; padding

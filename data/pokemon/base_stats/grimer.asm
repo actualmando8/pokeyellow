@@ -1,7 +1,7 @@
 	db DEX_GRIMER ; pokedex id
 
-	db  80,  80,  50,  25,  40
-	;   hp  atk  def  spd  spc
+	db  80,  80,  50,  25,  40,  40
+	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type
 	db 190 ; catch rate
@@ -18,5 +18,3 @@
 	     THUNDER,      MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, \
 	     FIRE_BLAST,   REST,         EXPLOSION,    SUBSTITUTE
 	; end
-
-	db 0 ; padding

@@ -1,7 +1,7 @@
 	db DEX_PERSIAN ; pokedex id
 
-	db  65,  70,  60, 115,  65
-	;   hp  atk  def  spd  spc
+	db  65,  70,  60, 115,  65,  65
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
 	db 90 ; catch rate
@@ -19,5 +19,3 @@
 	     THUNDER,      MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE
 	; end
-
-	db 0 ; padding

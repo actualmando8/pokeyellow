@@ -1,7 +1,7 @@
 	db DEX_KINGLER ; pokedex id
 
-	db  55, 130, 115,  75,  50
-	;   hp  atk  def  spd  spc
+	db  55, 130, 115,  75,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 60 ; catch rate
@@ -19,5 +19,3 @@
 	     RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         REST,         \
 	     SUBSTITUTE,   CUT,          SURF,         STRENGTH
 	; end
-
-	db 0 ; padding

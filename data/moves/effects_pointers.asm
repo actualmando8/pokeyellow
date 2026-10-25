@@ -13,7 +13,8 @@ MoveEffectPointerTable:
 	dw StatModifierUpEffect      ; ATTACK_UP1_EFFECT
 	dw StatModifierUpEffect      ; DEFENSE_UP1_EFFECT
 	dw StatModifierUpEffect      ; SPEED_UP1_EFFECT
-	dw StatModifierUpEffect      ; SPECIAL_UP1_EFFECT
+	dw StatModifierUpEffect      ; SPATK_UP1_EFFECT
+	dw StatModifierUpEffect      ; SPDEF_UP1_EFFECT
 	dw StatModifierUpEffect      ; ACCURACY_UP1_EFFECT
 	dw StatModifierUpEffect      ; EVASION_UP1_EFFECT
 	dw PayDayEffect              ; PAY_DAY_EFFECT
@@ -21,7 +22,8 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; ATTACK_DOWN1_EFFECT
 	dw StatModifierDownEffect    ; DEFENSE_DOWN1_EFFECT
 	dw StatModifierDownEffect    ; SPEED_DOWN1_EFFECT
-	dw StatModifierDownEffect    ; SPECIAL_DOWN1_EFFECT
+	dw StatModifierDownEffect    ; SPATK_DOWN1_EFFECT
+	dw StatModifierDownEffect    ; SPDEF_DOWN1_EFFECT
 	dw StatModifierDownEffect    ; ACCURACY_DOWN1_EFFECT
 	dw StatModifierDownEffect    ; EVASION_DOWN1_EFFECT
 	dw ConversionEffect          ; CONVERSION_EFFECT
@@ -53,7 +55,8 @@ MoveEffectPointerTable:
 	dw StatModifierUpEffect      ; ATTACK_UP2_EFFECT
 	dw StatModifierUpEffect      ; DEFENSE_UP2_EFFECT
 	dw StatModifierUpEffect      ; SPEED_UP2_EFFECT
-	dw StatModifierUpEffect      ; SPECIAL_UP2_EFFECT
+	dw StatModifierUpEffect      ; SPATK_UP2_EFFECT
+	dw StatModifierUpEffect      ; SPDEF_UP2_EFFECT
 	dw StatModifierUpEffect      ; ACCURACY_UP2_EFFECT
 	dw StatModifierUpEffect      ; EVASION_UP2_EFFECT
 	dw HealEffect                ; HEAL_EFFECT
@@ -61,7 +64,8 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; ATTACK_DOWN2_EFFECT
 	dw StatModifierDownEffect    ; DEFENSE_DOWN2_EFFECT
 	dw StatModifierDownEffect    ; SPEED_DOWN2_EFFECT
-	dw StatModifierDownEffect    ; SPECIAL_DOWN2_EFFECT
+	dw StatModifierDownEffect    ; SPATK_DOWN2_EFFECT
+	dw StatModifierDownEffect    ; SPDEF_DOWN2_EFFECT
 	dw StatModifierDownEffect    ; ACCURACY_DOWN2_EFFECT
 	dw StatModifierDownEffect    ; EVASION_DOWN2_EFFECT
 	dw ReflectLightScreenEffect  ; LIGHT_SCREEN_EFFECT
@@ -71,8 +75,8 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; ATTACK_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; DEFENSE_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; SPEED_DOWN_SIDE_EFFECT
-	dw StatModifierDownEffect    ; SPECIAL_DOWN_SIDE_EFFECT
-	dw StatModifierDownEffect    ; unused effect
+	dw StatModifierDownEffect    ; SPATK_DOWN_SIDE_EFFECT
+	dw StatModifierDownEffect    ; SPDEF_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; unused effect
 	dw StatModifierDownEffect    ; unused effect
 	dw StatModifierDownEffect    ; unused effect

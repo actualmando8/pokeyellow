@@ -1,7 +1,7 @@
 	db DEX_KABUTOPS ; pokedex id
 
-	db  60, 115, 105,  80,  70
-	;   hp  atk  def  spd  spc
+	db  60, 115, 105,  80,  70,  70
+	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type
 	db 45 ; catch rate
@@ -20,5 +20,3 @@
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
 	     REST,         SUBSTITUTE,   CUT,          SURF
 	; end
-
-	db 0 ; padding

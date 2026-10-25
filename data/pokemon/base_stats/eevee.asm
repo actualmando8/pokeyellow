@@ -1,7 +1,7 @@
 	db DEX_EEVEE ; pokedex id
 
-	db  55,  55,  50,  55,  65
-	;   hp  atk  def  spd  spc
+	db  55,  55,  50,  55,  65,  65
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
@@ -18,5 +18,3 @@
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
 	     SKULL_BASH,   REST,         SUBSTITUTE
 	; end
-
-	db 0 ; padding

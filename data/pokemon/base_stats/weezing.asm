@@ -1,7 +1,7 @@
 	db DEX_WEEZING ; pokedex id
 
-	db  65,  90, 120,  60,  85
-	;   hp  atk  def  spd  spc
+	db  65,  90, 120,  60,  85,  85
+	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type
 	db 60 ; catch rate
@@ -18,5 +18,3 @@
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, FIRE_BLAST,   \
 	     REST,         EXPLOSION,    SUBSTITUTE
 	; end
-
-	db 0 ; padding

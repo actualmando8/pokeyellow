@@ -1,7 +1,7 @@
 	db DEX_PIDGEOT ; pokedex id
 
-	db  83,  80,  75,  91,  70
-	;   hp  atk  def  spd  spc
+	db  83,  80,  75,  91,  70,  70
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     BIDE,         SWIFT,        SKY_ATTACK,   REST,         SUBSTITUTE,   \
 	     FLY
 	; end
-
-	db 0 ; padding

@@ -1,7 +1,7 @@
 	db DEX_VULPIX ; pokedex id
 
-	db  38,  41,  40,  65,  65
-	;   hp  atk  def  spd  spc
+	db  38,  41,  40,  65,  65,  65
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
 	db 190 ; catch rate
@@ -18,5 +18,3 @@
 	     DIG,          MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
 	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE
 	; end
-
-	db 0 ; padding

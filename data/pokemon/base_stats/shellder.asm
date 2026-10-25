@@ -1,7 +1,7 @@
 	db DEX_SHELLDER ; pokedex id
 
-	db  30,  65, 100,  40,  45
-	;   hp  atk  def  spd  spc
+	db  30,  65, 100,  40,  45,  45
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 190 ; catch rate
@@ -19,5 +19,3 @@
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT, SWIFT,        \
 	     REST,         EXPLOSION,    TRI_ATTACK,   SUBSTITUTE,   SURF
 	; end
-
-	db 0 ; padding

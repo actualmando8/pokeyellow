@@ -1,7 +1,7 @@
 	db DEX_SLOWPOKE ; pokedex id
 
-	db  90,  65,  65,  15,  40
-	;   hp  atk  def  spd  spc
+	db  90,  65,  65,  15,  40,  40
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC_TYPE ; type
 	db 190 ; catch rate
@@ -21,5 +21,3 @@
 	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      \
 	     TRI_ATTACK,   SUBSTITUTE,   SURF,         STRENGTH,     FLASH
 	; end
-
-	db 0 ; padding

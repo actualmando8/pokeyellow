@@ -1,7 +1,7 @@
 	db DEX_LICKITUNG ; pokedex id
 
-	db  90,  55,  75,  30,  60
-	;   hp  atk  def  spd  spc
+	db  90,  55,  75,  30,  60,  60
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
@@ -21,5 +21,3 @@
 	     MIMIC,        DOUBLE_TEAM,  BIDE,         FIRE_BLAST,   SKULL_BASH,   \
 	     REST,         SUBSTITUTE,   CUT,          SURF,         STRENGTH
 	; end
-
-	db 0 ; padding

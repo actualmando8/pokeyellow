@@ -1,7 +1,7 @@
 	db DEX_VOLTORB ; pokedex id
 
-	db  40,  30,  50, 100,  55
-	;   hp  atk  def  spd  spc
+	db  40,  30,  50, 100,  55,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type
 	db 190 ; catch rate
@@ -19,5 +19,3 @@
 	     SELFDESTRUCT, SWIFT,        REST,         THUNDER_WAVE, EXPLOSION,    \
 	     SUBSTITUTE,   FLASH
 	; end
-
-	db 0 ; padding

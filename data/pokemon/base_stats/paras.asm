@@ -1,7 +1,7 @@
 	db DEX_PARAS ; pokedex id
 
-	db  35,  70,  55,  25,  55
-	;   hp  atk  def  spd  spc
+	db  35,  70,  55,  25,  55,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, GRASS ; type
 	db 190 ; catch rate
@@ -19,5 +19,3 @@
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   REST,         \
 	     SUBSTITUTE,   CUT
 	; end
-
-	db 0 ; padding

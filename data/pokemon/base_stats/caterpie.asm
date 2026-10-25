@@ -1,7 +1,7 @@
 	db DEX_CATERPIE ; pokedex id
 
-	db  45,  30,  35,  45,  20
-	;   hp  atk  def  spd  spc
+	db  45,  30,  35,  45,  20,  20
+	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, BUG ; type
 	db 255 ; catch rate
@@ -16,5 +16,3 @@
 	; tm/hm learnset
 	tmhm
 	; end
-
-	db 0 ; padding

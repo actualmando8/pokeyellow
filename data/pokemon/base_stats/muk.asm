@@ -1,7 +1,7 @@
 	db DEX_MUK ; pokedex id
 
-	db 105, 105,  75,  50,  65
-	;   hp  atk  def  spd  spc
+	db 105, 105,  75,  50,  65,  65
+	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type
 	db 75 ; catch rate
@@ -18,5 +18,3 @@
 	     THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  BIDE,         \
 	     SELFDESTRUCT, FIRE_BLAST,   REST,         EXPLOSION,    SUBSTITUTE
 	; end
-
-	db 0 ; padding

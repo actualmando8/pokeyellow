@@ -1,7 +1,7 @@
 	db DEX_LAPRAS ; pokedex id
 
-	db 130,  85,  80,  60,  95
-	;   hp  atk  def  spd  spc
+	db 130,  85,  80,  60,  95,  95
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ICE ; type
 	db 45 ; catch rate
@@ -21,5 +21,3 @@
 	     SKULL_BASH,   REST,         PSYWAVE,      SUBSTITUTE,   SURF,         \
 	     STRENGTH
 	; end
-
-	db 0 ; padding

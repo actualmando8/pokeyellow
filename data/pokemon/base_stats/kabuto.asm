@@ -1,7 +1,7 @@
 	db DEX_KABUTO ; pokedex id
 
-	db  30,  80,  90,  55,  45
-	;   hp  atk  def  spd  spc
+	db  30,  80,  90,  55,  45,  45
+	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type
 	db 45 ; catch rate
@@ -19,5 +19,3 @@
 	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
 	     SURF
 	; end
-
-	db 0 ; padding
