@@ -86,9 +86,20 @@ Findings **[verified]**: damage calc decides physical vs special in exactly two 
 - [x] Evolution lines: Golbat 40 Crobat, Onix 40 Steelix, Scyther 40 Scizor, Seadra 45 Kingdra, Porygon 30 Porygon2, Chansey 40 Blissey, Rhydon 50 Rhyperior, Tangela 40 Tangrowth, Lickitung 40 Lickilicky; Sun Stone: Gloom Bellossom, Poliwhirl Politoed, Slowpoke Slowking, Eevee Espeon; Moon Stone Umbreon, Leaf Stone Leafeon, Ice Stone Glaceon; Thunder Stone: Electabuzz Electivire, Magneton Magnezone, Porygon2 Porygon-Z; Fire Stone Magmar Magmortar.
 - [x] The stone checks no longer copy evolution data into WRAM (Eevee's list did not fit); they use `CheckEvolveWithStone` in the evolution bank.
 
-## Phase 5: Moves
-- [ ] Add later-gen moves; reuse existing battle animations where you can (new animations are the expensive part).
-- [ ] Rebalance move list, TM/HM and move tutor sets.
+## Phase 5 — New moves (DONE, patch: phase5_moves.patch)
+- 29 new moves (IDs up to 195, Struggle still last): Crunch, Night Slash, Dark Pulse, Iron Tail, Iron Head, Flash Cannon, Moonblast, Play Rough, Shadow Ball, Energy Ball, Earth Power, Focus Blast, Aura Sphere, Drain Punch, Dragon Claw, Dragon Pulse, Air Slash, Brave Bird, Roost, Poison Jab, Sludge Bomb, X-Scissor, Bug Buzz, Stone Edge, Power Gem, Giga Drain, Zen Headbutt, Hyper Voice, Aqua Tail.
+- Reuse existing animations/sounds; Stone Edge and Night Slash are high-crit; categories set per move.
+- Learnsets inserted by rule (type match, final stage, atk/spa); 71 species gain >=1 move.
+- cries.asm -> "Cry Data", fishing.asm -> "Fishing Graphics" (bank $41) to free space.
+- Known: Primeape's learnset order (46 THRASH before 45 SCREECH) is a vanilla quirk, left alone.
+- Not done: TM/HM/tutor rebalance, move-effect edits (Roost etc. reuse closest existing effects).
+
+## Phase 5b — Dazzle Gleam, Annihilape, TM overhaul (DONE, patch: phase5b_tms_annihilape.patch, apply after phase5_moves.patch)
+- Move IDs were full (Struggle = $C3, items start at $C4), so 11 unused moves were retired in place (IDs unchanged): Comet Punch, Peck, Kinesis, Barrage, Lovely Kiss, Psywave, Egg Bomb, Conversion, Sharpen, Mimic, Dizzy Punch. Magikarp keeps Splash.
+- New moves: Dazzle Gleam (name shortened to fit 12 chars), Rage Fist, Shadow Claw, Close Combat, Knock Off, Thunder/Fire/Ice Fang, Leaf Blade, Flare Blitz, Wild Charge. Scripted trainer moves that used retired moves were remapped (to be redone in Phase 8).
+- Annihilape: dex 183, index $A2, Fighting/Ghost; Primeape learns Rage Fist at 35 and evolves into it on level-up while knowing it. Sprites are a Primeape placeholder in new bank "Pics 9" (second spare TM/HM bit selects it).
+- TMs: 54 TMs (24 obsolete ones replaced, TM51-54 new = Crunch, Play Rough, Hyper Voice, Power Gem; item IDs $C9-$FE). TM/HM flags widened to 8 bytes (59 used, 2 spare bits are sprite-bank flags). Every species' TM list was rebuilt: surviving TMs keep their old compatibility, new TMs by type/stat rules + curated lists. NPC TM texts updated.
+- Next: Phase 5c = learnset rewrite (modern level-up sets + egg/Stadium/XD-style moves).
 
 ## Phase 6: New species
 For each of the ~28 species: base stats file, evolutions and learnset entry, name, Pokédex entry (`data/pokemon/dex_entries.asm`), front and back sprites, cry (`data/pokemon/cries.asm`), mini sprite, palette (`data/pokemon/palettes.asm`).
@@ -105,18 +116,3 @@ List: Pichu, Cleffa, Igglybuff, Happiny, Munchlax, Mime Jr., Tyrogue, Espeon, Um
 
 ## Phase 9: Android (long term)
 - [ ] Simplest path: build the ROM and wrap it in an emulator core (libretro, SameBoy or Gambatte). A native port is a much larger project; decide later.
-
-## Phase 5 — New moves (DONE, patch: phase5_moves.patch)
-- 29 new moves (IDs up to 195, Struggle still last): Crunch, Night Slash, Dark Pulse, Iron Tail, Iron Head, Flash Cannon, Moonblast, Play Rough, Shadow Ball, Energy Ball, Earth Power, Focus Blast, Aura Sphere, Drain Punch, Dragon Claw, Dragon Pulse, Air Slash, Brave Bird, Roost, Poison Jab, Sludge Bomb, X-Scissor, Bug Buzz, Stone Edge, Power Gem, Giga Drain, Zen Headbutt, Hyper Voice, Aqua Tail.
-- Reuse existing animations/sounds; Stone Edge and Night Slash are high-crit; categories set per move.
-- Learnsets inserted by rule (type match, final stage, atk/spa); 71 species gain >=1 move.
-- cries.asm -> "Cry Data", fishing.asm -> "Fishing Graphics" (bank $41) to free space.
-- Known: Primeape's learnset order (46 THRASH before 45 SCREECH) is a vanilla quirk, left alone.
-- Not done: TM/HM/tutor rebalance, move-effect edits (Roost etc. reuse closest existing effects).
-
-## Phase 5b — Dazzle Gleam, Annihilape, TM overhaul (DONE, patch: phase5b_tms_annihilape.patch, apply after phase5_moves.patch)
-- Move IDs were full (Struggle = $C3, items start at $C4), so 11 unused moves were retired in place (IDs unchanged): Comet Punch, Peck, Kinesis, Barrage, Lovely Kiss, Psywave, Egg Bomb, Conversion, Sharpen, Mimic, Dizzy Punch. Magikarp keeps Splash.
-- New moves: Dazzle Gleam (name shortened to fit 12 chars), Rage Fist, Shadow Claw, Close Combat, Knock Off, Thunder/Fire/Ice Fang, Leaf Blade, Flare Blitz, Wild Charge. Scripted trainer moves that used retired moves were remapped (to be redone in Phase 8).
-- Annihilape: dex 183, index $A2, Fighting/Ghost; Primeape learns Rage Fist at 35 and evolves into it on level-up while knowing it. Sprites are a Primeape placeholder in new bank "Pics 9" (second spare TM/HM bit selects it).
-- TMs: 54 TMs (24 obsolete ones replaced, TM51-54 new = Crunch, Play Rough, Hyper Voice, Power Gem; item IDs $C9-$FE). TM/HM flags widened to 8 bytes (59 used, 2 spare bits are sprite-bank flags). Every species' TM list was rebuilt: surviving TMs keep their old compatibility, new TMs by type/stat rules + curated lists. NPC TM texts updated.
-- Next: Phase 5c = learnset rewrite (modern level-up sets + egg/Stadium/XD-style moves).
