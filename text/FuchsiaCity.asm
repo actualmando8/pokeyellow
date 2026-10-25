@@ -89,6 +89,10 @@ _FuchsiaCitySlowpokeSignText::
 
 	para "Friendly and very"
 	line "slow moving."
+
+	para "A SUN STONE used"
+	line "before LV37 makes"
+	cont "it a SLOWKING."
 	prompt
 
 _FuchsiaCityLaprasSignText::

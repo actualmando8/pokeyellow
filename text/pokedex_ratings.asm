@@ -110,7 +110,32 @@ _DexRatingText_Own140To149::
 	cont "authority now!"
 	done
 
-_DexRatingText_Own150To151::
+_DexRatingText_Own150To159::
+	text "That's every KANTO"
+	line "#MON and then"
+	cont "some! But there"
+	cont "are more to find!"
+	done
+
+_DexRatingText_Own160To169::
+	text "Your #DEX has"
+	line "grown far beyond"
+	cont "what I imagined!"
+	done
+
+_DexRatingText_Own170To179::
+	text "Almost there!"
+	line "Only a few rare"
+	cont "#MON are left!"
+	done
+
+_DexRatingText_Own180To182::
+	text "So close! Just a"
+	line "few more to fill"
+	cont "your #DEX!"
+	done
+
+_DexRatingText_Own183::
 	text "Your #DEX is"
 	line "fully complete!"
 	cont "Congratulations!"

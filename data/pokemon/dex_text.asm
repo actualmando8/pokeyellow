@@ -783,9 +783,9 @@ _SlowpokeDexEntry::
 	next "and sluggish. It"
 	next "is quite content"
 
-	page "to loll about"
-	next "without worrying"
-	next "about the time"
+	page "Use a SUN STONE"
+	next "before LV37 to get"
+	next "SLOWKING instead!"
 	dex
 
 _SlowbroDexEntry::
