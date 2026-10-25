@@ -261,14 +261,14 @@ PrintStatsBox:
 	lb bc, 8, 8
 	call TextBoxBorder
 	hlcoord 1, 9
-	ld bc, SCREEN_WIDTH + 5 ; one row down and 5 columns right
+	ld bc, 5 ; same row, 5 columns right (labels are at most 5 characters)
 	jr .PrintStats
 .LevelUpStatsBox
 	hlcoord 9, 2
 	lb bc, 8, 9
 	call TextBoxBorder
 	hlcoord 11, 3
-	ld bc, SCREEN_WIDTH + 4 ; one row down and 4 columns right
+	ld bc, 5 ; same row, 5 columns right (labels are at most 5 characters)
 .PrintStats
 	push bc
 	push hl
@@ -304,11 +304,11 @@ PrintStatsBox:
 	ret
 
 .StatsText:
-	db   "ATTACK"
-	next "DEFENSE"
+	db   "ATK"
+	next "DEF"
 	next "SPEED"
-	next "SP.ATK"
-	next "SP.DEF@"
+	next "SP.AT"
+	next "SP.DF@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
