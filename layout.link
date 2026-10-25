@@ -228,6 +228,10 @@ ROMX $3E
 ROMX $3F
 	"Overworld Pikachu"
 	"NPC Sprites 3"
+ROMX $40
+	"Pics 8"
+ROMX $41
+	"Trade Graphics"
 WRAM0
 	"Audio RAM"
 	org $c100
@@ -241,7 +245,7 @@ WRAM0
 	"Main Data"
 	"Current Box Data"
 	"CGB Palette Data"
-	org $df39
+	org $df41
 	"Stack"
 VRAM $0
 	"VRAM"

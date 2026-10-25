@@ -216,6 +216,8 @@ DEF NUM_TM_HM EQU NUM_TMS + NUM_HMS
 ; These fit in 7 bytes, with one unused bit left over.
 DEF __tmhm_value__ = NUM_TM_HM + 1
 DEF UNUSED_TMNUM EQU __tmhm_value__
+; the spare bit marks species whose sprites are in the "Pics 8" bank (see UncompressMonSprite)
+DEF NEWPICBANK_TMNUM EQU UNUSED_TMNUM
 
 DEF MAX_HIDDEN_ITEMS EQU 112
 DEF MAX_HIDDEN_COINS EQU 16

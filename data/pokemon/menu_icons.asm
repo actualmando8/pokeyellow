@@ -151,4 +151,35 @@ MonPartyData:
 	nybble ICON_SNAKE     ; Dragonite
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Crobat
+	nybble ICON_PIKACHU   ; Pichu
+	nybble ICON_FAIRY     ; Cleffa
+	nybble ICON_FAIRY     ; Igglybuff
+	nybble ICON_GRASS     ; Bellossom
+	nybble ICON_MON       ; Politoed
+	nybble ICON_MON       ; Espeon
+	nybble ICON_QUADRUPED ; Umbreon
+	nybble ICON_MON       ; Slowking
+	nybble ICON_SNAKE     ; Steelix
+	nybble ICON_BUG       ; Scizor
+	nybble ICON_WATER     ; Kingdra
+	nybble ICON_MON       ; Porygon2
+	nybble ICON_MON       ; Tyrogue
+	nybble ICON_MON       ; Hitmontop
+	nybble ICON_MON       ; Elekid
+	nybble ICON_MON       ; Magby
+	nybble ICON_FAIRY     ; Blissey
+	nybble ICON_QUADRUPED ; Leafeon
+	nybble ICON_QUADRUPED ; Glaceon
+	nybble ICON_QUADRUPED ; Sylveon
+	nybble ICON_BALL      ; Magnezone
+	nybble ICON_MON       ; Electivire
+	nybble ICON_MON       ; Magmortar
+	nybble ICON_MON       ; Rhyperior
+	nybble ICON_GRASS     ; Tangrowth
+	nybble ICON_MON       ; Lickilicky
+	nybble ICON_MON       ; Porygon-Z
+	nybble ICON_FAIRY     ; Happiny
+	nybble ICON_MON       ; Munchlax
+	nybble ICON_MON       ; Mime Jr.
 	end_nybble_array NUM_POKEMON

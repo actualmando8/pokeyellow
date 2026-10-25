@@ -20,6 +20,10 @@ UncompressMonSprite::
 	cp FOSSIL_KABUTOPS
 	ld a, BANK(FossilKabutopsPic)
 	jr z, .GotBank
+	ld a, [wMonHLearnset + (NEWPICBANK_TMNUM - 1) / 8] ; species added after Gen 1 keep their sprites in "Pics 8"
+	bit (NEWPICBANK_TMNUM - 1) % 8, a
+	ld a, BANK("Pics 8")
+	jr nz, .GotBank
 	ld a, b
 	cp TANGELA + 1
 	ld a, BANK("Pics 1")

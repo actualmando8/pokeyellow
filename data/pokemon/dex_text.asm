@@ -1506,3 +1506,189 @@ _MewDexEntry::
 	next "fine, delicate"
 	next "hair can be seen"
 	dex
+
+_CrobatDexEntry::
+	text "Its fourth wing"
+	next "lets it fly fast"
+	next "and silently."
+	dex
+
+_PichuDexEntry::
+	text "It cannot control"
+	next "its sparks yet and"
+	next "shocks itself."
+	dex
+
+_CleffaDexEntry::
+	text "It is seen when"
+	next "shooting stars"
+	next "fill the sky."
+	dex
+
+_IgglybuffDexEntry::
+	text "Its soft body"
+	next "bounces like a"
+	next "rubber ball."
+	dex
+
+_BellossomDexEntry::
+	text "It dances when the"
+	next "sun is out, and"
+	next "its petals sway."
+	dex
+
+_PolitoedDexEntry::
+	text "Its call rallies"
+	next "every Poliwag"
+	next "nearby."
+	dex
+
+_EspeonDexEntry::
+	text "Its fur senses"
+	next "the air and warns"
+	next "of danger."
+	dex
+
+_UmbreonDexEntry::
+	text "Its rings glow in"
+	next "the dark when it"
+	next "is angry."
+	dex
+
+_SlowkingDexEntry::
+	text "A bite on the head"
+	next "gave it a flash"
+	next "of brilliance."
+	dex
+
+_SteelixDexEntry::
+	text "It digs deeper"
+	next "than any other,"
+	next "harder as it digs."
+	dex
+
+_ScizorDexEntry::
+	text "Its steel pincers"
+	next "can crush rock"
+	next "to dust."
+	dex
+
+_KingdraDexEntry::
+	text "It sleeps deep in"
+	next "the sea and wakes"
+	next "for whirlpools."
+	dex
+
+_Porygon2DexEntry::
+	text "It was upgraded"
+	next "to learn new"
+	next "tricks on its own."
+	dex
+
+_TyrogueDexEntry::
+	text "It trains hard to"
+	next "burn off its"
+	next "endless energy."
+	dex
+
+_HitmontopDexEntry::
+	text "It spins on its"
+	next "head and kicks"
+	next "with both legs."
+	dex
+
+_ElekidDexEntry::
+	text "It twirls its arms"
+	next "to build up a"
+	next "static charge."
+	dex
+
+_MagbyDexEntry::
+	text "It breathes fire"
+	next "to show how it"
+	next "feels today."
+	dex
+
+_BlisseyDexEntry::
+	text "Its soft eggs"
+	next "bring joy to the"
+	next "sick and weary."
+	dex
+
+_LeafeonDexEntry::
+	text "It basks in the"
+	next "sun and makes"
+	next "clean air."
+	dex
+
+_GlaceonDexEntry::
+	text "Its fur freezes"
+	next "into needles that"
+	next "it can fire."
+	dex
+
+_SylveonDexEntry::
+	text "Its ribbons soothe"
+	next "the anger of any"
+	next "foe nearby."
+	dex
+
+_MagnezoneDexEntry::
+	text "It draws metal to"
+	next "itself with a"
+	next "strong magnetism."
+	dex
+
+_ElectivireDexEntry::
+	text "Its tails store"
+	next "huge amounts of"
+	next "electricity."
+	dex
+
+_MagmortarDexEntry::
+	text "It fires blazing"
+	next "flames from its"
+	next "cannon-like arm."
+	dex
+
+_RhyperiorDexEntry::
+	text "It shoots rocks"
+	next "from the holes"
+	next "in its palms."
+	dex
+
+_TangrowthDexEntry::
+	text "Its vines grow"
+	next "back at once if"
+	next "they are torn off."
+	dex
+
+_LickilickyDexEntry::
+	text "Its tongue can"
+	next "stretch over six"
+	next "feet and sticks."
+	dex
+
+_PorygonZDexEntry::
+	text "An odd program"
+	next "change made it"
+	next "act unpredictably."
+	dex
+
+_HappinyDexEntry::
+	text "It carries a round"
+	next "white stone it"
+	next "treats as an egg."
+	dex
+
+_MunchlaxDexEntry::
+	text "It hides food in"
+	next "its fur and then"
+	next "forgets where."
+	dex
+
+_MimeJrDexEntry::
+	text "It copies what it"
+	next "sees, even the"
+	next "moves of others."
+	dex

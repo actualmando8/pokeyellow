@@ -416,6 +416,8 @@ GetMonHeader::
 	call CopyData
 	jr .done
 .specialID
+	xor a
+	ld [wMonHLearnset + (NEWPICBANK_TMNUM - 1) / 8], a ; not a "Pics 8" species
 	ld hl, wMonHSpriteDim
 	ld [hl], b ; write sprite dimensions
 	inc hl
