@@ -77,9 +77,9 @@ MoveEffectPointerTable:
 	dw StatModifierDownEffect    ; SPEED_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; SPATK_DOWN_SIDE_EFFECT
 	dw StatModifierDownEffect    ; SPDEF_DOWN_SIDE_EFFECT
-	dw StatModifierDownEffect    ; unused effect
-	dw StatModifierDownEffect    ; unused effect
-	dw StatModifierDownEffect    ; unused effect
+	dw DefenseDropSelfEffect     ; CLOSE_COMBAT_EFFECT
+	dw NULL                      ; RAGE_FIST_EFFECT
+	dw RoostEffect               ; ROOST_EFFECT
 	dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
 	dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	dw NULL                      ; unused effect

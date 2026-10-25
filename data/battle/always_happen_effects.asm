@@ -8,6 +8,7 @@ AlwaysHappenSideEffects:
 	db EFFECT_1E
 	db ATTACK_TWICE_EFFECT
 	db RECOIL_EFFECT
+	db CLOSE_COMBAT_EFFECT
 	db TWINEEDLE_EFFECT
 	db RAGE_EFFECT
 	db -1 ; end

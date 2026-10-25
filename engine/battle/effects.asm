@@ -1438,6 +1438,175 @@ HazeEffect:
 HealEffect:
 	jpfar HealEffect_
 
+; Roost: heal half of max HP, and the user is not Flying-type until the end of the turn.
+; A pure Flying-type becomes Normal-type meanwhile.
+RoostEffect:
+	ld hl, wBattleMonHP
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .gotHP
+	ld hl, wEnemyMonHP
+.gotHP
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	push bc
+	push hl
+	callfar HealEffect_
+	pop hl
+	pop bc
+	ld a, [hld]
+	cp c
+	jr nz, .healed
+	ld a, [hl]
+	cp b
+	ret z ; HP unchanged: the move failed, so the type stays
+.healed
+	ld hl, wBattleMonType1
+	ld de, wPlayerRoostTypes
+	ld b, 1 << 0
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .gotTypes
+	ld hl, wEnemyMonType1
+	ld de, wEnemyRoostTypes
+	ld b, 1 << 1
+.gotTypes
+	ld a, [hli]
+	ld c, a ; c = type 1
+	ld a, [hld] ; a = type 2, hl = type 1
+	cp FLYING
+	jr z, .strip
+	ld a, c
+	cp FLYING
+	ret nz ; not a Flying-type
+.strip
+	ld a, c
+	ld [de], a
+	inc de
+	inc hl
+	ld a, [hld] ; type 2
+	ld [de], a
+	ld a, c
+	cp FLYING
+	jr nz, .type1Stays
+; type 1 is Flying: it becomes type 2 (or Normal if type 2 is Flying too)
+	ld a, [de]
+	cp FLYING
+	jr nz, .copyType2
+	ld a, NORMAL
+	ld [hli], a
+	ld [hld], a
+	jr .setFlag
+.copyType2
+	ld [hl], a
+	jr .setFlag
+.type1Stays
+; type 2 is Flying: it becomes type 1
+	inc hl
+	ld [hl], c
+.setFlag
+	ld hl, wRoostFlags
+	ld a, [hl]
+	or b
+	ld [hl], a
+	ret
+
+; Close Combat: lowers the user's Defense and Sp.Def by one stage each.
+DefenseDropSelfEffect:
+	ld c, MOD_DEFENSE
+	call LowerUserStat
+	ld c, MOD_SPDEF
+; fallthrough
+; input: c = MOD_* index of the stat to lower
+LowerUserStat:
+	ld a, c
+	ld [wSelfStatDropIndex], a
+	ld hl, wPlayerMonStatMods
+	ld de, wPlayerMonUnmodifiedAttack
+	ld bc, wBattleMonAttack
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .gotPointers
+	ld hl, wEnemyMonStatMods
+	ld de, wEnemyMonUnmodifiedAttack
+	ld bc, wEnemyMonAttack
+.gotPointers
+	ld a, [wSelfStatDropIndex]
+	add l
+	ld l, a
+	jr nc, .modPointerOk
+	inc h
+.modPointerOk
+	ld a, [hl]
+	dec a
+	ret z ; already at -6
+	ld [hl], a
+	ld [wSelfStatDropMod], a
+	ld a, [wSelfStatDropIndex]
+	add a
+	ld l, a
+	ld h, 0
+	add hl, de
+	ld d, h
+	ld e, l ; de = unmodified stat
+	ld a, [wSelfStatDropIndex]
+	add a
+	ld l, a
+	ld h, 0
+	add hl, bc ; hl = current stat
+	push hl
+	ld a, [wSelfStatDropMod]
+	dec a
+	add a
+	ld c, a
+	ld b, 0
+	ld hl, StatModifierRatios
+	add hl, bc
+	xor a
+	ldh [hMultiplicand], a
+	ld a, [de]
+	ldh [hMultiplicand + 1], a
+	inc de
+	ld a, [de]
+	ldh [hMultiplicand + 2], a
+	ld a, [hli]
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, [hl]
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	pop hl
+	ldh a, [hProduct + 3]
+	ld b, a
+	ldh a, [hProduct + 2]
+	or b
+	jr nz, .storeStat
+	xor a
+	ldh [hProduct + 2], a
+	inc a
+	ldh [hProduct + 3], a ; a stat can't drop below 1
+.storeStat
+	ldh a, [hProduct + 2]
+	ld [hli], a
+	ldh a, [hProduct + 3]
+	ld [hl], a
+	ld a, [wSelfStatDropIndex]
+	inc a
+	ld b, a
+	call PrintStatText
+	ldh a, [hWhoseTurn]
+	and a
+	call z, ApplyBadgeStatBoosts ; the player's lowered stat has lost its badge boost, as in the opponent's case above
+	ld hl, UserStatsFellText
+	jp PrintText
+
+UserStatsFellText:
+	text_far _UserStatsFellText
+	text_far _FellText
+	text_end
+
 TransformEffect:
 	jpfar TransformEffect_
 

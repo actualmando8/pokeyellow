@@ -81,9 +81,9 @@
 	const SPEED_DOWN_SIDE_EFFECT     ; $4A
 	const SPATK_DOWN_SIDE_EFFECT     ; $4B
 	const SPDEF_DOWN_SIDE_EFFECT     ; $4C
-	const_skip                       ; $4D
-	const_skip                       ; $4E
-	const_skip                       ; $4F
+	const CLOSE_COMBAT_EFFECT        ; $4D lowers the user's Defense and Sp.Def after hitting
+	const RAGE_FIST_EFFECT           ; $4E power grows with the hits the user has taken
+	const ROOST_EFFECT               ; $4F heals half HP, user loses Flying type until end of turn
 	const CONFUSION_SIDE_EFFECT      ; $50
 	const TWINEEDLE_EFFECT           ; $51
 	const_skip                       ; $52

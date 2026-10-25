@@ -287,6 +287,7 @@ EnemyRanText:
 	text_end
 
 MainInBattleLoop:
+	call RestoreRoostTypes
 	call ReadPlayerMonCurHPAndStatus
 	ld hl, wBattleMonHP
 	ld a, [hli]
@@ -1668,6 +1669,9 @@ LoadBattleMonFromParty:
 	xor a
 	ld [wDamage], a ; a new mon is out: forget the last damage (Counter fix)
 	ld [wDamage + 1], a
+	ld [wPlayerRageFistHits], a
+	ld hl, wRoostFlags
+	res 0, [hl]
 	ld a, [wWhichPokemon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wPartyMon1Species
@@ -1715,6 +1719,9 @@ LoadEnemyMonFromParty:
 	xor a
 	ld [wDamage], a ; a new mon is out: forget the last damage (Counter fix)
 	ld [wDamage + 1], a
+	ld [wEnemyRageFistHits], a
+	ld hl, wRoostFlags
+	res 1, [hl]
 	ld a, [wWhichPokemon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wEnemyMons
@@ -3031,7 +3038,7 @@ PrintMenuItem:
 	hlcoord 1, 10
 	ld de, DisabledText
 	call PlaceString
-	jr .moveDisabled
+	jp .moveDisabled
 .notDisabled
 	ld hl, wCurrentMenuItem
 	dec [hl]
@@ -3078,6 +3085,18 @@ PrintMenuItem:
 	call GetCurrentMove
 	hlcoord 2, 10
 	predef PrintMoveType
+	ld a, [wPlayerSelectedMove]
+	call GetMoveCategory
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, MoveCategoryLabels
+	add hl, de
+	ld d, h
+	ld e, l
+	hlcoord 7, 9
+	call PlaceString
 .moveDisabled
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
@@ -3088,6 +3107,12 @@ DisabledText:
 
 TypeText:
 	db "TYPE@"
+
+; one 4-byte label per category (PHYSICAL_MOVE, SPECIAL_MOVE, STATUS_MOVE)
+MoveCategoryLabels:
+	db "PHY@"
+	db "SPE@"
+	db "STA@"
 
 SelectEnemyMove:
 	ld a, [wLinkState]
@@ -4497,6 +4522,14 @@ CalculateDamage:
 	inc c ; ...with a minimum value of 1 (used as a divisor later on)
 .ok
 
+; Rage Fist: base power depends on how often the user was hit.
+	cp RAGE_FIST_EFFECT
+	jr nz, .notRageFist
+	call GetRageFistPower
+	ld d, a
+	ld a, RAGE_FIST_EFFECT
+.notRageFist
+
 ; Multi-hit attacks may or may not have 0 bp.
 	cp TWO_TO_FIVE_ATTACKS_EFFECT
 	jr z, .skipbp
@@ -4862,6 +4895,7 @@ ApplyDamageToEnemyPokemon:
 	ld a, [wEnemyBattleStatus2]
 	bit HAS_SUBSTITUTE_UP, a ; does the enemy have a substitute?
 	jp nz, AttackSubstitute
+	call CountEnemyRageFistHit
 ; subtract the damage from the pokemon's current HP
 ; also, save the current HP at wHPBarOldHP
 	ld a, [hld]
@@ -4981,6 +5015,7 @@ ApplyDamageToPlayerPokemon:
 	ld a, [wPlayerBattleStatus2]
 	bit HAS_SUBSTITUTE_UP, a ; does the player have a substitute?
 	jp nz, AttackSubstitute
+	call CountPlayerRageFistHit
 ; subtract the damage from the pokemon's current HP
 ; also, save the current HP at wHPBarOldHP and the new HP at wHPBarNewHP
 	ld a, [hld]
@@ -5429,6 +5464,71 @@ GetMoveCategory:
 	ret
 
 INCLUDE "data/moves/categories.asm"
+
+; output: a = Rage Fist base power for the current attacker
+; (50 + 50 per hit taken, at most 255). Preserves bc, de.
+GetRageFistPower:
+	ld hl, wPlayerRageFistHits
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .gotCounter
+	ld hl, wEnemyRageFistHits
+.gotCounter
+	ld a, [hl]
+	cp 5
+	jr c, .ok
+	ld a, 5
+.ok
+	push bc
+	ld c, a
+	ld b, 0
+	ld hl, RageFistPowers
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	ret
+
+RageFistPowers:
+	db 50, 100, 150, 200, 250, 255
+
+; preserve hl, bc, de
+CountEnemyRageFistHit:
+	ld a, [wEnemyRageFistHits]
+	inc a
+	ret z
+	ld [wEnemyRageFistHits], a
+	ret
+
+CountPlayerRageFistHit:
+	ld a, [wPlayerRageFistHits]
+	inc a
+	ret z
+	ld [wPlayerRageFistHits], a
+	ret
+
+; put back the types Roost removed during the turn
+RestoreRoostTypes:
+	ld a, [wRoostFlags]
+	and a
+	ret z
+	bit 0, a
+	jr z, .enemy
+	ld a, [wPlayerRoostTypes]
+	ld [wBattleMonType1], a
+	ld a, [wPlayerRoostTypes + 1]
+	ld [wBattleMonType2], a
+.enemy
+	ld a, [wRoostFlags]
+	bit 1, a
+	jr z, .done
+	ld a, [wEnemyRoostTypes]
+	ld [wEnemyMonType1], a
+	ld a, [wEnemyRoostTypes + 1]
+	ld [wEnemyMonType2], a
+.done
+	xor a
+	ld [wRoostFlags], a
+	ret
 
 ; some tests that need to pass for a move to hit
 MoveHitTest:

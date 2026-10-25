@@ -646,7 +646,17 @@ wLowHealthAlarmDisabled:: db
 
 wPlayerMonMinimized:: db
 
-	ds 13
+; Rage Fist: hits taken by each side's current mon since it was sent out
+wPlayerRageFistHits:: db
+wEnemyRageFistHits:: db
+; Roost: bit 0 = player's mon, bit 1 = enemy's mon has had Flying removed this turn
+wRoostFlags:: db
+; the types to put back at the end of the turn (type 1, type 2)
+wPlayerRoostTypes:: ds 2
+wEnemyRoostTypes:: ds 2
+wSelfStatDropIndex:: db
+wSelfStatDropMod:: db
+	ds 4
 
 UNION
 ; the amount of damage accumulated by the enemy while biding

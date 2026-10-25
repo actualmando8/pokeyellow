@@ -74,7 +74,7 @@ Moves:
 	move BUBBLEBEAM,   SPEED_DOWN_SIDE_EFFECT,      65, WATER,        100, 20
 	move AURORA_BEAM,  ATTACK_DOWN_SIDE_EFFECT,     65, ICE,          100, 20
 	move HYPER_BEAM,   HYPER_BEAM_EFFECT,          150, NORMAL,        90,  5
-	move RAGE_FIST,    NO_ADDITIONAL_EFFECT,         75, GHOST,        100, 10
+	move RAGE_FIST,    RAGE_FIST_EFFECT,             50, GHOST,        100, 10
 	move DRILL_PECK,   NO_ADDITIONAL_EFFECT,        80, FLYING,       100, 20
 	move SUBMISSION,   RECOIL_EFFECT,               80, FIGHTING,      80, 25
 	move LOW_KICK,     FLINCH_SIDE_EFFECT2,         50, FIGHTING,      90, 20
@@ -150,7 +150,7 @@ Moves:
 	move GLARE,        PARALYZE_EFFECT,              0, NORMAL,        75, 30
 	move DREAM_EATER,  DREAM_EATER_EFFECT,         100, PSYCHIC_TYPE, 100, 15
 	move POISON_GAS,   POISON_EFFECT,                0, POISON,        55, 40
-	move CLOSE_COMBAT, NO_ADDITIONAL_EFFECT,        110, FIGHTING,     100, 5
+	move CLOSE_COMBAT, CLOSE_COMBAT_EFFECT,         110, FIGHTING,     100, 5
 	move LEECH_LIFE,   DRAIN_HP_EFFECT,             20, BUG,          100, 15
 	move KNOCK_OFF,    NO_ADDITIONAL_EFFECT,         65, DARK,         100, 20
 	move SKY_ATTACK,   CHARGE_EFFECT,              140, FLYING,        90,  5
@@ -194,7 +194,7 @@ Moves:
 	move DRAGON_PULSE, NO_ADDITIONAL_EFFECT,         85, DRAGON,       100, 10
 	move AIR_SLASH,    FLINCH_SIDE_EFFECT2,          75, FLYING,        95, 15
 	move BRAVE_BIRD,   RECOIL_EFFECT,               120, FLYING,       100, 15
-	move ROOST,        HEAL_EFFECT,                   0, FLYING,       100, 10
+	move ROOST,        ROOST_EFFECT,                   0, FLYING,       100, 10
 	move POISON_JAB,   POISON_SIDE_EFFECT2,          80, POISON,       100, 20
 	move SLUDGE_BOMB,  POISON_SIDE_EFFECT2,          90, POISON,       100, 10
 	move X_SCISSOR,    NO_ADDITIONAL_EFFECT,         80, BUG,          100, 15

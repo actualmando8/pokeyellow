@@ -338,8 +338,17 @@ NewBattle::
 ; function to make bikes twice as fast as walking
 DoBikeSpeedup::
 	ld a, [wWalkBikeSurfState]
+	and a
+	jr nz, .notWalking
+; running shoes: walking while holding B is as fast as biking
+	ldh a, [hJoyHeld]
+	bit B_PAD_B, a
+	ret z
+	jr .checkFlags
+.notWalking
 	dec a ; riding a bike?
 	ret nz
+.checkFlags
 	ld a, [wMovementFlags]
 	bit BIT_LEDGE_OR_FISHING, a
 	ret nz
