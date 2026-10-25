@@ -171,7 +171,7 @@ PokedexEntryPointers:
 	dw GeodudeDexEntry
 	dw PorygonDexEntry
 	dw AerodactylDexEntry
-	dw MissingNoDexEntry
+	dw SmoochumDexEntry
 	dw MagnemiteDexEntry
 	dw MissingNoDexEntry
 	dw MissingNoDexEntry
@@ -1482,4 +1482,11 @@ AnnihilapeDexEntry:
 	db 3,7
 	dw 1989
 	text_far _AnnihilapeDexEntry
+	text_end
+
+SmoochumDexEntry:
+	db "KISS@"
+	db 1,4
+	dw 132
+	text_far _SmoochumDexEntry
 	text_end

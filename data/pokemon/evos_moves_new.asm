@@ -470,3 +470,15 @@ AnnihilapeEvosMoves:
 	db 50, SHADOW_CLAW
 	db 55, FOCUS_BLAST
 	db 0
+
+SmoochumEvosMoves:
+; Evolutions
+	db EVOLVE_LEVEL, 30, JYNX
+	db 0
+; Learnset
+	db 9, LICK
+	db 13, DOUBLESLAP
+	db 18, ICE_PUNCH
+	db 23, CONFUSION
+	db 28, PSYBEAM
+	db 0

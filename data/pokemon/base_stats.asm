@@ -183,4 +183,5 @@ INCLUDE "data/pokemon/base_stats/happiny.asm"
 INCLUDE "data/pokemon/base_stats/munchlax.asm"
 INCLUDE "data/pokemon/base_stats/mimejr.asm"
 INCLUDE "data/pokemon/base_stats/annihilape.asm"
+INCLUDE "data/pokemon/base_stats/smoochum.asm"
 	assert_table_length NUM_POKEMON

@@ -171,7 +171,7 @@ MonsterNames::
 	dname "GEODUDE"
 	dname "PORYGON"
 	dname "AERODACTYL"
-	dname "MISSINGNO."
+	dname "SMOOCHUM"
 	dname "MAGNEMITE"
 	dname "MISSINGNO."
 	dname "MISSINGNO."

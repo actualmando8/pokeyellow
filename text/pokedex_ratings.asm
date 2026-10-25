@@ -129,13 +129,13 @@ _DexRatingText_Own170To179::
 	cont "#MON are left!"
 	done
 
-_DexRatingText_Own180To182::
+_DexRatingText_Own180To183::
 	text "So close! Just a"
 	line "few more to fill"
 	cont "your #DEX!"
 	done
 
-_DexRatingText_Own183::
+_DexRatingText_Own184::
 	text "Your #DEX is"
 	line "fully complete!"
 	cont "Congratulations!"

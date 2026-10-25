@@ -452,3 +452,5 @@ SECTION "Pics 9", ROMX
 
 AnnihilapePicFront::      INCBIN "gfx/pokemon/front/annihilape.pic"
 AnnihilapePicBack::       INCBIN "gfx/pokemon/back/annihilapeb.pic"
+SmoochumPicFront::        INCBIN "gfx/pokemon/front/smoochum.pic"
+SmoochumPicBack::         INCBIN "gfx/pokemon/back/smoochumb.pic"

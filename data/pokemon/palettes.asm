@@ -184,4 +184,5 @@ MonsterPalettes:
 	db PAL_PINKMON    ; MUNCHLAX
 	db PAL_PINKMON    ; MIME_JR
 	db PAL_BROWNMON   ; ANNIHILAPE
+	db PAL_GREENMON   ; SMOOCHUM
 	assert_table_length NUM_POKEMON + 1
