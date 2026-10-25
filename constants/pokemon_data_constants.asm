@@ -79,9 +79,11 @@ DEF HOF_TEAM_CAPACITY EQU 50
 	const EVOLVE_LEVEL ; 1
 	const EVOLVE_ITEM  ; 2
 	const EVOLVE_TRADE ; 3
-
-; evolution data (see data/pokemon/evos_moves.asm)
-DEF NUM_EVOS_IN_BUFFER EQU 3
+	const EVOLVE_MOVE  ; 4: db EVOLVE_MOVE, move, species (level up while knowing the move)
+	; 5-7: db type, level, species. Compares Attack with Defense (used by Tyrogue)
+	const EVOLVE_ATK_GT_DEF ; 5
+	const EVOLVE_ATK_LT_DEF ; 6
+	const EVOLVE_ATK_EQ_DEF ; 7
 
 ; wMonHGrowthRate values
 ; GrowthRateTable indexes (see data/growth_rates.asm)

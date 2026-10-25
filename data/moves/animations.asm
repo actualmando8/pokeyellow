@@ -164,6 +164,7 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+	dw CharmAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -228,6 +229,10 @@ ENDM
 ; "Both" indicates either can be used for different images using the same animation.
 
 PoundAnim:
+CharmAnim:
+	battle_anim CHARM, SUBANIM_0_HEART_1_MUSIC, 1, 6
+	db -1 ; end
+
 StruggleAnim:
 	battle_anim POUND, SUBANIM_0_STAR_TWICE, 0, 8
 	db -1 ; end

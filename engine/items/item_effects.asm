@@ -847,48 +847,10 @@ ItemUseEvoStone:
 	ret
 
 CheckEvolveWithUsedStone:
-	ld hl, EvosMovesPointerTable
-	ld a, [wLoadedMon]
-	dec a
-	ld c, a
-	ld b, $0
-	add hl, bc
-	add hl, bc
-	ld de, wEvoDataBuffer
-	ld a, BANK(EvosMovesPointerTable)
-	ld bc, 2
-	call FarCopyData
-	ld hl, wEvoDataBuffer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, wEvoDataBuffer
-	ld a, BANK(EvosMovesPointerTable)
-	ld bc, wEvoDataBufferEnd - wEvoDataBuffer
-	call FarCopyData
-	ld hl, wEvoDataBuffer
-.loop
-	ld a, [hli]
-	and a
-	jr z, .cannotEvolveWithUsedStone
-	inc hl
-	inc hl
-	cp EVOLVE_ITEM
-	jr nz, .loop
-	dec hl
-	dec hl
-	ld b, [hl]
 	ld a, [wCurItem]
-	inc hl
-	inc hl
-	inc hl
-	cp b
-	jr nz, .loop
-	scf
-	ret
-
-.cannotEvolveWithUsedStone
-	and a
+	ld c, a
+	ld a, [wLoadedMon]
+	farcall CheckEvolveWithStone
 	ret
 
 RefusingText:

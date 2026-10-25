@@ -3,6 +3,8 @@
 ;    * db EVOLVE_LEVEL, level, species
 ;    * db EVOLVE_ITEM, used item, min level (1), species
 ;    * db EVOLVE_TRADE, min level (1), species
+;    * db EVOLVE_MOVE, required move, species
+;    * db EVOLVE_ATK_GT_DEF / EVOLVE_ATK_LT_DEF / EVOLVE_ATK_EQ_DEF, level, species
 ; - db 0 ; no more evolutions
 ; - Learnset (in increasing level order):
 ;    * db level, move
@@ -206,6 +208,7 @@ INCLUDE "data/pokemon/evos_moves_new.asm"
 
 RhydonEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 50, RHYPERIOR
 	db 0
 ; Learnset
 	db 30, STOMP
@@ -322,6 +325,7 @@ ExeggutorEvosMoves:
 
 LickitungEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, LICKILICKY
 	db 0
 ; Learnset
 	db 7, STOMP
@@ -492,6 +496,7 @@ GastlyEvosMoves:
 
 ScytherEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, SCIZOR
 	db 0
 ; Learnset
 	db 17, LEER
@@ -544,6 +549,7 @@ PinsirEvosMoves:
 
 TangelaEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, TANGROWTH
 	db 0
 ; Learnset
 	db 24, BIND
@@ -582,6 +588,7 @@ GrowlitheEvosMoves:
 
 OnixEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, STEELIX
 	db 0
 ; Learnset
 	db 15, BIND
@@ -618,6 +625,7 @@ PidgeyEvosMoves:
 SlowpokeEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 37, SLOWBRO
+	db EVOLVE_ITEM, SUN_STONE, 1, SLOWKING
 	db 0
 ; Learnset
 	db 18, DISABLE
@@ -656,6 +664,7 @@ GravelerEvosMoves:
 
 ChanseyEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, BLISSEY
 	db 0
 ; Learnset
 	db 12, DOUBLESLAP
@@ -779,6 +788,7 @@ MissingNo32EvosMoves:
 
 MagmarEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, FIRE_STONE, 1, MAGMORTAR
 	db 0
 ; Learnset
 	db 36, LEER
@@ -797,6 +807,7 @@ MissingNo34EvosMoves:
 
 ElectabuzzEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, THUNDER_STONE, 1, ELECTIVIRE
 	db 0
 ; Learnset
 	db 34, THUNDERSHOCK
@@ -808,6 +819,7 @@ ElectabuzzEvosMoves:
 
 MagnetonEvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, THUNDER_STONE, 1, MAGNEZONE
 	db 0
 ; Learnset
 	db 21, SONICBOOM
@@ -1182,6 +1194,7 @@ HorseaEvosMoves:
 
 SeadraEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 45, KINGDRA
 	db 0
 ; Learnset
 	db 19, SMOKESCREEN
@@ -1272,11 +1285,17 @@ EeveeEvosMoves:
 	db EVOLVE_ITEM, FIRE_STONE, 1, FLAREON
 	db EVOLVE_ITEM, THUNDER_STONE, 1, JOLTEON
 	db EVOLVE_ITEM, WATER_STONE, 1, VAPOREON
+	db EVOLVE_ITEM, SUN_STONE, 1, ESPEON
+	db EVOLVE_ITEM, MOON_STONE, 1, UMBREON
+	db EVOLVE_ITEM, LEAF_STONE, 1, LEAFEON
+	db EVOLVE_ITEM, ICE_STONE, 1, GLACEON
+	db EVOLVE_MOVE, CHARM, SYLVEON
 	db 0
 ; Learnset
 	db 8, SAND_ATTACK
 	db 16, GROWL
 	db 23, QUICK_ATTACK
+	db 26, CHARM
 	db 30, BITE
 	db 36, FOCUS_ENERGY
 	db 42, TAKE_DOWN
@@ -1376,6 +1395,7 @@ ParasEvosMoves:
 PoliwhirlEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, WATER_STONE, 1, POLIWRATH
+	db EVOLVE_ITEM, SUN_STONE, 1, POLITOED
 	db 0
 ; Learnset
 	db 16, HYPNOSIS
@@ -1569,6 +1589,7 @@ HypnoEvosMoves:
 
 GolbatEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 40, CROBAT
 	db 0
 ; Learnset
 	db 10, SUPERSONIC
@@ -1962,6 +1983,7 @@ GeodudeEvosMoves:
 
 PorygonEvosMoves:
 ; Evolutions
+	db EVOLVE_LEVEL, 30, PORYGON2
 	db 0
 ; Learnset
 	db 23, PSYBEAM
@@ -2115,6 +2137,7 @@ OddishEvosMoves:
 GloomEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, LEAF_STONE, 1, VILEPLUME
+	db EVOLVE_ITEM, SUN_STONE, 1, BELLOSSOM
 	db 0
 ; Learnset
 	db 15, POISONPOWDER

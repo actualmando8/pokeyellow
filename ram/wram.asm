@@ -1086,11 +1086,6 @@ NEXTU
 wPayDayMoney:: ds 3
 
 NEXTU
-; evolution data for one mon
-wEvoDataBuffer:: ds NUM_EVOS_IN_BUFFER * 4 + 1 ; enough for Eevee's three 4-byte evolutions and 0 terminator
-wEvoDataBufferEnd::
-
-NEXTU
 wBattleMenuCurrentPP:: db
 	ds 3
 wStatusScreenCurrentPP:: db

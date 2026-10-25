@@ -78,10 +78,14 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jr z, .checkItemEvo
 	ld a, [wForceEvolution]
 	and a
-	jr nz, Evolution_PartyMonLoop
+	jp nz, .nextEvoEntry1 ; a stone was used: skip level-based entries (a mon can now have both kinds)
 	ld a, b
 	cp EVOLVE_LEVEL
 	jr z, .checkLevel
+	cp EVOLVE_MOVE
+	jr z, .checkMoveEvo
+	cp EVOLVE_ATK_GT_DEF
+	jr nc, .checkStatEvo
 .checkTradeEvo
 	ld a, [wLinkState]
 	cp LINK_STATE_TRADING
@@ -108,6 +112,52 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, [wLoadedMonLevel]
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
+	jr .doEvolution
+.checkMoveEvo ; level up while knowing a particular move
+	ld a, [hli] ; required move
+	ld b, a
+	ld c, NUM_MOVES
+	push hl
+	ld hl, wLoadedMonMoves
+.moveLoop
+	ld a, [hli]
+	cp b
+	jr z, .knowsMove
+	dec c
+	jr nz, .moveLoop
+	pop hl
+	jp .nextEvoEntry2
+.knowsMove
+	pop hl
+	ld a, [wLoadedMonLevel]
+	jr .doEvolution
+.checkStatEvo ; evolve by comparing Attack with Defense
+	ld a, [hli] ; level requirement
+	ld c, a
+	ld a, [wLoadedMonLevel]
+	cp c
+	jp c, .nextEvoEntry2
+	ld a, [wLoadedMonAttack]
+	ld c, a
+	ld a, [wLoadedMonDefense]
+	cp c
+	jr nz, .statsDiffer
+	ld a, [wLoadedMonAttack + 1]
+	ld c, a
+	ld a, [wLoadedMonDefense + 1]
+	cp c
+	jr z, .statsEqual
+.statsDiffer
+	ld a, EVOLVE_ATK_LT_DEF
+	jr nc, .compareStatType ; no carry: Defense >= Attack
+	ld a, EVOLVE_ATK_GT_DEF
+	jr .compareStatType
+.statsEqual
+	ld a, EVOLVE_ATK_EQ_DEF
+.compareStatType
+	cp b
+	jp nz, .nextEvoEntry2
+	ld a, [wLoadedMonLevel]
 .doEvolution
 	ld [wCurEnemyLevel], a
 	ld a, 1
@@ -456,6 +506,40 @@ CheckCanLearnMove:
 	ret
 
 INCLUDE "data/pokemon/debug_ignore_lv1.asm"
+
+; input: a = species, c = item ID
+; output: carry set if the species has an evolution entry that uses that item
+CheckEvolveWithStone:
+	dec a
+	ld e, a
+	ld d, 0
+	ld hl, EvosMovesPointerTable
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.loop
+	ld a, [hli]
+	and a ; end of the evolution data?
+	jr z, .no
+	inc hl
+	inc hl
+	cp EVOLVE_ITEM
+	jr nz, .loop
+	dec hl
+	dec hl
+	ld a, [hl] ; the stone
+	inc hl
+	inc hl
+	inc hl
+	cp c
+	jr nz, .loop
+	scf
+	ret
+.no
+	and a
+	ret
 
 FindPreEvolution:
 	ld c, 0

@@ -121,48 +121,12 @@ RedrawPartyMenu_::
 	db "NOT ABLE@"
 .evolutionStoneMenu
 	push hl
-	ld hl, EvosMovesPointerTable
-	ld b, 0
-	ld a, [wLoadedMonSpecies]
-	dec a
-	add a
-	rl b
-	ld c, a
-	add hl, bc
-	ld de, wEvoDataBuffer
-	ld a, BANK(EvosMovesPointerTable)
-	ld bc, 2
-	call FarCopyData
-	ld hl, wEvoDataBuffer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld de, wEvoDataBuffer
-	ld a, BANK(EvosMovesPointerTable)
-	ld bc, wEvoDataBufferEnd - wEvoDataBuffer
-	call FarCopyData
-	ld hl, wEvoDataBuffer
-	ld de, .notAbleToEvolveText
-; loop through the pokemon's evolution entries
-.checkEvolutionsLoop
-	ld a, [hli]
-	and a ; reached terminator?
-	jr z, .placeEvolutionStoneString ; if so, place the "NOT ABLE" string
-	inc hl
-	inc hl
-	cp EVOLVE_ITEM
-	jr nz, .checkEvolutionsLoop
-; if it's a stone evolution entry
-	dec hl
-	dec hl
-	ld b, [hl]
 	ld a, [wEvoStoneItemID] ; the stone the player used
-	inc hl
-	inc hl
-	inc hl
-	cp b ; does the player's stone match this evolution entry's stone?
-	jr nz, .checkEvolutionsLoop
-; if it does match
+	ld c, a
+	ld a, [wLoadedMonSpecies]
+	farcall CheckEvolveWithStone
+	ld de, .notAbleToEvolveText
+	jr nc, .placeEvolutionStoneString
 	ld de, .ableToEvolveText
 .placeEvolutionStoneString
 	pop hl

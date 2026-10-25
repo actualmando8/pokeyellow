@@ -80,6 +80,12 @@ Findings **[verified]**: damage calc decides physical vs special in exactly two 
 - [ ] Add any new move or type fields here too.
 - [ ] After this commit, re-test the save, load and boot flows end to end.
 
+## Phase 4c: Evolutions (done, `phase4c_evolutions.patch`)
+- [x] New evolution types: `EVOLVE_MOVE` (level up while knowing a move) and `EVOLVE_ATK_GT_DEF/LT_DEF/EQ_DEF` (Tyrogue). Both are 3-byte entries, so the existing table scanners still work. A stone used on a Pokémon now skips its level entries instead of abandoning it (Slowpoke has both).
+- [x] Charm added (Fairy, Attack -2) just before Struggle; Eevee learns it at 26 and becomes Sylveon on level-up while knowing it.
+- [x] Evolution lines: Golbat 40 Crobat, Onix 40 Steelix, Scyther 40 Scizor, Seadra 45 Kingdra, Porygon 30 Porygon2, Chansey 40 Blissey, Rhydon 50 Rhyperior, Tangela 40 Tangrowth, Lickitung 40 Lickilicky; Sun Stone: Gloom Bellossom, Poliwhirl Politoed, Slowpoke Slowking, Eevee Espeon; Moon Stone Umbreon, Leaf Stone Leafeon, Ice Stone Glaceon; Thunder Stone: Electabuzz Electivire, Magneton Magnezone, Porygon2 Porygon-Z; Fire Stone Magmar Magmortar.
+- [x] The stone checks no longer copy evolution data into WRAM (Eevee's list did not fit); they use `CheckEvolveWithStone` in the evolution bank.
+
 ## Phase 5: Moves
 - [ ] Add later-gen moves; reuse existing battle animations where you can (new animations are the expensive part).
 - [ ] Rebalance move list, TM/HM and move tutor sets.

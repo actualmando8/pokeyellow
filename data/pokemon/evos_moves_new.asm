@@ -146,6 +146,7 @@ KingdraEvosMoves:
 
 Porygon2EvosMoves:
 ; Evolutions
+	db EVOLVE_ITEM, THUNDER_STONE, 1, PORYGON_Z
 	db 0
 ; Learnset
 	db 23, PSYBEAM
@@ -156,7 +157,9 @@ Porygon2EvosMoves:
 
 TyrogueEvosMoves:
 ; Evolutions
-	db EVOLVE_LEVEL, 20, HITMONLEE
+	db EVOLVE_ATK_GT_DEF, 20, HITMONLEE
+	db EVOLVE_ATK_LT_DEF, 20, HITMONCHAN
+	db EVOLVE_ATK_EQ_DEF, 20, HITMONTOP
 	db 0
 ; Learnset
 	db 33, ROLLING_KICK
