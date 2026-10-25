@@ -10,6 +10,7 @@
 DEF NUM_OPTIONS EQU const_value ; 8
 
 DisplayOptionMenu_:
+	call JoypadLowSensitivity ; clear stale joypad state (bug fix)
 	call InitOptionsMenu
 .optionMenuLoop
 	call JoypadLowSensitivity

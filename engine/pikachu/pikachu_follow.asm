@@ -1168,6 +1168,14 @@ AppendPikachuFollowCommandToBuffer:
 	ld hl, wPikachuFollowCommandBufferSize
 	inc [hl]
 	ld e, [hl]
+	ld d, a
+	ld a, e
+	cp 16 ; buffer holds 16 entries; ignore commands that would overflow it
+	ld a, d
+	jr c, .room
+	dec [hl]
+	ret
+.room
 	ld d, 0
 	ld hl, wPikachuFollowCommandBuffer
 	add hl, de

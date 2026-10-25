@@ -99,6 +99,15 @@ GetBattleTransitionID_WildOrTrainer:
 	ret
 
 GetBattleTransitionID_CompareLevels:
+	ld a, [wPartyCount]
+	and a
+	jr nz, .hasParty
+; scripted battle with an empty party (Oak catching Pikachu): treat as a normal-strength opponent
+	res BIT_STRONGER_BATTLE_TRANSITION, c
+	ld a, 1
+	ld [wBattleTransitionSpiralDirection], a
+	ret
+.hasParty
 	ld hl, wPartyMon1HP
 .faintedLoop
 	ld a, [hli]

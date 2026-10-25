@@ -1665,6 +1665,9 @@ GotAwayText:
 
 ; copies from party data to battle mon data when sending out a new player mon
 LoadBattleMonFromParty:
+	xor a
+	ld [wDamage], a ; a new mon is out: forget the last damage (Counter fix)
+	ld [wDamage + 1], a
 	ld a, [wWhichPokemon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wPartyMon1Species
@@ -1709,6 +1712,9 @@ LoadBattleMonFromParty:
 
 ; copies from enemy party data to current enemy mon data when sending out a new enemy mon
 LoadEnemyMonFromParty:
+	xor a
+	ld [wDamage], a ; a new mon is out: forget the last damage (Counter fix)
+	ld [wDamage + 1], a
 	ld a, [wWhichPokemon]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	ld hl, wEnemyMons

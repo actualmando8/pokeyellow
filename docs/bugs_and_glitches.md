@@ -21,6 +21,8 @@ Fixes are written in the `diff` format. If you've used Git before, this should l
 
 ## Options menu code fails to clear joypad state on initialization
 
+**Status: fixed in this fork.**
+
 This bug (or feature!) results in all options being shifted left or right if the respective direction is pressed on the same frame the options menu is opened.
 The bug also exists in pokegold and pokecrystal.
 
@@ -36,6 +38,8 @@ The bug also exists in pokegold and pokecrystal.
 
 ## Battle transitions fail to account for scripted battles
 
+**Status: fixed in this fork.**
+
 When Oak Catches Pikachu in the Pallet Town cutscenes you don't yet have any Pokemon in Party.
 The Battle Transitions code has no error handling for this and reads wPartyMon1HP from wRivalName+6.
 This means you can manipulate this first transition to be faster by choosing a default rival name or writing and deleting 6 characters in a custom rival name.
@@ -45,6 +49,8 @@ A similar series of bugs appears to exist in pokecrystal.
 
 
 ## `wPikachuFollowCommandBuffer` can overflow
+
+**Status: fixed in this fork.**
 
 AppendPikachuFollowCommandToBuffer doesn't have any length checking for the buffer of Pikachu commands.
 This can be abused to write data into any address past d437, typically by putting pikachu to sleep in the Pewter Center with Jigglypuff.
@@ -56,6 +62,8 @@ A typical use for this would be to force the in game time to 255:59.
 
 
 ## Unexpected Counter damage
+
+**Status: fixed in this fork.**
 
 Counter simply doubles the value of wDamage which can hold the last value of damage dealt whether it was from you, your opponent, a switched out opponent, or a player in another battle.
 This is because wDamage is used for both the player's damage and opponent's damage, and is not cleared out between switching or battles.

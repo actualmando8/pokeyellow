@@ -14,6 +14,8 @@ InitBattleVariables:
 	ld [wBattleMonSpecies], a
 	ld [wPartyGainExpFlags], a
 	ld [wPlayerMonNumber], a
+	ld [wDamage], a ; stale damage must not feed Counter
+	ld [wDamage + 1], a
 	ld [wEscapedFromBattle], a
 	ld [wMapPalOffset], a
 	ld hl, wPlayerHPBarColor
