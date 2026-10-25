@@ -161,7 +161,6 @@ SECTION "Battle Engine 6", ROMX
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
-INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
 
 
@@ -435,3 +434,8 @@ INCLUDE "data/pokemon/cries.asm"
 SECTION "Fishing Graphics", ROMX
 
 INCLUDE "gfx/fishing.asm"
+
+
+SECTION "Pokeball HUD", ROMX
+
+INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"

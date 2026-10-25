@@ -236,6 +236,7 @@ ROMX $41
 	"Trade Graphics"
 	"Cry Data"
 	"Fishing Graphics"
+	"Pokeball HUD"
 WRAM0
 	"Audio RAM"
 	org $c100
