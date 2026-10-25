@@ -4208,9 +4208,10 @@ GetDamageVarsForPlayerAttack:
 	and a
 	ld d, a ; d = move power
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wPlayerMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a, [wPlayerMoveNum]
+	call GetMoveCategory ; preserves bc, de, hl
+	cp SPECIAL_MOVE
+	jr z, .specialAttack
 ; physical attack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4321,9 +4322,10 @@ GetDamageVarsForEnemyAttack:
 	ld d, a ; d = move power
 	and a
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wEnemyMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a, [wEnemyMoveNum]
+	call GetMoveCategory ; preserves bc, de, hl
+	cp SPECIAL_MOVE
+	jr z, .specialAttack
 ; physical attack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -5405,6 +5407,24 @@ AIGetTypeEffectiveness:
 	ret
 
 INCLUDE "data/types/type_matchups.asm"
+
+; input: a = move ID
+; output: a = move category (PHYSICAL_MOVE, SPECIAL_MOVE or STATUS_MOVE)
+; preserves bc, de, hl
+GetMoveCategory:
+	push hl
+	push bc
+	dec a ; move IDs start at 1
+	ld c, a
+	ld b, 0
+	ld hl, MoveCategories
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	pop hl
+	ret
+
+INCLUDE "data/moves/categories.asm"
 
 ; some tests that need to pass for a move to hit
 MoveHitTest:

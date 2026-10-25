@@ -37,6 +37,13 @@ DEF MOVE_ACC    rb
 DEF MOVE_PP     rb
 DEF MOVE_LENGTH EQU _RS
 
+; Move categories (see data/moves/categories.asm)
+	const_def
+	const PHYSICAL_MOVE ; 0
+	const SPECIAL_MOVE  ; 1
+	const STATUS_MOVE   ; 2
+DEF NUM_MOVE_CATEGORIES EQU const_value
+
 ; battle classes (wIsInBattle values)
 	const_def 1
 	const WILD_BATTLE
