@@ -232,6 +232,8 @@ ROMX $40
 	"Pics 8"
 ROMX $41
 	"Trade Graphics"
+	"Cry Data"
+	"Fishing Graphics"
 WRAM0
 	"Audio RAM"
 	org $c100

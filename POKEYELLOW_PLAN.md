@@ -105,3 +105,11 @@ List: Pichu, Cleffa, Igglybuff, Happiny, Munchlax, Mime Jr., Tyrogue, Espeon, Um
 
 ## Phase 9: Android (long term)
 - [ ] Simplest path: build the ROM and wrap it in an emulator core (libretro, SameBoy or Gambatte). A native port is a much larger project; decide later.
+
+## Phase 5 — New moves (DONE, patch: phase5_moves.patch)
+- 29 new moves (IDs up to 195, Struggle still last): Crunch, Night Slash, Dark Pulse, Iron Tail, Iron Head, Flash Cannon, Moonblast, Play Rough, Shadow Ball, Energy Ball, Earth Power, Focus Blast, Aura Sphere, Drain Punch, Dragon Claw, Dragon Pulse, Air Slash, Brave Bird, Roost, Poison Jab, Sludge Bomb, X-Scissor, Bug Buzz, Stone Edge, Power Gem, Giga Drain, Zen Headbutt, Hyper Voice, Aqua Tail.
+- Reuse existing animations/sounds; Stone Edge and Night Slash are high-crit; categories set per move.
+- Learnsets inserted by rule (type match, final stage, atk/spa); 71 species gain >=1 move.
+- cries.asm -> "Cry Data", fishing.asm -> "Fishing Graphics" (bank $41) to free space.
+- Known: Primeape's learnset order (46 THRASH before 45 SCREECH) is a vanilla quirk, left alone.
+- Not done: TM/HM/tutor rebalance, move-effect edits (Roost etc. reuse closest existing effects).

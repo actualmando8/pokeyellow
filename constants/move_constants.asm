@@ -171,7 +171,36 @@
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const CHARM        ; a5
-	const STRUGGLE     ; a6
+	const CRUNCH       ; a6
+	const NIGHT_SLASH  ; a7
+	const DARK_PULSE   ; a8
+	const IRON_TAIL    ; a9
+	const IRON_HEAD    ; aa
+	const FLASH_CANNON ; ab
+	const MOONBLAST    ; ac
+	const PLAY_ROUGH   ; ad
+	const SHADOW_BALL  ; ae
+	const ENERGY_BALL  ; af
+	const EARTH_POWER  ; b0
+	const FOCUS_BLAST  ; b1
+	const AURA_SPHERE  ; b2
+	const DRAIN_PUNCH  ; b3
+	const DRAGON_CLAW  ; b4
+	const DRAGON_PULSE ; b5
+	const AIR_SLASH    ; b6
+	const BRAVE_BIRD   ; b7
+	const ROOST        ; b8
+	const POISON_JAB   ; b9
+	const SLUDGE_BOMB  ; ba
+	const X_SCISSOR    ; bb
+	const BUG_BUZZ     ; bc
+	const STONE_EDGE   ; bd
+	const POWER_GEM    ; be
+	const GIGA_DRAIN   ; bf
+	const ZEN_HEADBUTT ; c0
+	const HYPER_VOICE  ; c1
+	const AQUA_TAIL    ; c2
+	const STRUGGLE     ; c3
 DEF NUM_ATTACKS EQU const_value - 1
 
 DEF CANNOT_MOVE EQU $ff

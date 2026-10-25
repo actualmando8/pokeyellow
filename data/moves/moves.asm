@@ -176,5 +176,34 @@ Moves:
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
 	move CHARM,        ATTACK_DOWN2_EFFECT,          0, FAIRY,        100, 20
+	move CRUNCH,       DEFENSE_DOWN_SIDE_EFFECT,     80, DARK,         100, 15
+	move NIGHT_SLASH,  NO_ADDITIONAL_EFFECT,         70, DARK,         100, 15
+	move DARK_PULSE,   FLINCH_SIDE_EFFECT2,          80, DARK,         100, 15
+	move IRON_TAIL,    DEFENSE_DOWN_SIDE_EFFECT,    100, STEEL,         75, 15
+	move IRON_HEAD,    FLINCH_SIDE_EFFECT2,          80, STEEL,        100, 15
+	move FLASH_CANNON, SPDEF_DOWN_SIDE_EFFECT,       80, STEEL,        100, 10
+	move MOONBLAST,    SPATK_DOWN_SIDE_EFFECT,       95, FAIRY,        100, 15
+	move PLAY_ROUGH,   ATTACK_DOWN_SIDE_EFFECT,      90, FAIRY,         90, 10
+	move SHADOW_BALL,  SPDEF_DOWN_SIDE_EFFECT,       80, GHOST,        100, 15
+	move ENERGY_BALL,  SPDEF_DOWN_SIDE_EFFECT,       90, GRASS,        100, 10
+	move EARTH_POWER,  SPDEF_DOWN_SIDE_EFFECT,       90, GROUND,       100, 10
+	move FOCUS_BLAST,  SPDEF_DOWN_SIDE_EFFECT,      120, FIGHTING,      70, 5
+	move AURA_SPHERE,  SWIFT_EFFECT,                 80, FIGHTING,     100, 20
+	move DRAIN_PUNCH,  DRAIN_HP_EFFECT,              75, FIGHTING,     100, 10
+	move DRAGON_CLAW,  NO_ADDITIONAL_EFFECT,         80, DRAGON,       100, 15
+	move DRAGON_PULSE, NO_ADDITIONAL_EFFECT,         85, DRAGON,       100, 10
+	move AIR_SLASH,    FLINCH_SIDE_EFFECT2,          75, FLYING,        95, 15
+	move BRAVE_BIRD,   RECOIL_EFFECT,               120, FLYING,       100, 15
+	move ROOST,        HEAL_EFFECT,                   0, FLYING,       100, 10
+	move POISON_JAB,   POISON_SIDE_EFFECT2,          80, POISON,       100, 20
+	move SLUDGE_BOMB,  POISON_SIDE_EFFECT2,          90, POISON,       100, 10
+	move X_SCISSOR,    NO_ADDITIONAL_EFFECT,         80, BUG,          100, 15
+	move BUG_BUZZ,     SPDEF_DOWN_SIDE_EFFECT,       90, BUG,          100, 10
+	move STONE_EDGE,   NO_ADDITIONAL_EFFECT,        100, ROCK,          80, 5
+	move POWER_GEM,    NO_ADDITIONAL_EFFECT,         80, ROCK,         100, 20
+	move GIGA_DRAIN,   DRAIN_HP_EFFECT,              75, GRASS,        100, 10
+	move ZEN_HEADBUTT, FLINCH_SIDE_EFFECT2,          80, PSYCHIC_TYPE,  90, 15
+	move HYPER_VOICE,  NO_ADDITIONAL_EFFECT,         90, NORMAL,       100, 10
+	move AQUA_TAIL,    NO_ADDITIONAL_EFFECT,         90, WATER,         90, 10
 	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

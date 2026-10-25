@@ -165,6 +165,35 @@ AttackAnimationPointers:
 	dw SlashAnim
 	dw SubstituteAnim
 	dw CharmAnim
+	dw BiteAnim
+	dw SlashAnim
+	dw NightShadeAnim
+	dw SlamAnim
+	dw HeadbuttAnim
+	dw AuroraBeamAnim
+	dw PsyBeamAnim
+	dw DoubleSlapAnim
+	dw ConfusionAnim
+	dw RazorLeafAnim
+	dw EarthquakeAnim
+	dw MegaKickAnim
+	dw SwiftAnim
+	dw MegaPunchAnim
+	dw SlashAnim
+	dw DragonRageAnim
+	dw RazorWindAnim
+	dw DrillPeckAnim
+	dw RecoverAnim
+	dw PoisonStingAnim
+	dw SludgeAnim
+	dw CutAnim
+	dw SupersonicAnim
+	dw RockSlideAnim
+	dw RockThrowAnim
+	dw MegaDrainAnim
+	dw HeadbuttAnim
+	dw RoarAnim
+	dw WaterfallAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim

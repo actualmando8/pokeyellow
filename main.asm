@@ -160,7 +160,6 @@ SECTION "Battle Engine 6", ROMX
 
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
-INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
@@ -301,7 +300,6 @@ SECTION "bank1E", ROMX
 INCLUDE "engine/battle/animations.asm"
 INCLUDE "engine/overworld/cut2.asm"
 INCLUDE "engine/overworld/dust_smoke.asm"
-INCLUDE "gfx/fishing.asm"
 INCLUDE "data/moves/animations.asm"
 INCLUDE "data/battle_anims/subanimations.asm"
 INCLUDE "data/battle_anims/frame_blocks.asm"
@@ -427,3 +425,13 @@ INCLUDE "engine/debug/debug_menu.asm"
 SECTION "Trade Graphics", ROMX
 
 INCLUDE "gfx/trade.asm"
+
+
+SECTION "Cry Data", ROMX
+
+INCLUDE "data/pokemon/cries.asm"
+
+
+SECTION "Fishing Graphics", ROMX
+
+INCLUDE "gfx/fishing.asm"

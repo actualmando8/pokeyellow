@@ -59,6 +59,8 @@ BellossomEvosMoves:
 	db 15, POISONPOWDER
 	db 17, STUN_SPORE
 	db 19, SLEEP_POWDER
+	db 38, GIGA_DRAIN
+	db 44, ENERGY_BALL
 	db 0
 
 PolitoedEvosMoves:
@@ -89,7 +91,10 @@ UmbreonEvosMoves:
 	db 16, WATER_GUN
 	db 23, QUICK_ATTACK
 	db 30, BITE
+	db 34, NIGHT_SLASH
 	db 36, AURORA_BEAM
+	db 38, CRUNCH
+	db 38, DARK_PULSE
 	db 42, HAZE
 	db 42, MIST
 	db 47, ACID_ARMOR
@@ -117,7 +122,9 @@ SteelixEvosMoves:
 	db 19, ROCK_THROW
 	db 25, RAGE
 	db 33, SLAM
+	db 38, IRON_HEAD
 	db 43, HARDEN
+	db 50, IRON_TAIL
 	db 0
 
 ScizorEvosMoves:
@@ -129,8 +136,11 @@ ScizorEvosMoves:
 	db 24, DOUBLE_TEAM
 	db 29, SLASH
 	db 35, SWORDS_DANCE
+	db 38, IRON_HEAD
+	db 38, X_SCISSOR
 	db 42, AGILITY
 	db 50, WING_ATTACK
+	db 50, IRON_TAIL
 	db 0
 
 KingdraEvosMoves:
@@ -140,7 +150,10 @@ KingdraEvosMoves:
 	db 19, SMOKESCREEN
 	db 24, LEER
 	db 30, WATER_GUN
+	db 38, DRAGON_CLAW
+	db 40, DRAGON_PULSE
 	db 41, AGILITY
+	db 44, AQUA_TAIL
 	db 52, HYDRO_PUMP
 	db 0
 
@@ -175,6 +188,7 @@ HitmontopEvosMoves:
 ; Learnset
 	db 33, FIRE_PUNCH
 	db 38, ICE_PUNCH
+	db 38, DRAIN_PUNCH
 	db 43, THUNDERPUNCH
 	db 48, MEGA_PUNCH
 	db 53, COUNTER
@@ -214,6 +228,7 @@ BlisseyEvosMoves:
 	db 30, GROWL
 	db 38, MINIMIZE
 	db 44, DEFENSE_CURL
+	db 44, HYPER_VOICE
 	db 48, LIGHT_SCREEN
 	db 54, DOUBLE_EDGE
 	db 0
@@ -255,6 +270,8 @@ SylveonEvosMoves:
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, FIRE_SPIN
+	db 36, MOONBLAST
+	db 38, PLAY_ROUGH
 	db 42, SMOG
 	db 47, LEER
 	db 52, FLAMETHROWER
@@ -268,6 +285,7 @@ MagnezoneEvosMoves:
 	db 25, THUNDERSHOCK
 	db 29, SUPERSONIC
 	db 38, THUNDER_WAVE
+	db 38, FLASH_CANNON
 	db 46, SWIFT
 	db 54, SCREECH
 	db 0
@@ -303,6 +321,7 @@ RhyperiorEvosMoves:
 	db 35, TAIL_WHIP
 	db 40, FURY_ATTACK
 	db 48, HORN_DRILL
+	db 50, STONE_EDGE
 	db 55, LEER
 	db 64, TAKE_DOWN
 	db 0
@@ -316,7 +335,9 @@ TangrowthEvosMoves:
 	db 29, VINE_WHIP
 	db 32, POISONPOWDER
 	db 36, STUN_SPORE
+	db 36, GIGA_DRAIN
 	db 39, SLEEP_POWDER
+	db 44, ENERGY_BALL
 	db 45, SLAM
 	db 48, GROWTH
 	db 0
@@ -330,6 +351,7 @@ LickilickyEvosMoves:
 	db 23, DEFENSE_CURL
 	db 31, SLAM
 	db 39, SCREECH
+	db 44, HYPER_VOICE
 	db 0
 
 PorygonZEvosMoves:
@@ -340,6 +362,7 @@ PorygonZEvosMoves:
 	db 28, RECOVER
 	db 35, AGILITY
 	db 42, TRI_ATTACK
+	db 44, HYPER_VOICE
 	db 0
 
 HappinyEvosMoves:
