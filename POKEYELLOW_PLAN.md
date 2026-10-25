@@ -113,3 +113,10 @@ List: Pichu, Cleffa, Igglybuff, Happiny, Munchlax, Mime Jr., Tyrogue, Espeon, Um
 - cries.asm -> "Cry Data", fishing.asm -> "Fishing Graphics" (bank $41) to free space.
 - Known: Primeape's learnset order (46 THRASH before 45 SCREECH) is a vanilla quirk, left alone.
 - Not done: TM/HM/tutor rebalance, move-effect edits (Roost etc. reuse closest existing effects).
+
+## Phase 5b — Dazzle Gleam, Annihilape, TM overhaul (DONE, patch: phase5b_tms_annihilape.patch, apply after phase5_moves.patch)
+- Move IDs were full (Struggle = $C3, items start at $C4), so 11 unused moves were retired in place (IDs unchanged): Comet Punch, Peck, Kinesis, Barrage, Lovely Kiss, Psywave, Egg Bomb, Conversion, Sharpen, Mimic, Dizzy Punch. Magikarp keeps Splash.
+- New moves: Dazzle Gleam (name shortened to fit 12 chars), Rage Fist, Shadow Claw, Close Combat, Knock Off, Thunder/Fire/Ice Fang, Leaf Blade, Flare Blitz, Wild Charge. Scripted trainer moves that used retired moves were remapped (to be redone in Phase 8).
+- Annihilape: dex 183, index $A2, Fighting/Ghost; Primeape learns Rage Fist at 35 and evolves into it on level-up while knowing it. Sprites are a Primeape placeholder in new bank "Pics 9" (second spare TM/HM bit selects it).
+- TMs: 54 TMs (24 obsolete ones replaced, TM51-54 new = Crunch, Play Rough, Hyper Voice, Power Gem; item IDs $C9-$FE). TM/HM flags widened to 8 bytes (59 used, 2 spare bits are sprite-bank flags). Every species' TM list was rebuilt: surviving TMs keep their old compatibility, new TMs by type/stat rules + curated lists. NPC TM texts updated.
+- Next: Phase 5c = learnset rewrite (modern level-up sets + egg/Stadium/XD-style moves).

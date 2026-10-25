@@ -1692,3 +1692,9 @@ _MimeJrDexEntry::
 	next "sees, even the"
 	next "moves of others."
 	dex
+
+_AnnihilapeDexEntry::
+	text "Rage made it a"
+	next "ghost fighter that"
+	next "never rests."
+	dex

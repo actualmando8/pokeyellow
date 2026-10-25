@@ -24,6 +24,10 @@ UncompressMonSprite::
 	bit (NEWPICBANK_TMNUM - 1) % 8, a
 	ld a, BANK("Pics 8")
 	jr nz, .GotBank
+	ld a, [wMonHLearnset + (NEWPICBANK2_TMNUM - 1) / 8] ; ... and "Pics 9" once that one was full
+	bit (NEWPICBANK2_TMNUM - 1) % 8, a
+	ld a, BANK("Pics 9")
+	jr nz, .GotBank
 	ld a, b
 	cp TANGELA + 1
 	ld a, BANK("Pics 1")

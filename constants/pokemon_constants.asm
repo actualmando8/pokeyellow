@@ -168,7 +168,7 @@
 	const HAPPINY              ; $9F
 	const MUNCHLAX             ; $A0
 	const MIME_JR              ; $A1
-	const_skip               ; $A2
+	const ANNIHILAPE           ; $A2
 	const PONYTA             ; $A3
 	const RAPIDASH           ; $A4
 	const RATTATA            ; $A5

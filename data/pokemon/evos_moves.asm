@@ -173,7 +173,7 @@ EvosMovesPointerTable:
 	dw HappinyEvosMoves
 	dw MunchlaxEvosMoves
 	dw MimeJrEvosMoves
-	dw MissingNoA2EvosMoves
+	dw AnnihilapeEvosMoves
 	dw PonytaEvosMoves
 	dw RapidashEvosMoves
 	dw RattataEvosMoves
@@ -229,7 +229,6 @@ KangaskhanEvosMoves:
 	db 36, MEGA_PUNCH
 	db 41, LEER
 	db 44, CRUNCH
-	db 46, DIZZY_PUNCH
 	db 0
 
 NidoranMEvosMoves:
@@ -1529,6 +1528,7 @@ DodrioEvosMoves:
 
 PrimeapeEvosMoves:
 ; Evolutions
+	db EVOLVE_MOVE, RAGE_FIST, ANNIHILAPE
 	db 0
 ; Learnset
 	db 9, LOW_KICK
@@ -1536,6 +1536,7 @@ PrimeapeEvosMoves:
 	db 21, FURY_SWIPES
 	db 27, FOCUS_ENERGY
 	db 28, RAGE
+	db 35, RAGE_FIST
 	db 37, SEISMIC_TOSS
 	db 38, DRAIN_PUNCH
 	db 46, THRASH

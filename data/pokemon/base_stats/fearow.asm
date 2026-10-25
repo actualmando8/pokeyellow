@@ -10,11 +10,11 @@
 	INCBIN "gfx/pokemon/front/fearow.pic", 0, 1 ; sprite dimensions
 	dw FearowPicFront, FearowPicBack
 
-	db PECK, GROWL, LEER, NO_MOVE ; level 1 learnset
+	db GUST, GROWL, LEER, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
-	     HYPER_BEAM,   RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         \
-	     SWIFT,        SKY_ATTACK,   REST,         SUBSTITUTE,   FLY
+	tmhm ROOST, TOXIC, DOUBLE_EDGE, HYPER_BEAM, BRAVE_BIRD,	\
+	     DOUBLE_TEAM, SWIFT, KNOCK_OFF, AIR_SLASH, REST,	\
+	     SUBSTITUTE, CRUNCH, HYPER_VOICE, FLY
 	; end

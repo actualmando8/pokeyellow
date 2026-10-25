@@ -161,7 +161,7 @@ PokedexEntryPointers:
 	dw HappinyDexEntry
 	dw MunchlaxDexEntry
 	dw MimeJrDexEntry
-	dw MissingNoDexEntry
+	dw AnnihilapeDexEntry
 	dw PonytaDexEntry
 	dw RapidashDexEntry
 	dw RattataDexEntry
@@ -1475,4 +1475,11 @@ MimeJrDexEntry:
 	db 2,0
 	dw 287
 	text_far _MimeJrDexEntry
+	text_end
+
+AnnihilapeDexEntry:
+	db "RAGE MONKEY@"
+	db 3,7
+	dw 1989
+	text_far _AnnihilapeDexEntry
 	text_end

@@ -48,13 +48,13 @@ _CeladonCityGramps3ReceivedTM41Text::
 
 _CeladonCityGramps3TM41ExplanationText::
 	text "TM41 teaches"
-	line "SOFTBOILED!"
+	line "FOCUS BLAST!"
 
-	para "Only one #MON"
-	line "can use it!"
+	para "It is powerful,"
+	line "but it can miss!"
 
-	para "That #MON is"
-	line "CHANSEY!"
+	para "Use it on a"
+	line "special attacker!"
 	done
 
 _CeladonCityGramps3TM41NoRoomText::

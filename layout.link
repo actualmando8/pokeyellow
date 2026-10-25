@@ -230,6 +230,8 @@ ROMX $3F
 	"NPC Sprites 3"
 ROMX $40
 	"Pics 8"
+ROMX $42
+	"Pics 9"
 ROMX $41
 	"Trade Graphics"
 	"Cry Data"

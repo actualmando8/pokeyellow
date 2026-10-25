@@ -9,7 +9,7 @@
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
-	const COMET_PUNCH  ; 04
+	const DAZZLING_GLEAM  ; 04
 	const MEGA_PUNCH   ; 05
 	const PAY_DAY      ; 06
 	const FIRE_PUNCH   ; 07
@@ -69,7 +69,7 @@
 	const BUBBLEBEAM   ; 3d
 	const AURORA_BEAM  ; 3e
 	const HYPER_BEAM   ; 3f
-	const PECK         ; 40
+	const RAGE_FIST         ; 40
 	const DRILL_PECK   ; 41
 	const SUBMISSION   ; 42
 	const LOW_KICK     ; 43
@@ -107,7 +107,7 @@
 	const RAGE         ; 63
 	const TELEPORT     ; 64
 	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66
+	const FLARE_BLITZ        ; 66
 	const SCREECH      ; 67
 	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
@@ -126,7 +126,7 @@
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
 	const SELFDESTRUCT ; 78
-	const EGG_BOMB     ; 79
+	const FIRE_FANG     ; 79
 	const LICK         ; 7a
 	const SMOG         ; 7b
 	const SLUDGE       ; 7c
@@ -139,22 +139,22 @@
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86
+	const SHADOW_CLAW      ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c
+	const CLOSE_COMBAT      ; 8c
 	const LEECH_LIFE   ; 8d
-	const LOVELY_KISS  ; 8e
+	const KNOCK_OFF  ; 8e
 	const SKY_ATTACK   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
-	const DIZZY_PUNCH  ; 92
+	const WILD_CHARGE  ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94
-	const PSYWAVE      ; 95
+	const THUNDER_FANG      ; 95
 	const SPLASH       ; 96
 	const ACID_ARMOR   ; 97
 	const CRABHAMMER   ; 98
@@ -164,8 +164,8 @@
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
-	const SHARPEN      ; 9f
-	const CONVERSION   ; a0
+	const LEAF_BLADE      ; 9f
+	const ICE_FANG   ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3

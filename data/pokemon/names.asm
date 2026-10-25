@@ -161,7 +161,7 @@ MonsterNames::
 	dname "HAPPINY"
 	dname "MUNCHLAX"
 	dname "MIME JR."
-	dname "MISSINGNO."
+	dname "ANNIHILAPE"
 	dname "PONYTA"
 	dname "RAPIDASH"
 	dname "RATTATA"

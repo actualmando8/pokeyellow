@@ -446,3 +446,9 @@ MunchlaxPicFront::        INCBIN "gfx/pokemon/front/munchlax.pic"
 MunchlaxPicBack::         INCBIN "gfx/pokemon/back/munchlaxb.pic"
 MimeJrPicFront::          INCBIN "gfx/pokemon/front/mimejr.pic"
 MimeJrPicBack::           INCBIN "gfx/pokemon/back/mimejrb.pic"
+
+
+SECTION "Pics 9", ROMX
+
+AnnihilapePicFront::      INCBIN "gfx/pokemon/front/annihilape.pic"
+AnnihilapePicBack::       INCBIN "gfx/pokemon/back/annihilapeb.pic"

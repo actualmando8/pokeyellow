@@ -14,5 +14,5 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm
+	tmhm SLUDGE_BOMB, POISON_JAB
 	; end

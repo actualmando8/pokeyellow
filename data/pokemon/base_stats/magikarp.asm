@@ -14,5 +14,5 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm
+	tmhm WATERFALL
 	; end

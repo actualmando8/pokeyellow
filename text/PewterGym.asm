@@ -64,12 +64,10 @@ _TM34ExplanationText::
 	cont "carefully!"
 
 	para "TM34 contains"
-	line "BIDE!"
+	line "DAZZLE GLEAM!"
 
-	para "Your #MON will"
-	line "absorb damage in"
-	cont "battle then pay"
-	cont "it back double!"
+	para "A burst of light"
+	line "that hurts foes!"
 	done
 
 _PewterGymTM34NoRoomText::

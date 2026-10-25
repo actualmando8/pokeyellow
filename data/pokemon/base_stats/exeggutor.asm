@@ -10,12 +10,13 @@
 	INCBIN "gfx/pokemon/front/exeggutor.pic", 0, 1 ; sprite dimensions
 	dw ExeggutorPicFront, ExeggutorPicBack
 
-	db BARRAGE, HYPNOSIS, NO_MOVE, NO_MOVE ; level 1 learnset
+	db TACKLE, HYPNOSIS, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   RAGE,         \
-	     MEGA_DRAIN,   SOLARBEAM,    PSYCHIC_M,    TELEPORT,     MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         SELFDESTRUCT, EGG_BOMB,     \
-	     REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,   STRENGTH
+	tmhm TOXIC, FLAMETHROWER, DOUBLE_EDGE, SLUDGE_BOMB, SHADOW_BALL,	\
+	     HYPER_BEAM, GIGA_DRAIN, SOLARBEAM, PSYCHIC_M, ENERGY_BALL,	\
+	     DOUBLE_TEAM, REFLECT, DAZZLING_GLEAM, SELFDESTRUCT, KNOCK_OFF,	\
+	     REST, ZEN_HEADBUTT, EXPLOSION, SUBSTITUTE, POWER_GEM,	\
+	     STRENGTH
 	; end

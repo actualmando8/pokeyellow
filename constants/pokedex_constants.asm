@@ -186,6 +186,7 @@
 	const DEX_HAPPINY      ; 180
 	const DEX_MUNCHLAX     ; 181
 	const DEX_MIME_JR      ; 182
+	const DEX_ANNIHILAPE   ; 183
 
 DEF NUM_POKEMON EQU const_value - 1
 

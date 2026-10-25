@@ -10,12 +10,11 @@
 	INCBIN "gfx/pokemon/front/doduo.pic", 0, 1 ; sprite dimensions
 	dw DoduoPicFront, DoduoPicBack
 
-	db PECK, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db GUST, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm WHIRLWIND,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SKULL_BASH,   SKY_ATTACK,   REST,         TRI_ATTACK,   SUBSTITUTE,   \
-	     FLY
+	tmhm ROOST, TOXIC, BODY_SLAM, DOUBLE_EDGE, BRAVE_BIRD,	\
+	     DOUBLE_TEAM, REFLECT, KNOCK_OFF, AIR_SLASH, REST,	\
+	     TRI_ATTACK, SUBSTITUTE, FLY
 	; end

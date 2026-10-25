@@ -182,4 +182,5 @@ MonPartyData:
 	nybble ICON_FAIRY     ; Happiny
 	nybble ICON_MON       ; Munchlax
 	nybble ICON_MON       ; Mime Jr.
+	nybble ICON_MON       ; Annihilape
 	end_nybble_array NUM_POKEMON

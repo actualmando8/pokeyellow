@@ -18,10 +18,8 @@ MoveGrammar:
 	db MEDITATE
 	db AGILITY
 	db TELEPORT
-	db MIMIC
 	db DOUBLE_TEAM
 	db BIDE ; corrected JP grammar: moved from set 1 in pokered
-	db BARRAGE
 	db 0 ; end set
 
 ; 3: originally "[mon]の<LINE>[move]　こうげき！" ("[mon]'s<LINE>[move] attack!")
@@ -42,7 +40,6 @@ MoveGrammar:
 	db GROWL
 	db ROAR
 	db SING
-	db PECK
 	db COUNTER
 	db STRENGTH
 	db ABSORB
@@ -68,7 +65,6 @@ MoveGrammar:
 	db ACID_ARMOR
 	db FURY_SWIPES
 	db REST
-	db SHARPEN
 	db SLASH
 	db SUBSTITUTE
 	db 0 ; end set

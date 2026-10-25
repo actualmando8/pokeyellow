@@ -5,4 +5,6 @@ HighCriticalMoves:
 	db SLASH
 	db STONE_EDGE
 	db NIGHT_SLASH
+	db SHADOW_CLAW
+	db LEAF_BLADE
 	db -1 ; end

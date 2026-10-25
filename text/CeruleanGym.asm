@@ -21,10 +21,10 @@ _CeruleanGymMistyPreBattleText::
 
 _CeruleanGymMistyTM11ExplanationText::
 	text "TM11 teaches"
-	line "BUBBLEBEAM!"
+	line "SLUDGE BOMB!"
 
-	para "Use it on an"
-	line "aquatic #MON!"
+	para "It can poison"
+	line "the target!"
 	done
 
 _CeruleanGymMistyCascadeBadgeInfoText::

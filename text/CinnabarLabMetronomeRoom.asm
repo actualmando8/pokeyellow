@@ -18,10 +18,10 @@ _CinnabarLabMetronomeRoomScientist1TM35ExplanationText::
 	line "That's the sound"
 	cont "of a METRONOME!"
 
-	para "It tweaks your"
-	line "#MON's brain"
-	cont "into using moves"
-	cont "it doesn't know!"
+	para "TM35 is"
+	line "MOONBLAST!"
+	cont "The moon's power"
+	cont "may lower SP.ATK!"
 	done
 
 _CinnabarLabMetronomeRoomScientist1TM35NoRoomText::

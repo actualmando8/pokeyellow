@@ -3,7 +3,7 @@ AttackAnimationPointers:
 	dw PoundAnim
 	dw KarateChopAnim
 	dw DoubleSlapAnim
-	dw CometPunchAnim
+	dw SwiftAnim
 	dw MegaPunchAnim
 	dw PayDayAnim
 	dw FirePunchAnim
@@ -63,7 +63,7 @@ AttackAnimationPointers:
 	dw BubbleBeamAnim
 	dw AuroraBeamAnim
 	dw HyperBeamAnim
-	dw PeckAnim
+	dw MegaPunchAnim
 	dw DrillPeckAnim
 	dw SubmissionAnim
 	dw LowKickAnim
@@ -101,7 +101,7 @@ AttackAnimationPointers:
 	dw RageAnim
 	dw TeleportAnim
 	dw NightShadeAnim
-	dw MimicAnim
+	dw TakeDownAnim
 	dw ScreechAnim
 	dw DoubleTeamAnim
 	dw RecoverAnim
@@ -120,7 +120,7 @@ AttackAnimationPointers:
 	dw MetronomeAnim
 	dw MirrorMoveAnim
 	dw SelfdestructAnim
-	dw EggBombAnim
+	dw BiteAnim
 	dw LickAnim
 	dw SmogAnim
 	dw SludgeAnim
@@ -133,22 +133,22 @@ AttackAnimationPointers:
 	dw SpikeCannonAnim
 	dw ConstrictAnim
 	dw AmnesiaAnim
-	dw KinesisAnim
+	dw SlashAnim
 	dw SoftboiledAnim
 	dw HiJumpKickAnim
 	dw GlareAnim
 	dw DreamEaterAnim
 	dw PoisonGasAnim
-	dw BarrageAnim
+	dw HiJumpKickAnim
 	dw LeechLifeAnim
-	dw LovelyKissAnim
+	dw HeadbuttAnim
 	dw SkyAttackAnim
 	dw TransformAnim
 	dw BubbleAnim
-	dw DizzyPunchAnim
+	dw ThunderAnim
 	dw SporeAnim
 	dw FlashAnim
-	dw PsywaveAnim
+	dw BiteAnim
 	dw SplashAnim
 	dw AcidArmorAnim
 	dw CrabHammerAnim
@@ -158,8 +158,8 @@ AttackAnimationPointers:
 	dw RestAnim
 	dw RockSlideAnim
 	dw HyperFangAnim
-	dw SharpenAnim
-	dw ConversionAnim
+	dw RazorLeafAnim
+	dw BiteAnim
 	dw TriAttackAnim
 	dw SuperFangAnim
 	dw SlashAnim
@@ -273,11 +273,6 @@ KarateChopAnim:
 DoubleSlapAnim:
 	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 5
 	battle_anim DOUBLESLAP, SUBANIM_0_STAR_TWICE, 0, 5
-	db -1 ; end
-
-CometPunchAnim:
-	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
-	battle_anim COMET_PUNCH, SUBANIM_0_STAR_THRICE, 0, 4
 	db -1 ; end
 
 MegaPunchAnim:
@@ -589,10 +584,6 @@ HyperBeamAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
-PeckAnim:
-	battle_anim PECK, SUBANIM_0_STAR_TWICE, 0, 8
-	db -1 ; end
-
 DrillPeckAnim:
 	battle_anim DRILL_PECK, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	db -1 ; end
@@ -617,7 +608,7 @@ CounterAnim:
 
 SeismicTossAnim:
 	battle_anim NO_MOVE, SE_BLINK_ENEMY_MON
-	battle_anim BARRAGE, SUBANIM_1_SPHERE_BIG, 1, 1
+	battle_anim TACKLE, SUBANIM_1_SPHERE_BIG, 1, 1
 	battle_anim NO_MOVE, SE_HIDE_ENEMY_MON_PIC
 	battle_anim NO_MOVE, SE_SLIDE_MON_OFF
 	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_RISE, 1, 2
@@ -803,11 +794,6 @@ NightShadeAnim:
 	battle_anim NO_MOVE, SE_WAVY_SCREEN
 	db -1 ; end
 
-MimicAnim:
-	battle_anim MIMIC, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
-	battle_anim MIMIC, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
-	db -1 ; end
-
 ScreechAnim:
 	battle_anim SCREECH, SUBANIM_0_HEART_1_MUSIC, 1, 6
 	db -1 ; end
@@ -935,11 +921,6 @@ SelfdestructAnim:
 	battle_anim SELFDESTRUCT, SUBANIM_1_SELFDESTRUCT, 1, 3
 	db -1 ; end
 
-EggBombAnim:
-	battle_anim EGG_BOMB, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 4
-	battle_anim EGG_BOMB, SUBANIM_1_EXPLOSION_SMALL_ENEMY, 1, 4
-	db -1 ; end
-
 LickAnim:
 	battle_anim SLUDGE, SUBANIM_1_BLOB_DRIP_ENEMY, 1, 6
 	db -1 ; end
@@ -1003,10 +984,6 @@ AmnesiaAnim:
 	battle_anim AMNESIA, SUBANIM_0_STATUS_CONFUSED, 0, 8
 	db -1 ; end
 
-KinesisAnim:
-	battle_anim KINESIS, SUBANIM_0_STAR_TWICE, 0, 8
-	db -1 ; end
-
 SoftboiledAnim:
 	battle_anim LEECH_SEED, SE_SLIDE_MON_HALF_OFF
 	battle_anim SOFTBOILED, SUBANIM_0_EGG_SHAKING, 0, 8
@@ -1038,21 +1015,12 @@ PoisonGasAnim:
 	battle_anim POISON_GAS, SUBANIM_1_CLOUD_TOSS, 1, 6
 	db -1 ; end
 
-BarrageAnim:
-	battle_anim BARRAGE, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 3
-	battle_anim NO_MOVE, SUBANIM_0_STAR_HIGH, 0, 5
-	db -1 ; end
-
 LeechLifeAnim:
 	battle_anim LEECH_LIFE, SUBANIM_0_STAR_THRICE, 0, 8
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 0, 6
 	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 0, 6
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	db -1 ; end
-
-LovelyKissAnim:
-	battle_anim LOVELY_KISS, SUBANIM_0_HEART_1_MUSIC, 0, 6
 	db -1 ; end
 
 SkyAttackAnim:
@@ -1073,13 +1041,6 @@ BubbleAnim:
 	battle_anim BUBBLE, SUBANIM_0_WATER_BUBBLES, 0, 22
 	db -1 ; end
 
-DizzyPunchAnim:
-	battle_anim DIZZY_PUNCH, SUBANIM_0_BIRDIES_CIRCLING_ENEMY, 0, 6
-	battle_anim DIZZY_PUNCH, SUBANIM_0_BIRDIES_CIRCLING_ENEMY, 0, 6
-	battle_anim DIZZY_PUNCH, SUBANIM_0_BIRDIES_CIRCLING_ENEMY, 0, 6
-	battle_anim DOUBLESLAP, SUBANIM_0_STAR_THRICE, 0, 6
-	db -1 ; end
-
 SporeAnim:
 	battle_anim SPORE, SUBANIM_0_CIRCLES_FALLING, 0, 6
 	db -1 ; end
@@ -1089,11 +1050,6 @@ FlashAnim:
 	battle_anim GLARE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
-	db -1 ; end
-
-PsywaveAnim:
-	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
-	battle_anim CONFUSION, SE_WAVY_SCREEN
 	db -1 ; end
 
 SplashAnim:
@@ -1134,20 +1090,6 @@ RockSlideAnim:
 
 HyperFangAnim:
 	battle_anim HYPER_FANG, SUBANIM_0_STAR_THRICE, 0, 6
-	db -1 ; end
-
-SharpenAnim:
-	battle_anim SHARPEN, SE_LIGHT_SCREEN_PALETTE
-	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_CLOSING, 1, 6
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
-	db -1 ; end
-
-ConversionAnim:
-	battle_anim CONVERSION, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 1, 6
-	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 1, 6
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	db -1 ; end
 
 TriAttackAnim:
@@ -1301,9 +1243,9 @@ ShakeScreenAnim:
 	db -1 ; end
 
 ThrowRockAnim:
-	battle_anim BARRAGE, SUBANIM_0_SAFARI_ROCK, 0, 3
+	battle_anim TACKLE, SUBANIM_0_SAFARI_ROCK, 0, 3
 	db -1 ; end
 
 ThrowBaitAnim:
-	battle_anim BARRAGE, SUBANIM_0_SAFARI_BAIT, 0, 3
+	battle_anim TACKLE, SUBANIM_0_SAFARI_BAIT, 0, 3
 	db -1 ; end

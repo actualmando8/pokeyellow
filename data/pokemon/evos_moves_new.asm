@@ -401,3 +401,19 @@ MimeJrEvosMoves:
 	db 39, MEDITATE
 	db 47, SUBSTITUTE
 	db 0
+
+AnnihilapeEvosMoves:
+; Evolutions
+	db 0
+; Learnset
+	db 9, LOW_KICK
+	db 15, KARATE_CHOP
+	db 21, FURY_SWIPES
+	db 27, FOCUS_ENERGY
+	db 28, RAGE
+	db 35, RAGE_FIST
+	db 37, SEISMIC_TOSS
+	db 38, DRAIN_PUNCH
+	db 46, THRASH
+	db 45, SCREECH
+	db 0

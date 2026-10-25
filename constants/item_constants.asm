@@ -117,7 +117,7 @@ DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 ; HMs are defined before TMs, so the actual number of TM definitions
 ; is not yet available. The TM quantity is hard-coded here and must
 ; match the actual number below.
-DEF NUM_TMS EQU 50
+DEF NUM_TMS EQU 54
 
 DEF __tmhm_value__ = NUM_TMS + 1
 
@@ -158,66 +158,72 @@ MACRO add_tm
 ENDM
 
 DEF TM01 EQU const_value
-	add_tm MEGA_PUNCH   ; $C9
-	add_tm RAZOR_WIND   ; $CA
-	add_tm SWORDS_DANCE ; $CB
-	add_tm WHIRLWIND    ; $CC
-	add_tm MEGA_KICK    ; $CD
-	add_tm TOXIC        ; $CE
-	add_tm HORN_DRILL   ; $CF
-	add_tm BODY_SLAM    ; $D0
-	add_tm TAKE_DOWN    ; $D1
-	add_tm DOUBLE_EDGE  ; $D2
-	add_tm BUBBLEBEAM   ; $D3
-	add_tm WATER_GUN    ; $D4
-	add_tm ICE_BEAM     ; $D5
-	add_tm BLIZZARD     ; $D6
-	add_tm HYPER_BEAM   ; $D7
-	add_tm PAY_DAY      ; $D8
-	add_tm SUBMISSION   ; $D9
-	add_tm COUNTER      ; $DA
-	add_tm SEISMIC_TOSS ; $DB
-	add_tm RAGE         ; $DC
-	add_tm MEGA_DRAIN   ; $DD
-	add_tm SOLARBEAM    ; $DE
-	add_tm DRAGON_RAGE  ; $DF
-	add_tm THUNDERBOLT  ; $E0
-	add_tm THUNDER      ; $E1
-	add_tm EARTHQUAKE   ; $E2
-	add_tm FISSURE      ; $E3
-	add_tm DIG          ; $E4
-	add_tm PSYCHIC_M    ; $E5
-	add_tm TELEPORT     ; $E6
-	add_tm MIMIC        ; $E7
-	add_tm DOUBLE_TEAM  ; $E8
-	add_tm REFLECT      ; $E9
-	add_tm BIDE         ; $EA
-	add_tm METRONOME    ; $EB
-	add_tm SELFDESTRUCT ; $EC
-	add_tm EGG_BOMB     ; $ED
-	add_tm FIRE_BLAST   ; $EE
-	add_tm SWIFT        ; $EF
-	add_tm SKULL_BASH   ; $F0
-	add_tm SOFTBOILED   ; $F1
-	add_tm DREAM_EATER  ; $F2
-	add_tm SKY_ATTACK   ; $F3
-	add_tm REST         ; $F4
-	add_tm THUNDER_WAVE ; $F5
-	add_tm PSYWAVE      ; $F6
-	add_tm EXPLOSION    ; $F7
-	add_tm ROCK_SLIDE   ; $F8
-	add_tm TRI_ATTACK   ; $F9
-	add_tm SUBSTITUTE   ; $FA
+	add_tm DRAIN_PUNCH   ; $C9
+	add_tm DRAGON_CLAW   ; $CA
+	add_tm SWORDS_DANCE  ; $CB
+	add_tm ROOST         ; $CC
+	add_tm CLOSE_COMBAT  ; $CD
+	add_tm TOXIC         ; $CE
+	add_tm IRON_HEAD     ; $CF
+	add_tm BODY_SLAM     ; $D0
+	add_tm FLAMETHROWER  ; $D1
+	add_tm DOUBLE_EDGE   ; $D2
+	add_tm SLUDGE_BOMB   ; $D3
+	add_tm SHADOW_BALL   ; $D4
+	add_tm ICE_BEAM      ; $D5
+	add_tm BLIZZARD      ; $D6
+	add_tm HYPER_BEAM    ; $D7
+	add_tm BRAVE_BIRD    ; $D8
+	add_tm WATERFALL     ; $D9
+	add_tm POISON_JAB    ; $DA
+	add_tm SEISMIC_TOSS  ; $DB
+	add_tm AURA_SPHERE   ; $DC
+	add_tm GIGA_DRAIN    ; $DD
+	add_tm SOLARBEAM     ; $DE
+	add_tm DRAGON_PULSE  ; $DF
+	add_tm THUNDERBOLT   ; $E0
+	add_tm THUNDER       ; $E1
+	add_tm EARTHQUAKE    ; $E2
+	add_tm EARTH_POWER   ; $E3
+	add_tm DIG           ; $E4
+	add_tm PSYCHIC_M     ; $E5
+	add_tm ENERGY_BALL   ; $E6
+	add_tm FLASH_CANNON  ; $E7
+	add_tm DOUBLE_TEAM   ; $E8
+	add_tm REFLECT       ; $E9
+	add_tm DAZZLING_GLEAM; $EA
+	add_tm MOONBLAST     ; $EB
+	add_tm SELFDESTRUCT  ; $EC
+	add_tm X_SCISSOR     ; $ED
+	add_tm FIRE_BLAST    ; $EE
+	add_tm SWIFT         ; $EF
+	add_tm KNOCK_OFF     ; $F0
+	add_tm FOCUS_BLAST   ; $F1
+	add_tm DREAM_EATER   ; $F2
+	add_tm AIR_SLASH     ; $F3
+	add_tm REST          ; $F4
+	add_tm THUNDER_WAVE  ; $F5
+	add_tm ZEN_HEADBUTT  ; $F6
+	add_tm EXPLOSION     ; $F7
+	add_tm ROCK_SLIDE    ; $F8
+	add_tm TRI_ATTACK    ; $F9
+	add_tm SUBSTITUTE    ; $FA
+	add_tm CRUNCH        ; $FB
+	add_tm PLAY_ROUGH    ; $FC
+	add_tm HYPER_VOICE   ; $FD
+	add_tm POWER_GEM     ; $FE
 ASSERT NUM_TMS == const_value - TM01, "NUM_TMS ({d:NUM_TMS}) does not match the number of add_tm definitions"
 
 DEF NUM_TM_HM EQU NUM_TMS + NUM_HMS
 
-; 50 TMs + 5 HMs = 55 learnable TM/HM flags per Pokémon.
-; These fit in 7 bytes, with one unused bit left over.
+; 54 TMs + 5 HMs = 59 learnable TM/HM flags per Pokémon.
+; These fit in 8 bytes, with five unused bits left over.
 DEF __tmhm_value__ = NUM_TM_HM + 1
 DEF UNUSED_TMNUM EQU __tmhm_value__
 ; the spare bit marks species whose sprites are in the "Pics 8" bank (see UncompressMonSprite)
 DEF NEWPICBANK_TMNUM EQU UNUSED_TMNUM
+; ... and the next spare bit marks the ones in "Pics 9"
+DEF NEWPICBANK2_TMNUM EQU UNUSED_TMNUM + 1
 
 DEF MAX_HIDDEN_ITEMS EQU 112
 DEF MAX_HIDDEN_COINS EQU 16

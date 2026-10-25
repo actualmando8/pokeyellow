@@ -37,7 +37,8 @@ _CopycatsHouse2FCopycatTM31Explanation1Text::
 	text_start
 
 	para "TM31 contains my"
-	line "favorite, MIMIC!"
+	line "new favorite,"
+	cont "FLASH CANNON!"
 
 	para "Use it on a good"
 	line "#MON!@"

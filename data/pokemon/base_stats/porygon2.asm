@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/porygon2.pic", 0, 1 ; sprite dimensions
 	dw Porygon2PicFront, Porygon2PicBack
 
-	db TACKLE, SHARPEN, CONVERSION, NO_MOVE ; level 1 learnset
+	db TACKLE, DEFENSE_CURL, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  ICE_BEAM,     BLIZZARD,     \
-	     HYPER_BEAM,   RAGE,         THUNDERBOLT,  THUNDER,      PSYCHIC_M,    \
-	     TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, PSYWAVE,      \
-	     TRI_ATTACK,   SUBSTITUTE,   FLASH, NEWPICBANK
+	tmhm TOXIC, IRON_HEAD, DOUBLE_EDGE, ICE_BEAM, BLIZZARD,	\
+	     HYPER_BEAM, THUNDERBOLT, THUNDER, PSYCHIC_M, FLASH_CANNON,	\
+	     DOUBLE_TEAM, REFLECT, SWIFT, KNOCK_OFF, REST,	\
+	     THUNDER_WAVE, TRI_ATTACK, SUBSTITUTE, HYPER_VOICE, POWER_GEM,	\
+	     FLASH, NEWPICBANK
 	; end
