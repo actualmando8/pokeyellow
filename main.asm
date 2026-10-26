@@ -169,6 +169,15 @@ SECTION "Trainer AI", ROMX
 INCLUDE "engine/battle/trainer_ai.asm"
 
 
+SECTION "Trainer Parties", ROMX
+
+INCLUDE "engine/battle/read_trainer_party.asm"
+
+INCLUDE "data/trainers/special_moves.asm"
+
+INCLUDE "data/trainers/parties.asm"
+
+
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"

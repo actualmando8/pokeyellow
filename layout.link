@@ -238,6 +238,7 @@ ROMX $41
 	"Fishing Graphics"
 	"Pokeball HUD"
 	"Trainer AI"
+	"Trainer Parties"
 WRAM0
 	"Audio RAM"
 	org $c100
