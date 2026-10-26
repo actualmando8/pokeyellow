@@ -656,7 +656,12 @@ wPlayerRoostTypes:: ds 2
 wEnemyRoostTypes:: ds 2
 wSelfStatDropIndex:: db
 wSelfStatDropMod:: db
-	ds 4
+; Trainer AI: party index + 1 of the mon the AI wants EnemySendOut to bring in (0 = no preference)
+wAISwitchTarget:: db
+; voluntary switches the AI has made in this battle
+wAISwitchCount:: db
+; scratch for AIPickBestMon (candidate index, best score so far)
+wAITemp:: ds 2
 
 UNION
 ; the amount of damage accumulated by the enemy while biding
@@ -666,7 +671,11 @@ NEXTU
 wEnemyNumHits:: db
 ENDU
 
-	ds 8
+; Trainer AI: battle variables borrowed while it evaluates moves (hWhoseTurn, wCriticalHitOrOHKO,
+; wDamageMultipliers, wMoveMissed, wMoveType, wDamage)
+wAISaved:: ds 7
+; best candidate found by AIPickBestMon
+wAIPickBestIdx:: db
 wMiscBattleDataEnd::
 NEXTU
 	ds 2

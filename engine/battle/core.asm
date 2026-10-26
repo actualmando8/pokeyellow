@@ -919,6 +919,7 @@ ReplaceFaintedEnemyMon:
 	ret z
 	call LoadScreenTilesFromBuffer1
 .notLinkBattle
+	callfar AIPickNextMon ; smarter trainers choose which mon to bring in
 	call EnemySendOut
 	xor a
 	ld [wEnemyMoveNum], a
@@ -1361,6 +1362,15 @@ EnemySendOutFirstMon:
 	jr .next3
 .next
 	ld b, $ff
+	ld a, [wAISwitchTarget] ; the trainer AI may ask for a particular mon (party index + 1)
+	and a
+	jr z, .noPreferredMon
+	ld b, a
+	dec b
+	dec b ; the loop below increments first
+	xor a
+	ld [wAISwitchTarget], a
+.noPreferredMon
 .next2
 	inc b
 	ld a, [wEnemyMonPartyPos]
@@ -5464,6 +5474,13 @@ GetMoveCategory:
 	ret
 
 INCLUDE "data/moves/categories.asm"
+
+; Trainer AI: damage the enemy's current move would do to the player's mon, without the random roll.
+; The result is in wDamage. Callers are in another bank, so nothing is passed in registers.
+AIDamageProbe:
+	call GetDamageVarsForEnemyAttack
+	call CalculateDamage
+	jp AdjustDamageForMoveType
 
 ; output: a = Rage Fist base power for the current attacker
 ; (50 + 50 per hit taken, at most 255). Preserves bc, de.

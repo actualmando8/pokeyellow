@@ -237,6 +237,7 @@ ROMX $41
 	"Cry Data"
 	"Fishing Graphics"
 	"Pokeball HUD"
+	"Trainer AI"
 WRAM0
 	"Audio RAM"
 	org $c100
