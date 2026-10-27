@@ -14,13 +14,7 @@ SummerBeachHouse_TextPointers:
 SummerBeachHouseSurfinDudeText:
 	text_asm
 	ld a, [wPikachuSpawnStateFlags]
-	vc_patch Bypass_need_Pikachu_with_Surf_for_minigame
-IF DEF (_YELLOW_VC)
-	bit BIT_PIKACHU_SPAWN_STARTER, a
-ELSE
-	bit BIT_PIKACHU_SPAWN_SURFING, a
-ENDC
-	vc_patch_end
+	bit BIT_PIKACHU_SPAWN_STARTER, a ; starter Pikachu is enough, no Surf needed
 	jr nz, .next
 	ld hl, .SurfinDudeText4
 	call PrintText
@@ -137,13 +131,7 @@ SummerBeachHousePrinterText:
 	ld a, 1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld a, [wPikachuSpawnStateFlags]
-	vc_patch Bypass_need_Pikachu_with_Surf_for_high_score
-IF DEF(_YELLOW_VC)
 	bit BIT_PIKACHU_SPAWN_STARTER, a
-ELSE
-	bit BIT_PIKACHU_SPAWN_SURFING, a
-ENDC
-	vc_patch_end
 	jr z, .cannotPrint
 
 	ld hl, wPikachuMapScriptFlags

@@ -121,10 +121,7 @@ RedrawPartyMenu_::
 	db "NOT ABLE@"
 .evolutionStoneMenu
 	push hl
-	ld a, [wEvoStoneItemID] ; the stone the player used
-	ld c, a
-	ld a, [wLoadedMonSpecies]
-	farcall CheckEvolveWithStone
+	farcall CheckEvolveWithStone ; reads wEvoStoneItemID and wLoadedMonSpecies
 	ld de, .notAbleToEvolveText
 	jr nc, .placeEvolutionStoneString
 	ld de, .ableToEvolveText

@@ -507,9 +507,13 @@ CheckCanLearnMove:
 
 INCLUDE "data/pokemon/debug_ignore_lv1.asm"
 
-; input: a = species, c = item ID
+; input: [wLoadedMonSpecies] = species, [wEvoStoneItemID] = item ID
+; (read from RAM because Bankswitch clobbers a and c on the way in)
 ; output: carry set if the species has an evolution entry that uses that item
 CheckEvolveWithStone:
+	ld a, [wEvoStoneItemID]
+	ld c, a
+	ld a, [wLoadedMonSpecies]
 	dec a
 	ld e, a
 	ld d, 0

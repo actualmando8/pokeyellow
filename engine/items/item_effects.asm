@@ -809,22 +809,6 @@ ItemUseEvoStone:
 	ld [wCurPartySpecies], a
 	call CheckEvolveWithUsedStone
 	jr nc, .noEffect
-	callfar IsThisPartyMonStarterPikachu
-	jr nc, .notPlayerPikachu
-	ldpikacry e, PikachuCry28
-	callfar PlayPikachuSoundClip
-	ld a, [wWhichPokemon]
-	ld hl, wPartyMonNicks
-	call GetPartyMonName
-	ld hl, RefusingText
-	call PrintText
-	ld a, $4
-	ld [wPikachuEmotionModifier], a
-	ld a, $82
-	ld [wPikachuMood], a
-	jr .canceledItemUse
-
-.notPlayerPikachu
 	ld a, SFX_HEAL_AILMENT
 	call PlaySoundWaitForCurrent
 	call WaitForSoundToFinish
@@ -848,14 +832,11 @@ ItemUseEvoStone:
 
 CheckEvolveWithUsedStone:
 	ld a, [wCurItem]
-	ld c, a
+	ld [wEvoStoneItemID], a
 	ld a, [wLoadedMon]
+	ld [wLoadedMonSpecies], a
 	farcall CheckEvolveWithStone
 	ret
-
-RefusingText:
-	text_far _RefusingText
-	text_end
 
 ItemUseVitamin:
 	ld a, [wIsInBattle]
