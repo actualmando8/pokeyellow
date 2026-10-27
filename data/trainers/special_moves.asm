@@ -646,73 +646,6 @@ SpecialTrainerMoves:
 	db 3, 4, THUNDER_WAVE
 	db 0
 
-	db POKEMANIAC, 6
-	db 1, 1, FLAMETHROWER
-	db 1, 2, SLASH
-	db 1, 3, DRAGON_CLAW
-	db 1, 4, FIRE_PUNCH
-	db 2, 1, SURF
-	db 2, 2, ICE_BEAM
-	db 2, 3, THUNDERBOLT
-	db 2, 4, PSYCHIC_M
-	db 3, 1, BODY_SLAM
-	db 3, 2, EARTHQUAKE
-	db 3, 3, ICE_PUNCH
-	db 3, 4, THUNDERPUNCH
-	db 0
-
-	db JUGGLER, 2
-	db 1, 1, PSYCHIC_M
-	db 1, 2, HYPNOSIS
-	db 1, 3, DREAM_EATER
-	db 1, 4, SHADOW_BALL
-	db 2, 1, PSYCHIC_M
-	db 2, 2, SHADOW_BALL
-	db 2, 3, HYPNOSIS
-	db 2, 4, REST
-	db 3, 1, PSYCHIC_M
-	db 3, 2, SHADOW_BALL
-	db 3, 3, THUNDER_WAVE
-	db 3, 4, RECOVER
-	db 4, 1, PSYCHIC_M
-	db 4, 2, SHADOW_BALL
-	db 4, 3, THUNDER_WAVE
-	db 4, 4, RECOVER
-	db 0
-
-	db JUGGLER, 5
-	db 1, 1, PSYCHIC_M
-	db 1, 2, DAZZLING_GLEAM
-	db 1, 3, THUNDERBOLT
-	db 1, 4, REFLECT
-	db 0
-
-	db TAMER, 5
-	db 1, 1, SLASH
-	db 1, 2, THUNDERBOLT
-	db 1, 3, ICE_BEAM
-	db 1, 4, QUICK_ATTACK
-	db 2, 1, SURF
-	db 2, 2, ICE_BEAM
-	db 2, 3, PSYCHIC_M
-	db 2, 4, CRUNCH
-	db 0
-
-	db BLACKBELT, 9
-	db 1, 1, DRAIN_PUNCH
-	db 1, 2, ROCK_SLIDE
-	db 1, 3, KARATE_CHOP
-	db 1, 4, LEER
-	db 2, 1, HI_JUMP_KICK
-	db 2, 2, ROCK_SLIDE
-	db 2, 3, EARTHQUAKE
-	db 2, 4, QUICK_ATTACK
-	db 3, 1, CLOSE_COMBAT
-	db 3, 2, ROCK_SLIDE
-	db 3, 3, ICE_PUNCH
-	db 3, 4, RAGE_FIST
-	db 0
-
 	db ROCKET, 23
 	db 1, 1, BONE_CLUB
 	db 1, 2, ROCK_SLIDE
@@ -1192,6 +1125,903 @@ SpecialTrainerMoves:
 	db 6, 2, STONE_EDGE
 	db 6, 3, ROCK_SLIDE
 	db 6, 4, SWORDS_DANCE
+	db 0
+
+	db LASS, 4
+	db 1, 1, X_SCISSOR
+	db 1, 2, SPORE
+	db 1, 3, ENERGY_BALL
+	db 1, 4, SWORDS_DANCE
+	db 2, 1, X_SCISSOR
+	db 2, 2, SPORE
+	db 2, 3, ENERGY_BALL
+	db 2, 4, SWORDS_DANCE
+	db 3, 1, X_SCISSOR
+	db 3, 2, SPORE
+	db 3, 3, ENERGY_BALL
+	db 3, 4, SWORDS_DANCE
+	db 0
+
+	db JR_TRAINER_F, 13
+	db 1, 1, SURF
+	db 1, 2, HYPNOSIS
+	db 1, 3, BODY_SLAM
+	db 1, 4, BUBBLEBEAM
+	db 2, 1, SURF
+	db 2, 2, HYPNOSIS
+	db 2, 3, BODY_SLAM
+	db 2, 4, BUBBLEBEAM
+	db 0
+
+	db JR_TRAINER_F, 16
+	db 1, 1, WATERFALL
+	db 1, 2, HORN_ATTACK
+	db 1, 3, SUPERSONIC
+	db 1, 4, AGILITY
+	db 2, 1, WATERFALL
+	db 2, 2, POISON_JAB
+	db 2, 3, HORN_ATTACK
+	db 2, 4, ICE_BEAM
+	db 0
+
+	db JR_TRAINER_F, 22
+	db 1, 1, MOONBLAST
+	db 1, 2, THUNDERBOLT
+	db 1, 3, ICE_BEAM
+	db 1, 4, RECOVER
+	db 0
+
+	db JR_TRAINER_F, 24
+	db 1, 1, SURF
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, ICE_BEAM
+	db 1, 4, SCREECH
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, SMOKESCREEN
+	db 2, 4, AGILITY
+	db 3, 1, SURF
+	db 3, 2, ICE_BEAM
+	db 3, 3, AQUA_TAIL
+	db 3, 4, REST
+	db 0
+
+	db POKEMANIAC, 1
+	db 1, 1, EARTHQUAKE
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, HORN_ATTACK
+	db 1, 4, TAKE_DOWN
+	db 2, 1, BODY_SLAM
+	db 2, 2, EARTHQUAKE
+	db 2, 3, ICE_PUNCH
+	db 2, 4, THUNDERPUNCH
+	db 0
+
+	db POKEMANIAC, 6
+	db 1, 1, FLAMETHROWER
+	db 1, 2, SLASH
+	db 1, 3, DRAGON_CLAW
+	db 1, 4, FIRE_PUNCH
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, THUNDERBOLT
+	db 2, 4, PSYCHIC_M
+	db 3, 1, BODY_SLAM
+	db 3, 2, EARTHQUAKE
+	db 3, 3, ICE_PUNCH
+	db 3, 4, THUNDERPUNCH
+	db 0
+
+	db SUPER_NERD, 9
+	db 1, 1, FLAMETHROWER
+	db 1, 2, CONFUSE_RAY
+	db 1, 3, QUICK_ATTACK
+	db 1, 4, FIRE_SPIN
+	db 2, 1, FLAMETHROWER
+	db 2, 2, CONFUSE_RAY
+	db 2, 3, QUICK_ATTACK
+	db 2, 4, FIRE_SPIN
+	db 3, 1, FLAMETHROWER
+	db 3, 2, CONFUSE_RAY
+	db 3, 3, SHADOW_BALL
+	db 3, 4, QUICK_ATTACK
+	db 0
+
+	db SUPER_NERD, 10
+	db 1, 1, FLAMETHROWER
+	db 1, 2, STOMP
+	db 1, 3, TAKE_DOWN
+	db 1, 4, AGILITY
+	db 2, 1, FLAMETHROWER
+	db 2, 2, THUNDERPUNCH
+	db 2, 3, SMOG
+	db 2, 4, FIRE_PUNCH
+	db 3, 1, FLAMETHROWER
+	db 3, 2, CONFUSE_RAY
+	db 3, 3, QUICK_ATTACK
+	db 3, 4, FIRE_SPIN
+	db 4, 1, FLAMETHROWER
+	db 4, 2, BITE
+	db 4, 3, TAKE_DOWN
+	db 4, 4, QUICK_ATTACK
+	db 0
+
+	db SUPER_NERD, 11
+	db 1, 1, FLAMETHROWER
+	db 1, 2, THUNDERBOLT
+	db 1, 3, FOCUS_BLAST
+	db 1, 4, PSYCHIC_M
+	db 0
+
+	db SUPER_NERD, 12
+	db 1, 1, FLAMETHROWER
+	db 1, 2, BITE
+	db 1, 3, TAKE_DOWN
+	db 1, 4, QUICK_ATTACK
+	db 2, 1, FLAMETHROWER
+	db 2, 2, CONFUSE_RAY
+	db 2, 3, QUICK_ATTACK
+	db 2, 4, FIRE_SPIN
+	db 0
+
+	db BIKER, 6
+	db 1, 1, SLUDGE_BOMB
+	db 1, 2, THUNDERBOLT
+	db 1, 3, SMOG
+	db 1, 4, TOXIC
+	db 0
+
+	db BIKER, 9
+	db 1, 1, SLUDGE_BOMB
+	db 1, 2, CRUNCH
+	db 1, 3, TOXIC
+	db 1, 4, ACID_ARMOR
+	db 0
+
+	db BURGLAR, 2
+	db 1, 1, FLAMETHROWER
+	db 1, 2, BITE
+	db 1, 3, TAKE_DOWN
+	db 1, 4, QUICK_ATTACK
+	db 0
+
+	db BURGLAR, 4
+	db 1, 1, FLAMETHROWER
+	db 1, 2, BITE
+	db 1, 3, TAKE_DOWN
+	db 1, 4, QUICK_ATTACK
+	db 2, 1, FLAMETHROWER
+	db 2, 2, CONFUSE_RAY
+	db 2, 3, QUICK_ATTACK
+	db 2, 4, FIRE_SPIN
+	db 3, 1, FLAMETHROWER
+	db 3, 2, CONFUSE_RAY
+	db 3, 3, SHADOW_BALL
+	db 3, 4, QUICK_ATTACK
+	db 0
+
+	db BURGLAR, 5
+	db 1, 1, FLAMETHROWER
+	db 1, 2, THUNDERBOLT
+	db 1, 3, FOCUS_BLAST
+	db 1, 4, PSYCHIC_M
+	db 0
+
+	db BURGLAR, 6
+	db 1, 1, FLAMETHROWER
+	db 1, 2, CONFUSE_RAY
+	db 1, 3, QUICK_ATTACK
+	db 1, 4, FIRE_SPIN
+	db 2, 1, FLAMETHROWER
+	db 2, 2, BITE
+	db 2, 3, TAKE_DOWN
+	db 2, 4, QUICK_ATTACK
+	db 0
+
+	db BURGLAR, 7
+	db 1, 1, FLAMETHROWER
+	db 1, 2, SLASH
+	db 1, 3, FIRE_FANG
+	db 1, 4, SMOKESCREEN
+	db 2, 1, FLAMETHROWER
+	db 2, 2, SLASH
+	db 2, 3, DRAGON_CLAW
+	db 2, 4, FIRE_PUNCH
+	db 0
+
+	db BURGLAR, 8
+	db 1, 1, FLAMETHROWER
+	db 1, 2, CONFUSE_RAY
+	db 1, 3, SHADOW_BALL
+	db 1, 4, QUICK_ATTACK
+	db 0
+
+	db BURGLAR, 9
+	db 1, 1, FLAMETHROWER
+	db 1, 2, BITE
+	db 1, 3, TAKE_DOWN
+	db 1, 4, QUICK_ATTACK
+	db 2, 1, FLAMETHROWER
+	db 2, 2, STOMP
+	db 2, 3, TAKE_DOWN
+	db 2, 4, AGILITY
+	db 0
+
+	db FISHER, 8
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, CLAMP
+	db 1, 4, SPIKE_CANNON
+	db 2, 1, BLIZZARD
+	db 2, 2, SURF
+	db 2, 3, SPIKE_CANNON
+	db 2, 4, WITHDRAW
+	db 0
+
+	db FISHER, 10
+	db 1, 1, WATERFALL
+	db 1, 2, POISON_JAB
+	db 1, 3, HORN_ATTACK
+	db 1, 4, ICE_BEAM
+	db 2, 1, WATERFALL
+	db 2, 2, HORN_ATTACK
+	db 2, 3, SUPERSONIC
+	db 2, 4, AGILITY
+	db 0
+
+	db SWIMMER, 2
+	db 1, 1, SURF
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, ICE_BEAM
+	db 1, 4, SCREECH
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, CLAMP
+	db 2, 4, SPIKE_CANNON
+	db 0
+
+	db SWIMMER, 4
+	db 1, 1, SURF
+	db 1, 2, HYPNOSIS
+	db 1, 3, BODY_SLAM
+	db 1, 4, BUBBLEBEAM
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, HYPNOSIS
+	db 2, 4, BODY_SLAM
+	db 0
+
+	db SWIMMER, 7
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, SMOKESCREEN
+	db 1, 4, AGILITY
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, SMOKESCREEN
+	db 2, 4, AGILITY
+	db 0
+
+	db SWIMMER, 9
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, CLAMP
+	db 1, 4, SPIKE_CANNON
+	db 2, 1, BLIZZARD
+	db 2, 2, SURF
+	db 2, 3, SPIKE_CANNON
+	db 2, 4, WITHDRAW
+	db 0
+
+	db SWIMMER, 10
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, THUNDERBOLT
+	db 1, 4, RECOVER
+	db 0
+
+	db SWIMMER, 12
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, DRAGON_PULSE
+	db 1, 4, AGILITY
+	db 2, 1, SLUDGE_BOMB
+	db 2, 2, SURF
+	db 2, 3, ICE_BEAM
+	db 2, 4, TOXIC
+	db 0
+
+	db SWIMMER, 13
+	db 1, 1, SURF
+	db 1, 2, PSYCHIC_M
+	db 1, 3, ICE_BEAM
+	db 1, 4, THUNDERBOLT
+	db 0
+
+	db SWIMMER, 14
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, THUNDERBOLT
+	db 1, 4, RECOVER
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, BITE
+	db 2, 4, WITHDRAW
+	db 0
+
+	db SWIMMER, 15
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, HYPNOSIS
+	db 1, 4, BODY_SLAM
+	db 2, 1, SURF
+	db 2, 2, SLUDGE_BOMB
+	db 2, 3, ICE_BEAM
+	db 2, 4, SCREECH
+	db 3, 1, SURF
+	db 3, 2, ICE_BEAM
+	db 3, 3, DRAGON_PULSE
+	db 3, 4, AGILITY
+	db 0
+
+	db CUE_BALL, 3
+	db 1, 1, KARATE_CHOP
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, LOW_KICK
+	db 1, 4, LEER
+	db 0
+
+	db CUE_BALL, 6
+	db 1, 1, DRAIN_PUNCH
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, KARATE_CHOP
+	db 1, 4, LEER
+	db 0
+
+	db CUE_BALL, 9
+	db 1, 1, SURF
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, ICE_BEAM
+	db 1, 4, SCREECH
+	db 2, 1, SURF
+	db 2, 2, SLUDGE_BOMB
+	db 2, 3, ICE_BEAM
+	db 2, 4, SCREECH
+	db 3, 1, SLUDGE_BOMB
+	db 3, 2, SURF
+	db 3, 3, ICE_BEAM
+	db 3, 4, TOXIC
+	db 0
+
+	db BEAUTY, 6
+	db 1, 1, WATERFALL
+	db 1, 2, POISON_JAB
+	db 1, 3, HORN_ATTACK
+	db 1, 4, ICE_BEAM
+	db 0
+
+	db BEAUTY, 7
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, CLAMP
+	db 1, 4, SPIKE_CANNON
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, CLAMP
+	db 2, 4, SPIKE_CANNON
+	db 3, 1, BLIZZARD
+	db 3, 2, SURF
+	db 3, 3, SPIKE_CANNON
+	db 3, 4, WITHDRAW
+	db 0
+
+	db BEAUTY, 8
+	db 1, 1, SURF
+	db 1, 2, HYPNOSIS
+	db 1, 3, BODY_SLAM
+	db 1, 4, BUBBLEBEAM
+	db 2, 1, WATERFALL
+	db 2, 2, POISON_JAB
+	db 2, 3, HORN_ATTACK
+	db 2, 4, ICE_BEAM
+	db 0
+
+	db BEAUTY, 11
+	db 1, 1, LEAF_BLADE
+	db 1, 2, SLEEP_POWDER
+	db 1, 3, SLUDGE_BOMB
+	db 1, 4, STUN_SPORE
+	db 2, 1, ENERGY_BALL
+	db 2, 2, DAZZLING_GLEAM
+	db 2, 3, SLEEP_POWDER
+	db 2, 4, STUN_SPORE
+	db 3, 1, LEAF_BLADE
+	db 3, 2, SLEEP_POWDER
+	db 3, 3, SLUDGE_BOMB
+	db 3, 4, STUN_SPORE
+	db 0
+
+	db BEAUTY, 13
+	db 1, 1, WATERFALL
+	db 1, 2, HORN_ATTACK
+	db 1, 3, SUPERSONIC
+	db 1, 4, AGILITY
+	db 2, 1, WATERFALL
+	db 2, 2, POISON_JAB
+	db 2, 3, HORN_ATTACK
+	db 2, 4, ICE_BEAM
+	db 0
+
+	db BEAUTY, 15
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, DRAGON_PULSE
+	db 1, 4, AGILITY
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, SMOKESCREEN
+	db 2, 4, AGILITY
+	db 3, 1, SURF
+	db 3, 2, ICE_BEAM
+	db 3, 3, DRAGON_PULSE
+	db 3, 4, AGILITY
+	db 0
+
+	db PSYCHIC_TR, 1
+	db 1, 1, PSYCHIC_M
+	db 1, 2, SHADOW_BALL
+	db 1, 3, THUNDER_WAVE
+	db 1, 4, RECOVER
+	db 2, 1, SURF
+	db 2, 2, PSYCHIC_M
+	db 2, 3, AMNESIA
+	db 2, 4, REST
+	db 3, 1, PSYCHIC_M
+	db 3, 2, DAZZLING_GLEAM
+	db 3, 3, LIGHT_SCREEN
+	db 3, 4, REFLECT
+	db 4, 1, PSYCHIC_M
+	db 4, 2, SHADOW_BALL
+	db 4, 3, THUNDER_WAVE
+	db 4, 4, RECOVER
+	db 0
+
+	db PSYCHIC_TR, 2
+	db 1, 1, PSYCHIC_M
+	db 1, 2, DAZZLING_GLEAM
+	db 1, 3, THUNDERBOLT
+	db 1, 4, REFLECT
+	db 2, 1, PSYCHIC_M
+	db 2, 2, SHADOW_BALL
+	db 2, 3, THUNDER_WAVE
+	db 2, 4, RECOVER
+	db 0
+
+	db PSYCHIC_TR, 3
+	db 1, 1, SURF
+	db 1, 2, PSYCHIC_M
+	db 1, 3, AMNESIA
+	db 1, 4, REST
+	db 2, 1, SURF
+	db 2, 2, PSYCHIC_M
+	db 2, 3, AMNESIA
+	db 2, 4, REST
+	db 3, 1, SURF
+	db 3, 2, PSYCHIC_M
+	db 3, 3, AMNESIA
+	db 3, 4, REST
+	db 0
+
+	db PSYCHIC_TR, 4
+	db 1, 1, PSYCHIC_M
+	db 1, 2, SURF
+	db 1, 3, ICE_BEAM
+	db 1, 4, REST
+	db 0
+
+	db JUGGLER, 2
+	db 1, 1, PSYCHIC_M
+	db 1, 2, HYPNOSIS
+	db 1, 3, DREAM_EATER
+	db 1, 4, SHADOW_BALL
+	db 2, 1, PSYCHIC_M
+	db 2, 2, SHADOW_BALL
+	db 2, 3, HYPNOSIS
+	db 2, 4, REST
+	db 3, 1, PSYCHIC_M
+	db 3, 2, SHADOW_BALL
+	db 3, 3, THUNDER_WAVE
+	db 3, 4, RECOVER
+	db 4, 1, PSYCHIC_M
+	db 4, 2, SHADOW_BALL
+	db 4, 3, THUNDER_WAVE
+	db 4, 4, RECOVER
+	db 0
+
+	db JUGGLER, 3
+	db 1, 1, PSYCHIC_M
+	db 1, 2, HYPNOSIS
+	db 1, 3, DREAM_EATER
+	db 1, 4, SHADOW_BALL
+	db 2, 1, PSYCHIC_M
+	db 2, 2, HYPNOSIS
+	db 2, 3, DREAM_EATER
+	db 2, 4, SHADOW_BALL
+	db 3, 1, PSYCHIC_M
+	db 3, 2, SHADOW_BALL
+	db 3, 3, THUNDER_WAVE
+	db 3, 4, RECOVER
+	db 4, 1, PSYCHIC_M
+	db 4, 2, HYPNOSIS
+	db 4, 3, DREAM_EATER
+	db 4, 4, SHADOW_BALL
+	db 0
+
+	db JUGGLER, 4
+	db 1, 1, PSYCHIC_M
+	db 1, 2, HYPNOSIS
+	db 1, 3, DREAM_EATER
+	db 1, 4, SHADOW_BALL
+	db 2, 1, PSYCHIC_M
+	db 2, 2, SHADOW_BALL
+	db 2, 3, HYPNOSIS
+	db 2, 4, REST
+	db 0
+
+	db JUGGLER, 5
+	db 1, 1, PSYCHIC_M
+	db 1, 2, DAZZLING_GLEAM
+	db 1, 3, THUNDERBOLT
+	db 1, 4, REFLECT
+	db 0
+
+	db JUGGLER, 6
+	db 1, 1, PSYCHIC_M
+	db 1, 2, SHADOW_BALL
+	db 1, 3, HYPNOSIS
+	db 1, 4, REST
+	db 0
+
+	db JUGGLER, 7
+	db 1, 1, PSYCHIC_M
+	db 1, 2, SHADOW_BALL
+	db 1, 3, HYPNOSIS
+	db 1, 4, REST
+	db 0
+
+	db JUGGLER, 8
+	db 1, 1, PSYCHIC_M
+	db 1, 2, HYPNOSIS
+	db 1, 3, DREAM_EATER
+	db 1, 4, SHADOW_BALL
+	db 2, 1, PSYCHIC_M
+	db 2, 2, SHADOW_BALL
+	db 2, 3, THUNDER_WAVE
+	db 2, 4, RECOVER
+	db 0
+
+	db TAMER, 1
+	db 1, 1, EARTHQUAKE
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, SLASH
+	db 1, 4, SWORDS_DANCE
+	db 2, 1, POISON_JAB
+	db 2, 2, CRUNCH
+	db 2, 3, GLARE
+	db 2, 4, EARTHQUAKE
+	db 0
+
+	db TAMER, 2
+	db 1, 1, POISON_JAB
+	db 1, 2, CRUNCH
+	db 1, 3, GLARE
+	db 1, 4, EARTHQUAKE
+	db 2, 1, EARTHQUAKE
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, SLASH
+	db 2, 4, SWORDS_DANCE
+	db 3, 1, POISON_JAB
+	db 3, 2, CRUNCH
+	db 3, 3, GLARE
+	db 3, 4, EARTHQUAKE
+	db 0
+
+	db TAMER, 3
+	db 1, 1, EARTHQUAKE
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, HORN_ATTACK
+	db 1, 4, STRENGTH
+	db 0
+
+	db TAMER, 4
+	db 1, 1, POISON_JAB
+	db 1, 2, CRUNCH
+	db 1, 3, GLARE
+	db 1, 4, EARTHQUAKE
+	db 2, 1, DOUBLE_EDGE
+	db 2, 2, EARTHQUAKE
+	db 2, 3, ZEN_HEADBUTT
+	db 2, 4, TAKE_DOWN
+	db 0
+
+	db TAMER, 5
+	db 1, 1, SLASH
+	db 1, 2, THUNDERBOLT
+	db 1, 3, ICE_BEAM
+	db 1, 4, QUICK_ATTACK
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, PSYCHIC_M
+	db 2, 4, CRUNCH
+	db 0
+
+	db TAMER, 6
+	db 1, 1, EARTHQUAKE
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, HORN_ATTACK
+	db 1, 4, STRENGTH
+	db 2, 1, CLOSE_COMBAT
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, ICE_PUNCH
+	db 2, 4, RAGE_FIST
+	db 3, 1, POISON_JAB
+	db 3, 2, CRUNCH
+	db 3, 3, GLARE
+	db 3, 4, EARTHQUAKE
+	db 4, 1, DOUBLE_EDGE
+	db 4, 2, EARTHQUAKE
+	db 4, 3, ZEN_HEADBUTT
+	db 4, 4, TAKE_DOWN
+	db 0
+
+	db BIRD_KEEPER, 4
+	db 1, 1, LEAF_BLADE
+	db 1, 2, AIR_SLASH
+	db 1, 3, SWORDS_DANCE
+	db 1, 4, NIGHT_SLASH
+	db 0
+
+	db BIRD_KEEPER, 9
+	db 1, 1, DRILL_PECK
+	db 1, 2, BRAVE_BIRD
+	db 1, 3, QUICK_ATTACK
+	db 1, 4, SWORDS_DANCE
+	db 0
+
+	db BIRD_KEEPER, 11
+	db 1, 1, DRILL_PECK
+	db 1, 2, AIR_SLASH
+	db 1, 3, CRUNCH
+	db 1, 4, AGILITY
+	db 2, 1, DRILL_PECK
+	db 2, 2, AIR_SLASH
+	db 2, 3, CRUNCH
+	db 2, 4, AGILITY
+	db 3, 1, AIR_SLASH
+	db 3, 2, QUICK_ATTACK
+	db 3, 3, TAKE_DOWN
+	db 3, 4, AGILITY
+	db 0
+
+	db BIRD_KEEPER, 12
+	db 1, 1, BRAVE_BIRD
+	db 1, 2, AIR_SLASH
+	db 1, 3, QUICK_ATTACK
+	db 1, 4, AGILITY
+	db 2, 1, BRAVE_BIRD
+	db 2, 2, AIR_SLASH
+	db 2, 3, QUICK_ATTACK
+	db 2, 4, AGILITY
+	db 3, 1, AIR_SLASH
+	db 3, 2, QUICK_ATTACK
+	db 3, 3, TAKE_DOWN
+	db 3, 4, WING_ATTACK
+	db 4, 1, BRAVE_BIRD
+	db 4, 2, AIR_SLASH
+	db 4, 3, QUICK_ATTACK
+	db 4, 4, AGILITY
+	db 0
+
+	db BIRD_KEEPER, 13
+	db 1, 1, LEAF_BLADE
+	db 1, 2, AIR_SLASH
+	db 1, 3, SWORDS_DANCE
+	db 1, 4, NIGHT_SLASH
+	db 2, 1, DRILL_PECK
+	db 2, 2, AIR_SLASH
+	db 2, 3, CRUNCH
+	db 2, 4, AGILITY
+	db 0
+
+	db BLACKBELT, 1
+	db 1, 1, HI_JUMP_KICK
+	db 1, 2, MEGA_KICK
+	db 1, 3, EARTHQUAKE
+	db 1, 4, ROCK_SLIDE
+	db 2, 1, THUNDERPUNCH
+	db 2, 2, ICE_PUNCH
+	db 2, 3, FIRE_PUNCH
+	db 2, 4, DRAIN_PUNCH
+	db 0
+
+	db BLACKBELT, 2
+	db 1, 1, KARATE_CHOP
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, FIRE_PUNCH
+	db 1, 4, THUNDERPUNCH
+	db 2, 1, KARATE_CHOP
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, FIRE_PUNCH
+	db 2, 4, THUNDERPUNCH
+	db 3, 1, CLOSE_COMBAT
+	db 3, 2, ROCK_SLIDE
+	db 3, 3, ICE_PUNCH
+	db 3, 4, RAGE_FIST
+	db 0
+
+	db BLACKBELT, 3
+	db 1, 1, KARATE_CHOP
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, LOW_KICK
+	db 1, 4, LEER
+	db 2, 1, DRAIN_PUNCH
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, KARATE_CHOP
+	db 2, 4, LEER
+	db 0
+
+	db BLACKBELT, 4
+	db 1, 1, CLOSE_COMBAT
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, ICE_PUNCH
+	db 1, 4, RAGE_FIST
+	db 0
+
+	db BLACKBELT, 5
+	db 1, 1, KARATE_CHOP
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, LOW_KICK
+	db 1, 4, LEER
+	db 2, 1, KARATE_CHOP
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, FIRE_PUNCH
+	db 2, 4, THUNDERPUNCH
+	db 3, 1, CLOSE_COMBAT
+	db 3, 2, ROCK_SLIDE
+	db 3, 3, ICE_PUNCH
+	db 3, 4, RAGE_FIST
+	db 0
+
+	db BLACKBELT, 6
+	db 1, 1, KARATE_CHOP
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, LOW_KICK
+	db 1, 4, LEER
+	db 2, 1, DRAIN_PUNCH
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, KARATE_CHOP
+	db 2, 4, LEER
+	db 0
+
+	db BLACKBELT, 7
+	db 1, 1, DRAIN_PUNCH
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, KARATE_CHOP
+	db 1, 4, LEER
+	db 0
+
+	db BLACKBELT, 8
+	db 1, 1, DRAIN_PUNCH
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, KARATE_CHOP
+	db 1, 4, LEER
+	db 2, 1, KARATE_CHOP
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, LOW_KICK
+	db 2, 4, LEER
+	db 3, 1, DRAIN_PUNCH
+	db 3, 2, ROCK_SLIDE
+	db 3, 3, KARATE_CHOP
+	db 3, 4, LEER
+	db 0
+
+	db BLACKBELT, 9
+	db 1, 1, DRAIN_PUNCH
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, KARATE_CHOP
+	db 1, 4, LEER
+	db 2, 1, HI_JUMP_KICK
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, EARTHQUAKE
+	db 2, 4, QUICK_ATTACK
+	db 3, 1, CLOSE_COMBAT
+	db 3, 2, ROCK_SLIDE
+	db 3, 3, ICE_PUNCH
+	db 3, 4, RAGE_FIST
+	db 0
+
+	db SCIENTIST, 1
+	db 1, 1, SLUDGE
+	db 1, 2, TACKLE
+	db 1, 3, SMOG
+	db 1, 4, SMOKESCREEN
+	db 2, 1, THUNDERBOLT
+	db 2, 2, THUNDER_WAVE
+	db 2, 3, EXPLOSION
+	db 2, 4, SCREECH
+	db 0
+
+	db SCIENTIST, 5
+	db 1, 1, TRI_ATTACK
+	db 1, 2, THUNDERBOLT
+	db 1, 3, ICE_BEAM
+	db 1, 4, RECOVER
+	db 0
+
+	db SCIENTIST, 12
+	db 1, 1, THUNDERBOLT
+	db 1, 2, THUNDER_WAVE
+	db 1, 3, SWIFT
+	db 1, 4, SCREECH
+	db 2, 1, THUNDERBOLT
+	db 2, 2, FLASH_CANNON
+	db 2, 3, THUNDER_WAVE
+	db 2, 4, TRI_ATTACK
+	db 3, 1, THUNDERBOLT
+	db 3, 2, THUNDER_WAVE
+	db 3, 3, EXPLOSION
+	db 3, 4, SCREECH
+	db 0
+
+	db SCIENTIST, 13
+	db 1, 1, THUNDERBOLT
+	db 1, 2, THUNDER_WAVE
+	db 1, 3, SWIFT
+	db 1, 4, SCREECH
+	db 2, 1, THUNDERBOLT
+	db 2, 2, THUNDER_WAVE
+	db 2, 3, EXPLOSION
+	db 2, 4, SCREECH
+	db 0
+
+	db GENTLEMAN, 4
+	db 1, 1, RAGE_FIST
+	db 1, 2, CLOSE_COMBAT
+	db 1, 3, SHADOW_CLAW
+	db 1, 4, KNOCK_OFF
+	db 0
+
+	db CHANNELER, 22
+	db 1, 1, SHADOW_BALL
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, HYPNOSIS
+	db 1, 4, CONFUSE_RAY
+	db 2, 1, SHADOW_BALL
+	db 2, 2, SLUDGE_BOMB
+	db 2, 3, HYPNOSIS
+	db 2, 4, THUNDERBOLT
+	db 0
+
+	db CHANNELER, 23
+	db 1, 1, SHADOW_BALL
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, HYPNOSIS
+	db 1, 4, THUNDERBOLT
+	db 0
+
+	db CHANNELER, 24
+	db 1, 1, SHADOW_BALL
+	db 1, 2, SLUDGE_BOMB
+	db 1, 3, HYPNOSIS
+	db 1, 4, CONFUSE_RAY
+	db 2, 1, SHADOW_BALL
+	db 2, 2, SLUDGE_BOMB
+	db 2, 3, HYPNOSIS
+	db 2, 4, CONFUSE_RAY
+	db 3, 1, SHADOW_BALL
+	db 3, 2, SLUDGE_BOMB
+	db 3, 3, HYPNOSIS
+	db 3, 4, THUNDERBOLT
 	db 0
 
 	db -1 ; end
