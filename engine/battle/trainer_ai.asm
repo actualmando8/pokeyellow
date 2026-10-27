@@ -1,3 +1,20 @@
+; forbids the moves that are out of PP (like the disabled one)
+AIForbidMovesWithoutPP:
+	ld hl, wBuffer
+	ld de, wEnemyMonPP
+	ld b, NUM_MOVES
+.loop
+	ld a, [de]
+	and PP_MASK
+	jr nz, .next
+	ld [hl], $50
+.next
+	inc hl
+	inc de
+	dec b
+	jr nz, .loop
+	ret
+
 ; creates a set of moves that may be used and returns its address in hl
 ; unused slots are filled with 0, all used slots may be chosen with equal probability
 AIEnemyTrainerChooseMoves:
@@ -36,6 +53,7 @@ AIChooseMovesInner:
 	add hl, bc    ; advance pointer to forbidden move
 	ld [hl], $50  ; forbid (highly discourage) disabled move
 .noMoveDisabled
+	call AIForbidMovesWithoutPP
 	call AIGetTier
 	and a
 	jr z, .basicTrainer

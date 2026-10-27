@@ -1344,8 +1344,7 @@ EnemySendOutFirstMon:
 	ld hl, wPlayerUsedMove
 	ld [hli], a
 	ld [hl], a
-	dec a
-	ld [wAICount], a
+	; wAICount is no longer refilled here: a trainer's item allowance lasts the whole battle
 	ld hl, wPlayerBattleStatus1
 	res USING_TRAPPING_MOVE, [hl]
 	hlcoord 18, 0
@@ -3179,6 +3178,9 @@ SelectEnemyMove:
 	ld a, [wIsInBattle]
 	dec a
 	jr z, .chooseRandomMove ; wild encounter
+	call EnemyHasUsableMove
+	ld a, STRUGGLE ; a trainer's mon with no PP left (or only a disabled move) struggles
+	jr nc, .done
 	callfar AIEnemyTrainerChooseMoves
 .chooseRandomMove
 	push hl
@@ -3209,12 +3211,66 @@ SelectEnemyMove:
 	jr z, .chooseRandomMove ; move disabled, try again
 	and a
 	jr z, .chooseRandomMove ; move non-existent, try again
+	ld d, a
+	call EnemyMoveHasPP
+	ld a, d
+	jr z, .chooseRandomMove ; trainer's move is out of PP, try again
 .done
 	ld [wEnemySelectedMove], a
 	ret
 .linkedOpponentUsedStruggle
 	ld a, STRUGGLE
 	jr .done
+
+; z if a trainer's chosen move (wEnemyMoveListIndex) has no PP left, always nz for wild mons
+; preserves hl, de
+EnemyMoveHasPP:
+	ld a, [wIsInBattle]
+	cp 2
+	ret nz
+	push hl
+	ld hl, wEnemyMonPP
+	ld a, [wEnemyMoveListIndex]
+	add l
+	ld l, a
+	jr nc, .noCarry
+	inc h
+.noCarry
+	ld a, [hl]
+	pop hl
+	and PP_MASK
+	ret
+
+; carry set if the enemy mon has a move that has PP left and is not disabled
+EnemyHasUsableMove:
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+	ld a, [wEnemyDisabledMove]
+	swap a
+	and $f ; slot (1-4) of the disabled move, 0 if none
+	ld c, a
+	ld b, 0
+.loop
+	inc b
+	ld a, [hli]
+	and a
+	jr z, .next
+	ld a, [de]
+	and PP_MASK
+	jr z, .next
+	ld a, b
+	cp c
+	jr nz, .found
+.next
+	inc de
+	ld a, b
+	cp NUM_MOVES
+	jr nz, .loop
+	and a
+	ret
+.found
+	scf
+	ret
 
 ; this appears to exchange data with the other gameboy during link battles
 LinkBattleExchangeData:
@@ -5834,6 +5890,10 @@ EnemyCanExecuteMove:
 	xor a
 	ld [wMonIsDisobedient], a
 	call DisplayUsedMoveText
+	ld hl, DecrementEnemyPP
+	ld de, wEnemySelectedMove ; pointer to the move just used
+	ld b, BANK(DecrementEnemyPP)
+	call Bankswitch
 	ld a, [wEnemyMoveEffect]
 	ld hl, ResidualEffects1
 	ld de, $1

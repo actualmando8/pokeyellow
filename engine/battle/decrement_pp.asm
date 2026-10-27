@@ -41,3 +41,38 @@ DecrementPP:
 	                     ; based on the move chosen.
 	dec [hl]             ; Decrement PP
 	ret
+
+DecrementEnemyPP:
+; after a trainer's mon used a move, decrement its PP in battle and in the party
+; (wild mons keep unlimited PP)
+	ld a, [wIsInBattle]
+	cp 2 ; trainer battle?
+	ret nz
+	ld a, [de]
+	cp STRUGGLE
+	ret z
+	ld hl, wEnemyBattleStatus1
+	ld a, [hli]
+	and (1 << STORING_ENERGY) | (1 << THRASHING_ABOUT) | (1 << ATTACKING_MULTIPLE_TIMES)
+	ret nz
+	bit USING_RAGE, [hl]
+	ret nz
+	ld hl, wEnemyMonPP
+	call .DecrementPP
+	ld a, [wEnemyBattleStatus3]
+	bit TRANSFORMED, a
+	ret nz ; a transformed mon has its own PP
+	ld hl, wEnemyMons + MON_PP
+	ld a, [wEnemyMonPartyPos]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+.DecrementPP:
+	ld a, [wEnemyMoveListIndex]
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	ret z
+	dec [hl]
+	ret
