@@ -1948,6 +1948,8 @@ AISmartXItem:
 	jr z, .defend
 	cp X_SPEED
 	jr z, .speed
+	cp GUARD_SPEC
+	jr z, .guard
 ; X Special
 	ld a, [wEnemyMonSpAtkMod]
 	cp 8
@@ -1966,6 +1968,11 @@ AISmartXItem:
 	call AIMovesHaveCategory
 	jr nc, .no
 	jp AIUseXAttack
+.guard
+	ld a, [wEnemyBattleStatus2]
+	bit PROTECTED_BY_MIST, a
+	jr nz, .no
+	jp AIUseGuardSpec
 .defend
 	ld a, [wEnemyMonDefenseMod]
 	cp 8
