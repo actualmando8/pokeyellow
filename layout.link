@@ -118,6 +118,7 @@ ROMX $17
 	"Starter Dex"
 	"Maps 16"
 	"Hidden Events 3"
+	"Cry Data"
 ROMX $18
 	"Maps 17"
 	"Cinnabar Lab Fossils"
@@ -234,7 +235,6 @@ ROMX $42
 	"Pics 9"
 ROMX $41
 	"Trade Graphics"
-	"Cry Data"
 	"Fishing Graphics"
 	"Pokeball HUD"
 	"Trainer AI"

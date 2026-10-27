@@ -741,6 +741,10 @@ Audio1_note_length:
 	add hl, bc
 	ld [hl], e
 	ld a, d
+	and a
+	jr nz, .gotDelay
+	inc a ; a note lasts at least one frame (a 0 would wrap to 256 frames)
+.gotDelay
 	ld hl, wChannelNoteDelayCounters
 	add hl, bc
 	ld [hl], a
@@ -986,8 +990,12 @@ Audio1_SetSfxTempo:
 	jr c, .isCry
 	call Audio1_IsBattleSFX
 	jr nc, .notCry
+	ld d, 0 ; battle sound effects only use the low byte of the modifier
+	jr .gotHighByte
 .isCry
-	ld d, 0
+	ld a, [wTempoModifierHi]
+	ld d, a
+.gotHighByte
 	ld a, [wTempoModifier]
 	add $80
 	jr nc, .next
@@ -1009,15 +1017,26 @@ Audio1_ApplyFrequencyModifier:
 	jr c, .isCry
 	call Audio1_IsBattleSFX
 	ret nc
+	ld b, 0 ; battle sound effects only use the low byte of the modifier
+	jr .addModifier
 .isCry
-; if playing a cry, add the cry's frequency modifier
+	ld a, [wFrequencyModifierHi]
+	ld b, a
+.addModifier
+; if playing a cry, add the cry's (signed 16-bit) frequency modifier
+; to the 11-bit frequency in de (the flags in the top bits of d are kept)
 	ld a, [wFrequencyModifier]
 	add e
-	jr nc, .noCarry
-	inc d
-.noCarry
-	dec hl
 	ld e, a
+	ld a, d
+	adc b
+	and $07
+	ld b, a
+	ld a, d
+	and $c0
+	or b
+	ld d, a
+	dec hl
 	ld [hl], e
 	inc hl
 	ld [hl], d
@@ -1307,8 +1326,28 @@ Audio1_ApplyDutyCyclePattern:
 	ret
 
 Audio1_GetNextMusicByte:
-	call GetNextMusicByte
-	ret
+; Reads the next command byte of channel c from the audio bank, except for an
+; extended cry (see audio/extended_cries.asm), whose data is in wCryDataBank.
+	ld a, c
+	cp CHAN5
+	jr c, .audioBank
+	ld a, [wCryDataBank]
+	and a
+	jr z, .audioBank
+	ld hl, wChannelSoundIDs
+	ld d, 0
+	ld e, c
+	add hl, de
+	ld a, [hl]
+	cp CRY_SFX_START
+	jr c, .audioBank
+	cp CRY_SFX_END
+	jr nc, .audioBank
+	ld a, [wCryDataBank]
+	jp GetNextMusicByte
+.audioBank
+	ld a, [wAudioROMBank]
+	jp GetNextMusicByte
 
 Audio1_GetRegisterPointer:
 ; hl = address of hardware sound register b for software channel c

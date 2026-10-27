@@ -445,6 +445,8 @@ INCLUDE "gfx/trade.asm"
 SECTION "Cry Data", ROMX
 
 INCLUDE "data/pokemon/cries.asm"
+INCLUDE "audio/cry_data.asm"
+INCLUDE "audio/extended_cries.asm"
 
 
 SECTION "Fishing Graphics", ROMX

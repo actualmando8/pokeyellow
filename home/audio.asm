@@ -173,7 +173,7 @@ PlaySound::
 .noFadeOut
 	xor a
 	ld [wNewSoundID], a
-	call DetermineAudioFunction
+	homecall PlayExtendedCry ; plays the sound, like DetermineAudioFunction
 	jr .done
 
 .fadeOut
@@ -191,9 +191,11 @@ PlaySound::
 	ret
 
 GetNextMusicByte::
+; a = ROM bank to read the next byte of channel c's data from
+	ld e, a
 	ldh a, [hLoadedROMBank]
 	push af
-	ld a, [wAudioROMBank]
+	ld a, e
 	call BankswitchCommon
 	ld d, $0
 	ld a, c

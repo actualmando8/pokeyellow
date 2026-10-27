@@ -1,10 +1,23 @@
+; A species' cry is either one of the Generation I cries (the SFX_CRY_* sound
+; effects, whose data is duplicated in every audio bank) or an "extended" cry
+; (audio/extended_cries.asm). Either way, the pitch is a signed 16-bit offset
+; added to every note's frequency, and the length is added to $80 (it can be
+; negative) to get the tempo that the cry's notes are played at.
+DEF EXTENDED_CRY EQU $80
+
 MACRO mon_cry
 	db (\1 - CRY_SFX_START) / 3
-	db \2, \3
+	dw \2, \3
+ENDM
+
+; arguments: extended cry, pitch, tempo ($100 is normal speed)
+MACRO mon_cry_ext
+	db EXTENDED_CRY | \1
+	dw \2, (\3) - $80
 ENDM
 
 CryData::
-	table_width 3
+	table_width 5
 	; base cry, pitch, length
 	mon_cry SFX_CRY_11, $00, $80 ; Rhydon
 	mon_cry SFX_CRY_03, $00, $80 ; Kangaskhan
@@ -36,8 +49,8 @@ CryData::
 	mon_cry SFX_CRY_13, $00, $80 ; Blastoise
 	mon_cry SFX_CRY_14, $00, $80 ; Pinsir
 	mon_cry SFX_CRY_12, $00, $80 ; Tangela
-	mon_cry SFX_CRY_1D, $02, $80 ; Crobat
-	mon_cry SFX_CRY_0F, $0e, $01 ; Pichu
+	mon_cry_ext EXT_CRY_SQUIRTLE, -16, 320 ; Crobat
+	mon_cry_ext EXT_CRY_PICHU, 0, 320 ; Pichu
 	mon_cry SFX_CRY_1F, $20, $40 ; Growlithe
 	mon_cry SFX_CRY_17, $FF, $C0 ; Onix
 	mon_cry SFX_CRY_18, $40, $A0 ; Fearow
@@ -55,26 +68,26 @@ CryData::
 	mon_cry SFX_CRY_21, $20, $60 ; Psyduck
 	mon_cry SFX_CRY_0D, $88, $20 ; Drowzee
 	mon_cry SFX_CRY_12, $E0, $40 ; Golem
-	mon_cry SFX_CRY_19, $ec, $01 ; Cleffa
+	mon_cry_ext EXT_CRY_BELLOSSOM, 97, 145 ; Cleffa
 	mon_cry SFX_CRY_04, $FF, $30 ; Magmar
-	mon_cry SFX_CRY_0E, $1f, $35 ; Igglybuff
+	mon_cry_ext EXT_CRY_CHIKORITA, 232, 232 ; Igglybuff
 	mon_cry SFX_CRY_06, $8F, $FF ; Electabuzz
 	mon_cry SFX_CRY_1C, $20, $C0 ; Magneton
 	mon_cry SFX_CRY_12, $E6, $DD ; Koffing
-	mon_cry SFX_CRY_23, $42, $FF ; Bellossom
+	mon_cry_ext EXT_CRY_BELLOSSOM, 132, 336 ; Bellossom
 	mon_cry SFX_CRY_0A, $DD, $60 ; Mankey
 	mon_cry SFX_CRY_0C, $88, $C0 ; Seel
 	mon_cry SFX_CRY_0B, $AA, $01 ; Diglett
 	mon_cry SFX_CRY_1D, $11, $40 ; Tauros
-	mon_cry SFX_CRY_0E, $08, $FF ; Politoed
-	mon_cry SFX_CRY_1C, $b0, $C0 ; Espeon
-	mon_cry SFX_CRY_1A, $b2, $FF ; Umbreon
+	mon_cry_ext EXT_CRY_BELLOSSOM, -675, 456 ; Politoed
+	mon_cry_ext EXT_CRY_TYROGUE, 162, 320 ; Espeon
+	mon_cry_ext EXT_CRY_VENONAT, -233, 240 ; Umbreon
 	mon_cry SFX_CRY_10, $DD, $01 ; Farfetch'd
 	mon_cry SFX_CRY_1A, $44, $40 ; Venonat
 	mon_cry SFX_CRY_0F, $3C, $C0 ; Dragonite
-	mon_cry SFX_CRY_1F, $08, $80 ; Slowking
-	mon_cry SFX_CRY_17, $ef, $C0 ; Steelix
-	mon_cry SFX_CRY_16, $08, $80 ; Scizor
+	mon_cry_ext EXT_CRY_SLOWKING, 260, 512 ; Slowking
+	mon_cry_ext EXT_CRY_TYPHLOSION, 239, 247 ; Steelix
+	mon_cry_ext EXT_CRY_AMPHAROS, 0, 352 ; Scizor
 	mon_cry SFX_CRY_0B, $BB, $01 ; Doduo
 	mon_cry SFX_CRY_0E, $FF, $FF ; Poliwag
 	mon_cry SFX_CRY_0D, $FF, $FF ; Jynx
@@ -84,23 +97,23 @@ CryData::
 	mon_cry SFX_CRY_0E, $FF, $FF ; Ditto
 	mon_cry SFX_CRY_19, $77, $10 ; Meowth
 	mon_cry SFX_CRY_20, $20, $E0 ; Krabby
-	mon_cry SFX_CRY_19, $2c, $01 ; Kingdra
-	mon_cry SFX_CRY_25, $b2, $FF ; Porygon2
-	mon_cry SFX_CRY_12, $a0, $C0 ; Tyrogue
+	mon_cry_ext EXT_CRY_SLUGMA, 763, 256 ; Kingdra
+	mon_cry_ext EXT_CRY_GIRAFARIG, 115, 576 ; Porygon2
+	mon_cry_ext EXT_CRY_TYROGUE, 44, 264 ; Tyrogue
 	mon_cry SFX_CRY_24, $4F, $10 ; Vulpix
 	mon_cry SFX_CRY_24, $88, $60 ; Ninetales
 	mon_cry SFX_CRY_0F, $EE, $01 ; Pikachu
 	mon_cry SFX_CRY_09, $EE, $08 ; Raichu
-	mon_cry SFX_CRY_0C, $f6, $C0 ; Hitmontop
-	mon_cry SFX_CRY_06, $97, $FF ; Elekid
+	mon_cry_ext EXT_CRY_SLUGMA, 0, 256 ; Hitmontop
+	mon_cry_ext EXT_CRY_REMORAID, -728, 180 ; Elekid
 	mon_cry SFX_CRY_0F, $60, $40 ; Dratini
 	mon_cry SFX_CRY_0F, $40, $80 ; Dragonair
 	mon_cry SFX_CRY_16, $BB, $40 ; Kabuto
 	mon_cry SFX_CRY_18, $EE, $01 ; Kabutops
 	mon_cry SFX_CRY_19, $99, $10 ; Horsea
 	mon_cry SFX_CRY_19, $3C, $01 ; Seadra
-	mon_cry SFX_CRY_04, $07, $30 ; Magby
-	mon_cry SFX_CRY_14, $12, $C0 ; Blissey
+	mon_cry_ext EXT_CRY_TEDDIURSA, 374, 58 ; Magby
+	mon_cry_ext EXT_CRY_SLOWKING, 659, 320 ; Blissey
 	mon_cry SFX_CRY_00, $20, $40 ; Sandshrew
 	mon_cry SFX_CRY_00, $FF, $FF ; Sandslash
 	mon_cry SFX_CRY_1F, $F0, $01 ; Omanyte
@@ -120,38 +133,38 @@ CryData::
 	mon_cry SFX_CRY_15, $EE, $01 ; Weedle
 	mon_cry SFX_CRY_13, $FF, $01 ; Kakuna
 	mon_cry SFX_CRY_13, $60, $80 ; Beedrill
-	mon_cry SFX_CRY_1A, $45, $80 ; Leafeon
+	mon_cry_ext EXT_CRY_LEAFEON, 56, 524 ; Leafeon
 	mon_cry SFX_CRY_0B, $99, $20 ; Dodrio
 	mon_cry SFX_CRY_0A, $AF, $40 ; Primeape
 	mon_cry SFX_CRY_0B, $2A, $10 ; Dugtrio
 	mon_cry SFX_CRY_1A, $29, $80 ; Venomoth
 	mon_cry SFX_CRY_0C, $23, $FF ; Dewgong
-	mon_cry SFX_CRY_1A, $45, $80 ; Glaceon
-	mon_cry SFX_CRY_1A, $18, $20 ; Sylveon
+	mon_cry_ext EXT_CRY_GLACEON, 56, 588 ; Glaceon
+	mon_cry_ext EXT_CRY_SYLVEON, 0, 664 ; Sylveon
 	mon_cry SFX_CRY_16, $80, $20 ; Caterpie
 	mon_cry SFX_CRY_1C, $CC, $01 ; Metapod
 	mon_cry SFX_CRY_16, $77, $40 ; Butterfree
 	mon_cry SFX_CRY_1F, $08, $C0 ; Machamp
-	mon_cry SFX_CRY_1C, $10, $C0 ; Magnezone
+	mon_cry_ext EXT_CRY_MAGNEZONE, -16, 256 ; Magnezone
 	mon_cry SFX_CRY_21, $FF, $40 ; Golduck
 	mon_cry SFX_CRY_0D, $EE, $40 ; Hypno
 	mon_cry SFX_CRY_1D, $FA, $80 ; Golbat
 	mon_cry SFX_CRY_1E, $99, $FF ; Mewtwo
 	mon_cry SFX_CRY_05, $55, $01 ; Snorlax
 	mon_cry SFX_CRY_17, $80, $00 ; Magikarp
-	mon_cry SFX_CRY_06, $7f, $FF ; Electivire
-	mon_cry SFX_CRY_04, $07, $30 ; Magmortar
+	mon_cry_ext EXT_CRY_ELECTIVIRE, 0, 256 ; Electivire
+	mon_cry_ext EXT_CRY_MAGMORTAR, 0, 256 ; Magmortar
 	mon_cry SFX_CRY_07, $EF, $FF ; Muk
-	mon_cry SFX_CRY_11, $f0, $80 ; Rhyperior
+	mon_cry_ext EXT_CRY_RHYPERIOR, 0, 256 ; Rhyperior
 	mon_cry SFX_CRY_20, $EE, $E0 ; Kingler
 	mon_cry SFX_CRY_18, $6F, $E0 ; Cloyster
-	mon_cry SFX_CRY_12, $08, $80 ; Tangrowth
+	mon_cry_ext EXT_CRY_TANGROWTH, 0, 256 ; Tangrowth
 	mon_cry SFX_CRY_06, $A8, $90 ; Electrode
 	mon_cry SFX_CRY_19, $AA, $20 ; Clefable
 	mon_cry SFX_CRY_12, $FF, $FF ; Weezing
 	mon_cry SFX_CRY_19, $99, $FF ; Persian
 	mon_cry SFX_CRY_08, $4F, $60 ; Marowak
-	mon_cry SFX_CRY_0C, $f0, $80 ; Lickilicky
+	mon_cry_ext EXT_CRY_LICKILICKY, 0, 256 ; Lickilicky
 	mon_cry SFX_CRY_1C, $30, $40 ; Haunter
 	mon_cry SFX_CRY_1C, $C0, $01 ; Abra
 	mon_cry SFX_CRY_1C, $98, $FF ; Alakazam
@@ -161,13 +174,13 @@ CryData::
 	mon_cry SFX_CRY_0F, $80, $01 ; Bulbasaur
 	mon_cry SFX_CRY_0F, $00, $C0 ; Venusaur
 	mon_cry SFX_CRY_1A, $EE, $FF ; Tentacruel
-	mon_cry SFX_CRY_25, $b2, $FF ; Porygon-Z
+	mon_cry_ext EXT_CRY_PORYGON_Z, 0, 384 ; Porygon-Z
 	mon_cry SFX_CRY_16, $80, $40 ; Goldeen
 	mon_cry SFX_CRY_16, $10, $FF ; Seaking
-	mon_cry SFX_CRY_14, $2a, $C0 ; Happiny
-	mon_cry SFX_CRY_05, $5d, $01 ; Munchlax
-	mon_cry SFX_CRY_20, $10, $40 ; Mime Jr.
-	mon_cry SFX_CRY_0A, $9f, $40 ; Annihilape
+	mon_cry_ext EXT_CRY_HAPPINY, -16, 256 ; Happiny
+	mon_cry_ext EXT_CRY_MUNCHLAX, 0, 256 ; Munchlax
+	mon_cry_ext EXT_CRY_MIME_JR, 4, 256 ; Mime Jr.
+	mon_cry_ext EXT_CRY_ANNIHILAPE, 0, 256 ; Annihilape
 	mon_cry SFX_CRY_25, $00, $80 ; Ponyta
 	mon_cry SFX_CRY_25, $20, $C0 ; Rapidash
 	mon_cry SFX_CRY_22, $00, $80 ; Rattata
@@ -177,7 +190,7 @@ CryData::
 	mon_cry SFX_CRY_24, $F0, $10 ; Geodude
 	mon_cry SFX_CRY_25, $AA, $FF ; Porygon
 	mon_cry SFX_CRY_23, $20, $F0 ; Aerodactyl
-	mon_cry SFX_CRY_0D, $1f, $FF ; Smoochum
+	mon_cry_ext EXT_CRY_MARILL, 104, 256 ; Smoochum
 	mon_cry SFX_CRY_1C, $80, $60 ; Magnemite
 	mon_cry SFX_CRY_00, $00, $00 ; MissingNo.
 	mon_cry SFX_CRY_00, $00, $00 ; MissingNo.

@@ -76,7 +76,16 @@ wTempoModifier:: db
 ; regularly set to $0, but nothing ever reads it
 wUnusedAudioCounter:: dw
 
-	ds 11
+; high bytes of the (signed 16-bit) pitch and length modifiers of a cry
+; (battle sound effects only use the 8-bit wFrequencyModifier and wTempoModifier)
+wFrequencyModifierHi:: db
+wTempoModifierHi:: db
+; 1 + index of the extended cry that the next sound played will be (see audio/extended_cries.asm), or 0
+wExtendedCryPending:: db
+; ROM bank holding the channel data of the extended cry being played, or 0
+wCryDataBank:: db
+
+	ds 7
 
 
 SECTION "Sprite State Data", WRAM0
