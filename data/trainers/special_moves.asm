@@ -978,4 +978,220 @@ SpecialTrainerMoves:
 	db 3, 4, SWORDS_DANCE
 	db 0
 
+	db BROCK, 2
+	db 1, 1, EARTHQUAKE
+	db 1, 2, ROCK_SLIDE
+	db 1, 3, EXPLOSION
+	db 1, 4, SWORDS_DANCE
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, ROCK_SLIDE
+	db 2, 4, TOXIC
+	db 3, 1, SWORDS_DANCE
+	db 3, 2, WATERFALL
+	db 3, 3, STONE_EDGE
+	db 3, 4, SLASH
+	db 4, 1, ROCK_SLIDE
+	db 4, 2, EARTHQUAKE
+	db 4, 3, HYPER_BEAM
+	db 4, 4, FLY
+	db 5, 1, EARTHQUAKE
+	db 5, 2, IRON_HEAD
+	db 5, 3, ROCK_SLIDE
+	db 5, 4, EXPLOSION
+	db 6, 1, EARTHQUAKE
+	db 6, 2, ROCK_SLIDE
+	db 6, 3, STONE_EDGE
+	db 6, 4, SWORDS_DANCE
+	db 0
+
+	db MISTY, 2
+	db 1, 1, SURF
+	db 1, 2, ICE_BEAM
+	db 1, 3, EARTHQUAKE
+	db 1, 4, HYPNOSIS
+	db 2, 1, SURF
+	db 2, 2, ICE_BEAM
+	db 2, 3, THUNDERBOLT
+	db 2, 4, RECOVER
+	db 3, 1, HYDRO_PUMP
+	db 3, 2, ICE_BEAM
+	db 3, 3, DRAGON_PULSE
+	db 3, 4, AGILITY
+	db 4, 1, WATERFALL
+	db 4, 2, EARTHQUAKE
+	db 4, 3, ICE_FANG
+	db 4, 4, SWORDS_DANCE
+	db 5, 1, SURF
+	db 5, 2, ICE_BEAM
+	db 5, 3, THUNDERBOLT
+	db 5, 4, SING
+	db 6, 1, SURF
+	db 6, 2, ICE_BEAM
+	db 6, 3, TOXIC
+	db 6, 4, REST
+	db 0
+
+	db LT_SURGE, 2
+	db 1, 1, THUNDERBOLT
+	db 1, 2, CLOSE_COMBAT
+	db 1, 3, ICE_PUNCH
+	db 1, 4, THUNDER_WAVE
+	db 2, 1, THUNDERBOLT
+	db 2, 2, SURF
+	db 2, 3, THUNDER_WAVE
+	db 2, 4, QUICK_ATTACK
+	db 3, 1, THUNDERBOLT
+	db 3, 2, EXPLOSION
+	db 3, 3, THUNDER_WAVE
+	db 3, 4, SCREECH
+	db 4, 1, THUNDERBOLT
+	db 4, 2, FLASH_CANNON
+	db 4, 3, THUNDER_WAVE
+	db 4, 4, TRI_ATTACK
+	db 5, 1, THUNDERBOLT
+	db 5, 2, SHADOW_BALL
+	db 5, 3, THUNDER_WAVE
+	db 5, 4, QUICK_ATTACK
+	db 6, 1, THUNDERBOLT
+	db 6, 2, CLOSE_COMBAT
+	db 6, 3, EARTHQUAKE
+	db 6, 4, ICE_PUNCH
+	db 0
+
+	db ERIKA, 2
+	db 1, 1, GIGA_DRAIN
+	db 1, 2, SLEEP_POWDER
+	db 1, 3, SLUDGE_BOMB
+	db 1, 4, SWORDS_DANCE
+	db 2, 1, GIGA_DRAIN
+	db 2, 2, SLEEP_POWDER
+	db 2, 3, SLUDGE_BOMB
+	db 2, 4, STUN_SPORE
+	db 3, 1, GIGA_DRAIN
+	db 3, 2, SLEEP_POWDER
+	db 3, 3, EARTHQUAKE
+	db 3, 4, STUN_SPORE
+	db 4, 1, MOONBLAST
+	db 4, 2, HYPER_VOICE
+	db 4, 3, SHADOW_BALL
+	db 4, 4, AMNESIA
+	db 5, 1, LEAF_BLADE
+	db 5, 2, SWORDS_DANCE
+	db 5, 3, X_SCISSOR
+	db 5, 4, DOUBLE_EDGE
+	db 6, 1, GIGA_DRAIN
+	db 6, 2, SLEEP_POWDER
+	db 6, 3, SLUDGE_BOMB
+	db 6, 4, EARTHQUAKE
+	db 0
+
+	db KOGA, 2
+	db 1, 1, SLUDGE_BOMB
+	db 1, 2, FIRE_BLAST
+	db 1, 3, EXPLOSION
+	db 1, 4, TOXIC
+	db 2, 1, SLUDGE_BOMB
+	db 2, 2, EARTHQUAKE
+	db 2, 3, ICE_PUNCH
+	db 2, 4, EXPLOSION
+	db 3, 1, SLEEP_POWDER
+	db 3, 2, BUG_BUZZ
+	db 3, 3, SLUDGE_BOMB
+	db 3, 4, PSYCHIC_M
+	db 4, 1, SLUDGE_BOMB
+	db 4, 2, AIR_SLASH
+	db 4, 3, TOXIC
+	db 4, 4, CONFUSE_RAY
+	db 5, 1, SWORDS_DANCE
+	db 5, 2, X_SCISSOR
+	db 5, 3, IRON_HEAD
+	db 5, 4, ROOST
+	db 6, 1, TOXIC
+	db 6, 2, CONFUSE_RAY
+	db 6, 3, DARK_PULSE
+	db 6, 4, REST
+	db 0
+
+	db SABRINA, 2
+	db 1, 1, PSYCHIC_M
+	db 1, 2, THUNDERBOLT
+	db 1, 3, AMNESIA
+	db 1, 4, RECOVER
+	db 2, 1, PSYCHIC_M
+	db 2, 2, HYPNOSIS
+	db 2, 3, SHADOW_BALL
+	db 2, 4, DREAM_EATER
+	db 3, 1, PSYCHIC_M
+	db 3, 2, SURF
+	db 3, 3, ICE_BEAM
+	db 3, 4, REST
+	db 4, 1, PSYCHIC_M
+	db 4, 2, SHADOW_BALL
+	db 4, 3, FOCUS_BLAST
+	db 4, 4, RECOVER
+	db 5, 1, PSYCHIC_M
+	db 5, 2, SHADOW_BALL
+	db 5, 3, AMNESIA
+	db 5, 4, RECOVER
+	db 6, 1, SHADOW_BALL
+	db 6, 2, SLUDGE_BOMB
+	db 6, 3, THUNDERBOLT
+	db 6, 4, HYPNOSIS
+	db 0
+
+	db BLAINE, 2
+	db 1, 1, FIRE_BLAST
+	db 1, 2, STOMP
+	db 1, 3, HYPNOSIS
+	db 1, 4, AGILITY
+	db 2, 1, FIRE_BLAST
+	db 2, 2, PSYCHIC_M
+	db 2, 3, SHADOW_BALL
+	db 2, 4, CONFUSE_RAY
+	db 3, 1, FLARE_BLITZ
+	db 3, 2, QUICK_ATTACK
+	db 3, 3, CRUNCH
+	db 3, 4, WILD_CHARGE
+	db 4, 1, FIRE_BLAST
+	db 4, 2, THUNDERBOLT
+	db 4, 3, CLOSE_COMBAT
+	db 4, 4, PSYCHIC_M
+	db 5, 1, FLARE_BLITZ
+	db 5, 2, CLOSE_COMBAT
+	db 5, 3, QUICK_ATTACK
+	db 5, 4, IRON_TAIL
+	db 6, 1, FIRE_BLAST
+	db 6, 2, FLY
+	db 6, 3, EARTHQUAKE
+	db 6, 4, SWORDS_DANCE
+	db 0
+
+	db GIOVANNI, 4
+	db 1, 1, SLASH
+	db 1, 2, THUNDERBOLT
+	db 1, 3, SHADOW_BALL
+	db 1, 4, SWORDS_DANCE
+	db 2, 1, EARTHQUAKE
+	db 2, 2, ROCK_SLIDE
+	db 2, 3, SWORDS_DANCE
+	db 2, 4, SLASH
+	db 3, 1, EARTHQUAKE
+	db 3, 2, SLUDGE_BOMB
+	db 3, 3, ICE_BEAM
+	db 3, 4, THUNDERBOLT
+	db 4, 1, EARTHQUAKE
+	db 4, 2, SLUDGE_BOMB
+	db 4, 3, POISON_JAB
+	db 4, 4, THUNDERBOLT
+	db 5, 1, EARTHQUAKE
+	db 5, 2, IRON_HEAD
+	db 5, 3, ROCK_SLIDE
+	db 5, 4, EXPLOSION
+	db 6, 1, EARTHQUAKE
+	db 6, 2, STONE_EDGE
+	db 6, 3, ROCK_SLIDE
+	db 6, 4, SWORDS_DANCE
+	db 0
+
 	db -1 ; end

@@ -197,6 +197,9 @@ CinnabarGymScript_SetGateFlag:
 
 CinnabarGymBlainePostBattleScript:
 	call CinnabarGymClearWrongAnswer
+	ld d, TEXT_CINNABARGYM_BLAINE
+	callfar GymRematchPostBattle
+	jp c, CinnabarGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, CinnabarGymResetScripts
@@ -279,6 +282,15 @@ CinnabarGymBlaineText:
 	call DisableWaitingAfterTextDisplay
 	jp TextScriptEnd
 .afterBeat
+	ld c, 6
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_CINNABARGYM_BLAINE_POST_BATTLE
+	ld [wCinnabarGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jp TextScriptEnd

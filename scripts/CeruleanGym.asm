@@ -37,6 +37,9 @@ CeruleanGym_ScriptPointers:
 	dw_const CeruleanGymMistyPostBattleScript,      SCRIPT_CERULEANGYM_MISTY_POST_BATTLE
 
 CeruleanGymMistyPostBattleScript:
+	ld d, TEXT_CERULEANGYM_MISTY
+	callfar GymRematchPostBattle
+	jp c, CeruleanGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, CeruleanGymResetScripts
@@ -99,6 +102,15 @@ CeruleanGymMistyText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld c, 1
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_CERULEANGYM_MISTY_POST_BATTLE
+	ld [wCeruleanGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .TM11ExplanationText
 	call PrintText
 	jr .done

@@ -730,6 +730,7 @@
 	const_next $8C0
 	const_skip
 	const EVENT_BEAT_MEWTWO
+	const EVENT_BEAT_MEW ; header bit 2 in CeruleanCaveB1F
 
 ; Indigo Plateau events
 	const_next $8E0
@@ -789,6 +790,20 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 	const EVENT_SEAFOAM4_BOULDER2_DOWN_HOLE
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
+
+; Post-game gym rematches. These 8 flags occupy exactly one byte
+; (bit order = leader index used by engine/events/gym_rematch.asm).
+	const_next $9F0
+	const EVENT_REMATCH_BROCK
+	const EVENT_REMATCH_MISTY
+	const EVENT_REMATCH_LT_SURGE
+	const EVENT_REMATCH_ERIKA
+	const EVENT_REMATCH_KOGA
+	const EVENT_REMATCH_SABRINA
+	const EVENT_REMATCH_BLAINE
+	const EVENT_REMATCH_GIOVANNI
+	const EVENT_REMATCH_ACTIVE ; a rematch battle is in progress
+	const EVENT_REMATCH_WON    ; rematch won, reward not yet handed over
 
 ; End of events
 	const_next $A00

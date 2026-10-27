@@ -370,6 +370,7 @@ ENDM
 	const TOGGLE_CERULEAN_CAVE_B1F_ITEM_2      ; D9 X
 	const TOGGLE_CERULEAN_CAVE_B1F_ITEM_3      ; DA X
 	const TOGGLE_CERULEAN_CAVE_B1F_ITEM_4      ; DB X
+	const TOGGLE_CERULEAN_CAVE_B1F_MEW         ; post-game
 
 	toggle_consts_for VICTORY_ROAD_1F
 	const TOGGLE_VICTORY_ROAD_1F_ITEM_1        ; DC X

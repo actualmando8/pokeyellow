@@ -37,6 +37,9 @@ CeladonGym_ScriptPointers:
 	dw_const CeladonGymErikaPostBattleScript,       SCRIPT_CELADONGYM_ERIKA_POST_BATTLE
 
 CeladonGymErikaPostBattleScript:
+	ld d, TEXT_CELADONGYM_ERIKA
+	callfar GymRematchPostBattle
+	jp c, CeladonGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, CeladonGymResetScripts
@@ -113,6 +116,15 @@ CeladonGymErikaText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld c, 3
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_CELADONGYM_ERIKA_POST_BATTLE
+	ld [wCeladonGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done

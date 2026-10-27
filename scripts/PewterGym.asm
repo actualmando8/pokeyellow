@@ -38,6 +38,9 @@ PewterGym_ScriptPointers:
 	dw_const PewterGymBrockPostBattle,              SCRIPT_PEWTERGYM_BROCK_POST_BATTLE
 
 PewterGymBrockPostBattle:
+	ld d, TEXT_PEWTERGYM_BROCK
+	callfar GymRematchPostBattle
+	jp c, PewterGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, PewterGymResetScripts
@@ -106,6 +109,15 @@ PewterGymBrockText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld c, 0
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_PEWTERGYM_BROCK_POST_BATTLE
+	ld [wPewterGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done

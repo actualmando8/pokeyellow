@@ -39,6 +39,9 @@ FuchsiaGym_ScriptPointers:
 	dw_const FuchsiaGymKogaPostBattleScript,        SCRIPT_FUCHSIAGYM_KOGA_POST_BATTLE
 
 FuchsiaGymKogaPostBattleScript:
+	ld d, TEXT_FUCHSIAGYM_KOGA
+	callfar GymRematchPostBattle
+	jp c, FuchsiaGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, FuchsiaGymResetScripts
@@ -113,6 +116,15 @@ FuchsiaGymKogaText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld c, 4
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_FUCHSIAGYM_KOGA_POST_BATTLE
+	ld [wFuchsiaGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done

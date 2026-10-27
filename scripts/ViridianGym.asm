@@ -129,6 +129,9 @@ ViridianGymPlayerSpinningScript:
 	farjp LoadSpinnerArrowTiles
 
 ViridianGymGiovanniPostBattle:
+	ld d, TEXT_VIRIDIANGYM_GIOVANNI
+	callfar GymRematchPostBattle
+	jp c, ViridianGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, ViridianGymResetScripts
@@ -214,6 +217,14 @@ ViridianGymGiovanniText:
 	call DisableWaitingAfterTextDisplay
 	jr .text_script_end
 .afterBeat
+	ld c, 7
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_VIRIDIANGYM_GIOVANNI_POST_BATTLE
+	ld [wViridianGymCurScript], a
+	jp TextScriptEnd
+.noRematch
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, .PostBattleAdviceText

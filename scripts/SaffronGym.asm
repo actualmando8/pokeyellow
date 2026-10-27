@@ -37,6 +37,9 @@ SaffronGym_ScriptPointers:
 	dw_const SaffronGymSabrinaPostBattle,           SCRIPT_SAFFRONGYM_SABRINA_POST_BATTLE
 
 SaffronGymSabrinaPostBattle:
+	ld d, TEXT_SAFFRONGYM_SABRINA
+	callfar GymRematchPostBattle
+	jp c, SaffronGymResetScripts
 	ld a, [wIsInBattle]
 	cp LOST_BATTLE
 	jp z, SaffronGymResetScripts
@@ -114,6 +117,15 @@ SaffronGymSabrinaText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld c, 5
+	callfar GymRematchOffer
+	jr nc, .noRematch
+	jp nz, TextScriptEnd
+	ld a, SCRIPT_SAFFRONGYM_SABRINA_POST_BATTLE
+	ld [wSaffronGymCurScript], a
+	ld [wCurMapScript], a
+	jp TextScriptEnd
+.noRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done
