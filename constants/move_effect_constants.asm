@@ -95,4 +95,8 @@
 	const LEECH_SEED_EFFECT          ; $58
 	const SPLASH_EFFECT              ; $59
 	const DISABLE_EFFECT             ; $5A
+	const FIRE_FANG_EFFECT           ; $5B 10% burn and 10% flinch
+	const ICE_FANG_EFFECT            ; $5C 10% freeze and 10% flinch
+	const THUNDER_FANG_EFFECT        ; $5D 10% paralysis and 10% flinch
+	const FLARE_BLITZ_EFFECT         ; $5E 1/3 recoil and 10% burn
 DEF NUM_MOVE_EFFECTS EQU const_value - 1

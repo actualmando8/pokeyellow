@@ -112,7 +112,7 @@ Moves:
 	move RAGE,         RAGE_EFFECT,                 20, NORMAL,       100, 20
 	move TELEPORT,     SWITCH_AND_TELEPORT_EFFECT,   0, PSYCHIC_TYPE, 100, 20
 	move NIGHT_SHADE,  SPECIAL_DAMAGE_EFFECT,        0, GHOST,        100, 15
-	move FLARE_BLITZ,  RECOIL_EFFECT,               120, FIRE,         100, 15
+	move FLARE_BLITZ,  FLARE_BLITZ_EFFECT,            120, FIRE,         100, 15
 	move SCREECH,      DEFENSE_DOWN2_EFFECT,         0, NORMAL,        85, 40
 	move DOUBLE_TEAM,  EVASION_UP1_EFFECT,           0, NORMAL,       100, 15
 	move RECOVER,      HEAL_EFFECT,                  0, NORMAL,       100, 20
@@ -131,7 +131,7 @@ Moves:
 	move METRONOME,    METRONOME_EFFECT,             0, NORMAL,       100, 10
 	move MIRROR_MOVE,  MIRROR_MOVE_EFFECT,           0, FLYING,       100, 20
 	move SELFDESTRUCT, EXPLODE_EFFECT,             130, NORMAL,       100,  5
-	move FIRE_FANG,    BURN_SIDE_EFFECT1,            65, FIRE,          95, 15
+	move FIRE_FANG,    FIRE_FANG_EFFECT,             65, FIRE,          95, 15
 	move LICK,         PARALYZE_SIDE_EFFECT2,       20, GHOST,        100, 30
 	move SMOG,         POISON_SIDE_EFFECT2,         20, POISON,        70, 20
 	move SLUDGE,       POISON_SIDE_EFFECT2,         65, POISON,       100, 20
@@ -159,7 +159,7 @@ Moves:
 	move WILD_CHARGE,  RECOIL_EFFECT,                90, ELECTRIC,     100, 15
 	move SPORE,        SLEEP_EFFECT,                 0, GRASS,        100, 15
 	move FLASH,        ACCURACY_DOWN1_EFFECT,        0, NORMAL,        70, 20
-	move THUNDER_FANG, PARALYZE_SIDE_EFFECT1,        65, ELECTRIC,      95, 15
+	move THUNDER_FANG, THUNDER_FANG_EFFECT,        65, ELECTRIC,      95, 15
 	move SPLASH,       SPLASH_EFFECT,                0, NORMAL,       100, 40
 	move ACID_ARMOR,   DEFENSE_UP2_EFFECT,           0, POISON,       100, 40
 	move CRABHAMMER,   NO_ADDITIONAL_EFFECT,        90, WATER,         85, 10
@@ -170,7 +170,7 @@ Moves:
 	move ROCK_SLIDE,   NO_ADDITIONAL_EFFECT,        75, ROCK,          90, 10
 	move HYPER_FANG,   FLINCH_SIDE_EFFECT1,         80, NORMAL,        90, 15
 	move LEAF_BLADE,   NO_ADDITIONAL_EFFECT,         90, GRASS,        100, 15
-	move ICE_FANG,     FREEZE_SIDE_EFFECT1,          65, ICE,           95, 15
+	move ICE_FANG,     ICE_FANG_EFFECT,              65, ICE,           95, 15
 	move TRI_ATTACK,   NO_ADDITIONAL_EFFECT,        80, NORMAL,       100, 10
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 10
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20

@@ -1167,6 +1167,61 @@ FocusEnergyEffect:
 RecoilEffect:
 	jpfar RecoilEffect_
 
+FlareBlitzEffect:
+; 10% burn if the target is still standing, then 1/3 recoil (see RecoilEffect_)
+	ld hl, wEnemyMonHP
+	ldh a, [hWhoseTurn]
+	and a
+	jr z, .gotTarget
+	ld hl, wBattleMonHP
+.gotTarget
+	ld a, [hli]
+	or [hl]
+	jr z, .recoil
+	ld b, BURN_SIDE_EFFECT1
+	ld hl, FreezeBurnParalyzeEffect
+	call RunSideEffectAs
+.recoil
+	jpfar RecoilEffect_
+
+FireFangEffect:
+	ld b, BURN_SIDE_EFFECT1
+	jr FangEffect
+
+IceFangEffect:
+	ld b, FREEZE_SIDE_EFFECT1
+	jr FangEffect
+
+ThunderFangEffect:
+	ld b, PARALYZE_SIDE_EFFECT1
+FangEffect:
+; the fang moves roll a 10% status chance and an independent 10% flinch chance
+	ld hl, FreezeBurnParalyzeEffect
+	call RunSideEffectAs
+	ld b, FLINCH_SIDE_EFFECT1
+	ld hl, FlinchSideEffect
+	; fallthrough
+RunSideEffectAs:
+; Run the effect routine hl as if the current move's effect were b.
+	ldh a, [hWhoseTurn]
+	and a
+	ld de, wPlayerMoveEffect
+	jr z, .gotEffectAddr
+	ld de, wEnemyMoveEffect
+.gotEffectAddr
+	ld a, [de]
+	push af
+	push de
+	ld a, b
+	ld [de], a
+	call .callRoutine
+	pop de
+	pop af
+	ld [de], a
+	ret
+.callRoutine
+	jp hl
+
 ConfusionSideEffect:
 	call BattleRandom
 	cp 10 percent ; chance of confusion

@@ -91,4 +91,8 @@ MoveEffectPointerTable:
 	dw LeechSeedEffect           ; LEECH_SEED_EFFECT
 	dw SplashEffect              ; SPLASH_EFFECT
 	dw DisableEffect             ; DISABLE_EFFECT
+	dw FireFangEffect            ; FIRE_FANG_EFFECT
+	dw IceFangEffect             ; ICE_FANG_EFFECT
+	dw ThunderFangEffect         ; THUNDER_FANG_EFFECT
+	dw FlareBlitzEffect          ; FLARE_BLITZ_EFFECT
 	assert_table_length NUM_MOVE_EFFECTS

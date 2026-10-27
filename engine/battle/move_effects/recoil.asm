@@ -12,6 +12,27 @@ RecoilEffect_:
 	ld b, a
 	ld a, [wDamage + 1]
 	ld c, a
+	ld a, d
+	cp FLARE_BLITZ ; Flare Blitz deals 1/3 recoil
+	jr nz, .notThirdRecoil
+	push hl
+	ld hl, 0
+.divideByThree
+	ld a, c
+	sub 3
+	ld c, a
+	ld a, b
+	sbc 0
+	ld b, a
+	jr c, .divisionDone
+	inc hl
+	jr .divideByThree
+.divisionDone
+	ld b, h
+	ld c, l
+	pop hl
+	jr .gotRecoilDamage
+.notThirdRecoil
 	srl b
 	rr c
 	ld a, d
