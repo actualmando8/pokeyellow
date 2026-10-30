@@ -162,22 +162,11 @@ TryingToLearn:
 	ld b, 0
 	add hl, bc
 	ld a, [hl]
-	push af
-	push bc
-	call IsMoveHM
-	pop bc
-	pop de
-	ld a, d
-	jr c, .hm
+; HM moves can be forgotten like any other move (the HM item is never used up)
 	pop hl
 	add hl, bc
 	and a
 	ret
-.hm
-	ld hl, HMCantDeleteText
-	call PrintText
-	pop hl
-	jr .loop
 .cancel
 	scf
 	ret

@@ -45,7 +45,7 @@ _PewterGymBrockWaitTakeThisText::
 
 _PewterGymReceivedTM34Text::
 	text "<PLAYER> received"
-	line "TM34!@"
+	line "TM54!@"
 	text_end
 
 _TM34ExplanationText::
@@ -56,18 +56,16 @@ _TM34ExplanationText::
 	cont "can be taught to"
 	cont "#MON!"
 
-	para "A TM is good only"
-	line "once! So when you"
-	cont "use one to teach"
-	cont "a new technique,"
-	cont "pick the #MON"
-	cont "carefully!"
+	para "A TM can be used"
+	line "as often as you"
+	cont "like, so teach it"
+	cont "to any #MON!"
 
-	para "TM34 contains"
-	line "DAZZLE GLEAM!"
+	para "TM54 contains"
+	line "POWER GEM!"
 
-	para "A burst of light"
-	line "that hurts foes!"
+	para "A rock-type beam"
+	line "of shining gems!"
 	done
 
 _PewterGymTM34NoRoomText::

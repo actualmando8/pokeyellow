@@ -51,7 +51,7 @@ CeruleanGymReceiveTM11:
 	ldh [hTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_MISTY
-	lb bc, TM_SLUDGE_BOMB, 1
+	lb bc, TM_WATERFALL, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, TEXT_CERULEANGYM_MISTY_RECEIVED_TM11

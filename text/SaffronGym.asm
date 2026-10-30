@@ -57,16 +57,16 @@ _SaffronGymSabrinaMarshBadgeInfoText::
 
 _SaffronGymSabrinaReceivedTM46Text::
 	text "<PLAYER> received"
-	line "TM46!@"
+	line "TM29!@"
 	text_end
 
 _TM46ExplanationText::
 	text_start
 
-	para "TM46 teaches"
-	line "ZEN HEADBUTT!"
-	cont "A focused strike"
-	cont "that may flinch!"
+	para "TM29 is PSYCHIC!"
+	line "It can lower the"
+	cont "target's SPECIAL"
+	cont "abilities."
 	done
 
 _SaffronGymSabrinaTM46NoRoomText::

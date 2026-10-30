@@ -20,11 +20,12 @@ _CeruleanGymMistyPreBattleText::
 	done
 
 _CeruleanGymMistyTM11ExplanationText::
-	text "TM11 teaches"
-	line "SLUDGE BOMB!"
+	text "TM17 teaches"
+	line "WATERFALL!"
 
-	para "It can poison"
-	line "the target!"
+	para "A powerful water"
+	line "attack that may"
+	cont "make foes flinch!"
 	done
 
 _CeruleanGymMistyCascadeBadgeInfoText::
@@ -49,7 +50,7 @@ _CeruleanGymMistyCascadeBadgeInfoText::
 
 _CeruleanGymMistyReceivedTM11Text::
 	text "<PLAYER> received"
-	line "TM11!@"
+	line "TM17!@"
 	text_end
 
 _CeruleanGymMistyTM11NoRoomText::
