@@ -269,3 +269,8 @@ INCLUDE "data/pokemon/dex_text_new.asm"
 SECTION "Move Names", ROMX
 
 INCLUDE "data/moves/names.asm"
+
+
+SECTION "Gym Rematch Text", ROMX
+
+INCLUDE "text/GymRematch.asm"

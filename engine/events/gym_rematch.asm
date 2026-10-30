@@ -23,6 +23,21 @@ GymRematchData:
 	db OPP_BLAINE,   2, FIRE_STONE,    1
 	db OPP_GIOVANNI, 4, RARE_CANDY,    5
 
+GymRematchGetText:
+; in: b = leader index, hl = table of eight text pointers; out: hl = the leader's text
+; (de is preserved)
+	push de
+	ld a, b
+	add a
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	pop de
+	ret
+
 GymRematchGetMask:
 ; in: b = leader index; out: a = 1 << b
 	ld a, 1
@@ -50,7 +65,7 @@ GymRematchOffer::
 	call GymRematchGetMask
 	ld hl, (wEventFlags + EVENT_REMATCH_BROCK / 8)
 	and [hl]
-	jr nz, .none ; already rematched
+	jp nz, .none ; already rematched
 	pop bc
 	push bc
 	ld a, b
@@ -76,8 +91,11 @@ GymRematchOffer::
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
-	jr nz, .declined
-	ld hl, GymRematchAcceptText
+	jp nz, .declined
+	pop bc
+	push bc
+	ld hl, GymRematchAcceptTexts
+	call GymRematchGetText
 	call PrintText
 	pop bc
 	push bc
@@ -96,9 +114,16 @@ GymRematchOffer::
 	ld a, [hl]
 	ld [wEngagedTrainerSet], a
 	call InitBattleEnemyParameters
-	ld hl, GymRematchEndBattleText
+	pop bc
+	push bc
+	ld hl, GymRematchLoseTexts
+	call GymRematchGetText
 	ld d, h
-	ld e, l
+	ld e, l ; de = the leader's text when the player loses
+	pop bc
+	push bc
+	ld hl, GymRematchWinTexts
+	call GymRematchGetText ; hl = the leader's text when the player wins
 	call SaveEndBattleTextPointers
 	ld hl, wStatusFlags3
 	set BIT_TALKED_TO_TRAINER, [hl]
@@ -112,7 +137,10 @@ GymRematchOffer::
 	scf
 	ret
 .declined
-	ld hl, GymRematchDeclineText
+	pop bc
+	push bc
+	ld hl, GymRematchDeclineTexts
+	call GymRematchGetText
 	call PrintText
 	pop bc
 	ld a, 1
@@ -139,8 +167,11 @@ GymRematchOffer::
 	ld b, a
 	ld c, [hl]
 	call GiveItem
-	jr c, .gotItem
-	ld hl, GymRematchNoRoomText
+	jp c, .gotItem
+	pop bc
+	push bc
+	ld hl, GymRematchNoRoomTexts
+	call GymRematchGetText
 	call PrintText
 	pop bc
 	ld a, 1
@@ -154,22 +185,25 @@ GymRematchOffer::
 	ld hl, (wEventFlags + EVENT_REMATCH_BROCK / 8)
 	or [hl]
 	ld [hl], a
-	ld hl, GymRematchRewardText
+	pop bc
+	push bc
+	ld hl, GymRematchRewardTexts
+	call GymRematchGetText
 	call PrintText
 	; unlock Mew once all eight are done
 	ld a, [(wEventFlags + EVENT_REMATCH_BROCK / 8)]
 	cp $FF
-	jr nz, .checkGiovanni
+	jp nz, .checkGiovanni
 	ld a, TOGGLE_CERULEAN_CAVE_B1F_MEW
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
 	ld hl, GymRematchMewText
 	call PrintText
-	jr .rewardDone
+	jp .rewardDone
 .checkGiovanni
 	and REMATCH_ALL_OTHERS
 	cp REMATCH_ALL_OTHERS
-	jr nz, .rewardDone
+	jp nz, .rewardDone
 	ld a, TOGGLE_VIRIDIAN_GYM_GIOVANNI
 	ld [wToggleableObjectIndex], a
 	predef ShowObject
@@ -268,39 +302,6 @@ GymRematchOfferTexts:
 	cont "will face you at"
 	cont "my full strength."
 	para "Rematch?"
-	done
-
-GymRematchAcceptText:
-	text "Then show me"
-	line "what you've got!"
-	done
-
-GymRematchDeclineText:
-	text "Come back when"
-	line "you're ready."
-	done
-
-GymRematchEndBattleText:
-	text "Magnificent!"
-	line "You've truly"
-	cont "grown."
-	prompt
-
-GymRematchRewardText:
-	text "Please take this"
-	line "as a reward."
-	para "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer
-	text "!@"
-	text_promptbutton
-	text_end
-
-GymRematchNoRoomText:
-	text "Your pack is full."
-	line "Make room, then"
-	cont "challenge me"
-	cont "again!"
 	done
 
 GymRematchMewText:

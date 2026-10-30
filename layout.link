@@ -88,6 +88,7 @@ ROMX $F
 	"Battle Core"
 ROMX $10
 	"bank10"
+	"Gym Rematch Text"
 ROMX $11
 	"Maps 5"
 	"Pokédex Rating"

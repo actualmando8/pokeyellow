@@ -178,6 +178,7 @@ INCLUDE "data/trainers/special_moves.asm"
 INCLUDE "data/trainers/parties.asm"
 
 INCLUDE "engine/events/gym_rematch.asm"
+INCLUDE "engine/events/gym_rematch_texts.asm"
 
 
 SECTION "Battle Core", ROMX
