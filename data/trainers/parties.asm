@@ -244,6 +244,8 @@ SuperNerdData:
 	db 34, PONYTA, MAGBY, VULPIX, GROWLITHE, 0
 	db 41, MAGMAR, 0
 	db 37, GROWLITHE, VULPIX, 0
+; Mt. Moon B2F fossil rematch (party 13, set in scripts/MtMoonB2F.asm)
+	db 34, MAGNETON, MUK, WEEZING, ELECTRODE, 0
 
 HikerData:
 ; Mt. Moon 1F

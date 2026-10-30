@@ -804,6 +804,8 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 	const EVENT_REMATCH_GIOVANNI
 	const EVENT_REMATCH_ACTIVE ; a rematch battle is in progress
 	const EVENT_REMATCH_WON    ; rematch won, reward not yet handed over
+	const EVENT_FOSSIL_NERD_WON     ; Mt. Moon Super Nerd beaten in the rematch (5+ badges)
+	const EVENT_GOT_SECOND_FOSSIL   ; he handed over the fossil he took
 
 ; End of events
 	const_next $A00

@@ -73,6 +73,37 @@ _MtMoonB2FSuperNerdTheresAPokemonLabText::
 	cont "fossils."
 	done
 
+_MtMoonB2FSuperNerdNeedBadgesText::
+	text "I still want to"
+	line "share the other"
+	cont "fossil, but you're"
+	cont "too green."
+
+	para "Come back with 5"
+	line "BADGES and we'll"
+	cont "battle for it!"
+	done
+
+_MtMoonB2FSuperNerdRematchOfferText::
+	text "You've got 5"
+	line "BADGES now? Then"
+	cont "let's battle!"
+
+	para "If you win, the"
+	line "other fossil is"
+	cont "yours. Ready?"
+	done
+
+_MtMoonB2FSuperNerdADealIsADealText::
+	text "Whoa, you're too"
+	line "good!"
+	prompt
+
+_MtMoonB2FSuperNerdHereIsYourFossilText::
+	text "A deal is a deal."
+	line "Take the fossil!"
+	prompt
+
 _MtMoonB2FSuperNerdThenThisIsMineText::
 	text "All right. Then"
 	line "this is mine!@"

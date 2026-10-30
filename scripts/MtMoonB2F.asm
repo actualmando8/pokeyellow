@@ -72,6 +72,7 @@ MtMoonB2F_ScriptPointers:
 	dw_const MtMoonB2FScript13,                        SCRIPT_MTMOONB2F_SCRIPT13
 	dw_const MtMoonB2FScript14,                        SCRIPT_MTMOONB2F_SCRIPT14
 	dw_const MtMoonB2FScript15,                        SCRIPT_MTMOONB2F_SCRIPT15
+	dw_const MtMoonB2FDefeatedFossilNerdScript,        SCRIPT_MTMOONB2F_DEFEATED_FOSSIL_NERD
 
 MtMoonB2FDefaultScript:
 IF DEF(_DEBUG)
@@ -429,6 +430,7 @@ MtMoonB2F_TextPointers:
 	dw_const MtMoonB2FText12,                       TEXT_MTMOONB2F_TEXT12
 	dw_const MtMoonB2FText13,                       TEXT_MTMOONB2F_TEXT13
 	dw_const MtMoonB2FText14,                       TEXT_MTMOONB2F_TEXT14
+	dw_const MtMoonB2FFossilNerdRewardText,         TEXT_MTMOONB2F_FOSSIL_NERD_REWARD
 
 MtMoon3TrainerHeaders:
 	def_trainers 3
@@ -479,10 +481,10 @@ MtMoonB2FSuperNerdText:
 	CheckEvent EVENT_BEAT_MT_MOON_EXIT_SUPER_NERD
 	jr z, .beat_super_nerd
 	CheckEitherEventSet EVENT_GOT_DOME_FOSSIL, EVENT_GOT_HELIX_FOSSIL, 1
-	jr nz, .got_a_fossil
+	jp nz, .got_a_fossil
 	ld hl, MtMoonB2fSuperNerdEachTakeOneText
 	call PrintText
-	jr .done
+	jp .done
 .beat_super_nerd
 	ld hl, MtMoonB2FSuperNerdTheyreBothMineText
 	call PrintText
@@ -498,12 +500,94 @@ MtMoonB2FSuperNerdText:
 	call InitBattleEnemyParameters
 	ld a, SCRIPT_MTMOONB2F_DEFEATED_SUPER_NERD
 	call MtMoonB2FSetScript
-	jr .done
+	jp .done
 .got_a_fossil
+	CheckEvent EVENT_GOT_SECOND_FOSSIL
+	jr nz, .lab_hint
+	CheckEvent EVENT_FOSSIL_NERD_WON
+	jr nz, .give_second_fossil
+	ld hl, wObtainedBadges
+	ld b, 1
+	call CountSetBits
+	ld a, [wNumSetBits]
+	cp 5
+	jr nc, .rematch_offer
+	ld hl, MtMoonB2FSuperNerdNeedBadgesText
+	call PrintText
+	jp .done
+.rematch_offer
+	ld a, 1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, MtMoonB2FSuperNerdRematchOfferText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, .done
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, MtMoonB2FSuperNerdADealIsADealText
+	ld de, MtMoonB2FSuperNerdADealIsADealText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, 13 ; the stronger Super Nerd party (see data/trainers/parties.asm)
+	ld [wTrainerNo], a
+	ld a, SCRIPT_MTMOONB2F_DEFEATED_FOSSIL_NERD
+	call MtMoonB2FSetScript
+	jp .done
+.give_second_fossil
+	call MtMoonB2FGiveSecondFossil
+	jp .done
+.lab_hint
 	ld hl, MtMoonB2FSuperNerdTheresAPokemonLabText
 	call PrintText
 .done
 	jp TextScriptEnd
+
+MtMoonB2FFossilNerdRewardText:
+	text_asm
+	call MtMoonB2FGiveSecondFossil
+	jp TextScriptEnd
+
+; Hands over the fossil the player did not take (DOME if they took HELIX and vice versa).
+MtMoonB2FGiveSecondFossil:
+	ld hl, MtMoonB2FSuperNerdHereIsYourFossilText
+	call PrintText
+	CheckEvent EVENT_GOT_DOME_FOSSIL
+	ld b, DOME_FOSSIL
+	jr z, .gotFossil ; took the HELIX FOSSIL, so give the DOME FOSSIL
+	ld b, HELIX_FOSSIL
+.gotFossil
+	ld c, 1
+	push bc
+	call GiveItem
+	pop bc
+	jr nc, .noRoom
+	call MtMoonB2FReceivedFossilText
+	SetEvent EVENT_GOT_SECOND_FOSSIL
+	ret
+.noRoom
+	ld hl, MtMoonB2FYouHaveNoRoomText.Text
+	jp PrintText
+
+MtMoonB2FDefeatedFossilNerdScript:
+	ld a, [wIsInBattle]
+	cp LOST_BATTLE
+	jp z, MtMoonB2FResetScripts
+	call UpdateSprites
+	call Delay3
+	SetEvent EVENT_FOSSIL_NERD_WON
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_MTMOONB2F_DEFAULT
+	call MtMoonB2FSetScript
+	ld a, TEXT_MTMOONB2F_FOSSIL_NERD_REWARD
+	ldh [hTextID], a
+	jp DisplayTextID
 
 MtMoonB2FRocket1Text:
 	text_asm
@@ -602,6 +686,22 @@ MtMoonB2FSuperNerdTheyreBothMineText:
 
 MtMoonB2FSuperNerdOkIllShareText:
 	text_far _MtMoonB2FSuperNerdOkIllShareText
+	text_end
+
+MtMoonB2FSuperNerdNeedBadgesText:
+	text_far _MtMoonB2FSuperNerdNeedBadgesText
+	text_end
+
+MtMoonB2FSuperNerdRematchOfferText:
+	text_far _MtMoonB2FSuperNerdRematchOfferText
+	text_end
+
+MtMoonB2FSuperNerdADealIsADealText:
+	text_far _MtMoonB2FSuperNerdADealIsADealText
+	text_end
+
+MtMoonB2FSuperNerdHereIsYourFossilText:
+	text_far _MtMoonB2FSuperNerdHereIsYourFossilText
 	text_end
 
 MtMoonB2fSuperNerdEachTakeOneText:
