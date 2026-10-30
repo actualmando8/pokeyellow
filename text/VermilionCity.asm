@@ -162,7 +162,7 @@ _VermilionCityGymSignText::
 	cont "LEADER: LT.SURGE"
 
 	para "The Lightning "
-	line "American!"
+	line "Unovan!"
 	done
 
 _VermilionCityHarborSignText::
